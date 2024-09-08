@@ -1019,3 +1019,10 @@ figure.instagram-item img.insta-image {
 .post-navigation:focus svg {
     fill: var(--primary-color);
 }
+
+/* ------------------------------------ */
+/* Cloudy Book Club overrides           */
+/* ------------------------------------ */
+#billboard {
+  padding-top: 90px;
+}
