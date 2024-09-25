@@ -2,7 +2,8 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import {createBrowserRouter, RouterProvider,} from "react-router-dom";
 import Root from "./routes/root";
-import ErrorPage from "./error-page";
+import ErrorPage from "./components/ErrorPage/ErrorPage";
+import CoverFlow from './components/CoverFlow/CoverFlow';
 import './index.css'
 
 const router = createBrowserRouter([
@@ -10,7 +11,14 @@ const router = createBrowserRouter([
     path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
-
+    children: [
+      {
+        errorElement: <ErrorPage />,
+        children: [
+          { index: true, element: <CoverFlow /> },
+        ]
+      }
+    ],
   }
 ]);
 

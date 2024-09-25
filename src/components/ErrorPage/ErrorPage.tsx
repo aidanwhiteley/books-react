@@ -1,4 +1,5 @@
 import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
+import './ErrorPage.css'
 
 function errorMessage(error: unknown): string {
   if (isRouteErrorResponse(error)) {
@@ -15,7 +16,6 @@ function errorMessage(error: unknown): string {
 
 export default function ErrorPage() {
   const error = useRouteError();
-  console.error('Error is: ' + JSON.stringify(error));
 
   return (
     <div id="error-page">
