@@ -1,4 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -8,10 +9,28 @@ import 'swiper/css/navigation';
 
 import './Swiper.css';
 
-// import required modules
-import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
+// For testing only
+import data from "./testdata.json";
 
 export default function App() {
+
+  const booksData = data.content.map(aBook => {
+    return {
+        title: aBook.title,
+        author: aBook.author,
+        rating: aBook.rating,
+        bookAppUrl: '//cloudybookclub.com/#/book/' + aBook.id,
+        thumbnail: (aBook.googleBookId ? aBook.googleBookDetails.volumeInfo.imageLinks.thumbnail.replace('http:', 'https:') : '#'),
+        smallThumbnail: (aBook.googleBookId ? aBook.googleBookDetails.volumeInfo.imageLinks.smallThumbnail.replace('http:', 'https:') : '#')
+    };
+  }).filter(s => (s.thumbnail !== '#')).slice(0, 15);
+
+  const swiperSlides = booksData.map((book, index) =>
+    <SwiperSlide key={index} data-book-url={book.bookAppUrl}>
+      <img src={book.thumbnail} />
+    </SwiperSlide>
+  );
+
   return (
     <>
       <Swiper
@@ -22,46 +41,17 @@ export default function App() {
         coverflowEffect={{
           rotate: 30,
           stretch: 20,
-          depth: 50,
+          depth: 20,
           modifier: 1,
-          slideShadows: true,
+          slideShadows: false,
         }}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
-        onClick={(swiper) => console.log(swiper.clickedIndex)}
-        pagination={true}
+        onClick={(swiper) =>  window.location.href = swiper.slides[swiper.clickedIndex].dataset.bookUrl!}
         navigation
         loop={true}
         modules={[EffectCoverflow, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide>
+        {swiperSlides}
       </Swiper>
     </>
   );
