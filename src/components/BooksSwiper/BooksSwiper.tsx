@@ -1,13 +1,11 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
-import './Swiper.css';
+import './BooksSwiper.css';
 
 // For testing only
 import data from "./testdata.json";
