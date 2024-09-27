@@ -38,6 +38,7 @@ export type Comment = {
 }
 
 export type Rating = 'TERRIBLE' | 'POOR' | 'OK' | 'GOOD' | 'GREAT';
+export type RequestedRating = Rating | 'All';
 
 export type GoogleBookDetails = {
     id: string,
@@ -72,7 +73,10 @@ export type AccessInfo = {
 
 export type ViewAbility = 'NO_PAGES' | 'PARTIAL' | 'ALL_PAGES' | 'UNKNOWN'
 
-export async function getWebCamStatus(): Promise<WebCamStatus> {
+export async function getBooksByRating(requestedRating : RequestedRating, pageSize: number): Promise<Book[]> {
+    
+    const apiPrefix = '/api/books/?';
+
     const response = await fetch('/webcam/api/status');
     if (response.status === 401) {
         throw new NotLoggedOnError('User was not logged on. Status: ' + response.status + ' ' + response.statusText);
