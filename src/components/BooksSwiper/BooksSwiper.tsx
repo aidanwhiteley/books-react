@@ -8,11 +8,12 @@ import 'swiper/css/navigation';
 import './BooksSwiper.css';
 
 // For testing only
-import data from "./testdata.json";
+// import data from "./testdata.json";
+import { Book } from "../../apis/HttpDataApis";
 
-export default function App() {
+export default function BookSwiper(props: Book[]) {
 
-  const booksData = data.content.map(aBook => {
+  const booksData = props.map(aBook => {
     return {
         title: aBook.title,
         author: aBook.author,

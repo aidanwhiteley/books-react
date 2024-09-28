@@ -1,19 +1,23 @@
-import BooksSwiper from "../components/BooksSwiper/BooksSwiper"
+import BooksSwiper from "../components/BooksSwiper/BooksSwiper";
+import { Book, getBooksByRating } from "../apis/HttpDataApis";
+import { useLoaderData, LoaderFunction  } from "react-router-dom";
 
-export async function loader({ request }) {
+interface LoaderData {
+  books: Book[];
+ }
 
-  return null;
+const loader: LoaderFunction = async ({}): Promise<LoaderData> => {
+  return getBooksByRating("ALL", 20);
 }
 
-export async function action() {
 
-  return null;
-}
 
 export default function SwiperRoute() {
 
+  const { booksData } = useLoaderData<LoaderData>();
+
   return (
-    <BooksSwiper />
+    <BooksSwiper booksData={booksData} />
   )
 
 }

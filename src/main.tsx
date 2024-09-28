@@ -3,7 +3,9 @@ import { createRoot } from 'react-dom/client';
 import {createBrowserRouter, RouterProvider,} from "react-router-dom";
 import Root from "./routes/root";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
-import SwiperRoute from "./routes/SwiperRoute"
+import SwiperRoute from "./routes/SwiperRoute";
+import { loader as recentBooksLoader } from "./routes/SwiperRoute"
+
 
 const router = createBrowserRouter([
   {
@@ -14,7 +16,10 @@ const router = createBrowserRouter([
       {
         errorElement: <ErrorPage />,
         children: [
-          { index: true, element: <SwiperRoute /> },
+          { index: true, 
+            element: <SwiperRoute />, 
+            loader: recentBooksLoader
+          },
         ]
       }
     ],

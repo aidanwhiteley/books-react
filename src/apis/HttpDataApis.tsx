@@ -1,4 +1,5 @@
 export class NotLoggedOnError extends Error { }
+export class DataRetievalError extends Error { }
 
 export type Book = {
     id: string,
@@ -38,7 +39,7 @@ export type Comment = {
 }
 
 export type Rating = 'TERRIBLE' | 'POOR' | 'OK' | 'GOOD' | 'GREAT';
-export type RequestedRating = Rating | 'All';
+export type RequestedRating = Rating | 'ALL';
 
 export type GoogleBookDetails = {
     id: string,
@@ -73,15 +74,18 @@ export type AccessInfo = {
 
 export type ViewAbility = 'NO_PAGES' | 'PARTIAL' | 'ALL_PAGES' | 'UNKNOWN'
 
-export async function getBooksByRating(requestedRating : RequestedRating, pageSize: number): Promise<Book[]> {
+export async function getBooksByRating(requestedRating : RequestedRating = "ALL", pageSize: number = 20): Promise<Book[]> {
     
     const apiPrefix = '/api/books/?';
 
-    const response = await fetch('/webcam/api/status');
+    const apiParams = requestedRating === "ALL" ? "page=0&size=" + pageSize :
+        "rating=" + requestedRating.toLocaleLowerCase + "&page=0&size=" +pageSize;
+
+    const response = await fetch(apiPrefix + apiParams);
     if (response.status === 401) {
         throw new NotLoggedOnError('User was not logged on. Status: ' + response.status + ' ' + response.statusText);
     } else if (!response.ok) {
-        throw new Error('Network response was not ok. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetievalError('Error retrieiving data from the server. Status: ' + response.status + ' ' + response.statusText);
     }
     return response.json()
 }
