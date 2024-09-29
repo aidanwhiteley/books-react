@@ -14,7 +14,7 @@ const loader: LoaderFunction = async ({}): Promise<LoaderData> => {
 
 export default function SwiperRoute() {
 
-  const { booksData } = useLoaderData<LoaderData>();
+  const booksData = useLoaderData() as LoaderData;
 
   return (
     <BooksSwiper booksData={booksData} />
