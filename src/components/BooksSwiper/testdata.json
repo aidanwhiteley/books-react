@@ -1184,29 +1184,10 @@
             "allowComment": false
         }
     ],
-    "pageable": {
-        "pageNumber": 0,
-        "pageSize": 15,
-        "sort": {
-            "sorted": false,
-            "empty": true,
-            "unsorted": true
-        },
-        "offset": 0,
-        "paged": true,
-        "unpaged": false
-    },
-    "totalPages": 14,
-    "totalElements": 198,
-    "last": false,
-    "size": 15,
-    "number": 0,
-    "sort": {
-        "sorted": false,
-        "empty": true,
-        "unsorted": true
-    },
-    "numberOfElements": 15,
-    "first": true,
-    "empty": false
+    "page": {
+        "size": 15,
+        "number": 0,
+        "totalElements": 198,
+        "totalPages": 14
+    }
 }

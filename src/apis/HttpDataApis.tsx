@@ -74,7 +74,17 @@ export type AccessInfo = {
 
 export type ViewAbility = 'NO_PAGES' | 'PARTIAL' | 'ALL_PAGES' | 'UNKNOWN'
 
-export async function getBooksByRating(requestedRating : RequestedRating = "ALL", pageSize: number = 20): Promise<Book[]> {
+export type BooksQueryResult = {
+    content: Book[],
+    page: {
+        size: number,
+        number: number,
+        totalElements: number,
+        totalPages: number
+    }
+}
+
+export async function getBooksByRating(requestedRating : RequestedRating = "ALL", pageSize: number = 20): Promise<BooksQueryResult> {
     
     const apiPrefix = '/api/books/?';
 
@@ -85,7 +95,18 @@ export async function getBooksByRating(requestedRating : RequestedRating = "ALL"
     if (response.status === 401) {
         throw new NotLoggedOnError('User was not logged on. Status: ' + response.status + ' ' + response.statusText);
     } else if (!response.ok) {
-        throw new DataRetievalError('Error retrieiving data from the server. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetievalError('Error retrieiving book summary data from the server. Status: ' + response.status + ' ' + response.statusText);
+    }
+    return response.json()
+}
+
+export async function getBookById(bookId: string) : Promise<Book> {
+
+    const api = '/api/books/' + bookId;
+
+    const response = await fetch(api);
+    if (!response.ok) {
+        throw new DataRetievalError('Error retrieiving data for a book from the server. Status: ' + response.status + ' ' + response.statusText);
     }
     return response.json()
 }

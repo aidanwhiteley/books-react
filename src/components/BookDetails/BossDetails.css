@@ -1,0 +1,33 @@
+.reviewDetail {
+    font-size: 16px;
+    white-space: pre-wrap;
+}
+
+.reviewDetailSummary {
+    display: block;
+    margin-top: 12px;
+}
+
+.googleSummary {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+#googleSummaryDetail {
+    font-size: 14px;
+}
+#googleSummaryDetail p {
+    font-size: 14px;
+}
+
+.rating {
+    text-transform: capitalize;
+}
+
+.bookContent {
+    padding-left: 10px;
+}
+
+.bookInfo {
+  
+}

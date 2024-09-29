@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
+import { useNavigate } from 'react-router-dom';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
@@ -7,28 +8,35 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './BooksSwiper.css';
 
+import { BooksProps } from "../../routes/SwiperRoute"
+
 // For testing only
 // import data from "./testdata.json";
-import { Book } from "../../apis/HttpDataApis";
 
-export default function BookSwiper(props: Book[]) {
 
-  const booksData = props.map(aBook => {
+export default function BookSwiper(props: BooksProps) {
+
+  const booksData = props.booksQueryResult.content.map(aBook => {
     return {
+        id: aBook.id,
         title: aBook.title,
         author: aBook.author,
         rating: aBook.rating,
-        bookAppUrl: '//cloudybookclub.com/#/book/' + aBook.id,
-        thumbnail: (aBook.googleBookId ? aBook.googleBookDetails.volumeInfo.imageLinks.thumbnail.replace('http:', 'https:') : '#'),
-        smallThumbnail: (aBook.googleBookId ? aBook.googleBookDetails.volumeInfo.imageLinks.smallThumbnail.replace('http:', 'https:') : '#')
+        bookAppUrl: '/book/' + aBook.id,
+        thumbnail: (aBook.googleBookId ? 
+          aBook.googleBookDetails.volumeInfo.imageLinks.thumbnail ? aBook.googleBookDetails.volumeInfo.imageLinks.thumbnail.replace('http:', 'https:') : '' : ''),
+        smallThumbnail: (aBook.googleBookId ? 
+          aBook.googleBookDetails.volumeInfo.imageLinks.smallThumbnail ? aBook.googleBookDetails.volumeInfo.imageLinks.smallThumbnail.replace('http:', 'https:') : '' : '')
     };
   }).filter(s => (s.thumbnail !== '#')).slice(0, 15);
 
   const swiperSlides = booksData.map((book, index) =>
-    <SwiperSlide key={index} data-book-url={book.bookAppUrl}>
+    <SwiperSlide key={index} data-book-id={book.id}>
       <img src={book.thumbnail} />
     </SwiperSlide>
   );
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -44,7 +52,7 @@ export default function BookSwiper(props: Book[]) {
           modifier: 1,
           slideShadows: false,
         }}
-        onClick={(swiper) =>  window.location.href = swiper.slides[swiper.clickedIndex].dataset.bookUrl!}
+        onClick={(swiper) =>  navigate('book/' + swiper.slides[swiper.clickedIndex].dataset.bookId!)}
         navigation
         loop={true}
         modules={[EffectCoverflow, Pagination, Navigation]}
