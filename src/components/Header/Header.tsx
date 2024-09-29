@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import "./Header.css"
 
 export default function Header() {
 
@@ -28,8 +29,8 @@ export default function Header() {
             <header id="header" className="site-header header-scrolled position-fixed text-black bg-light">
                 <nav id="header-nav" className="navbar navbar-expand-lg px-3 mb-3">
                     <div className="container-fluid">
-                        <NavLink to='/' className="navbar-brand">
-                            <img src="/images/main-logo.png" className="logo" />
+                        <NavLink to='/' className="navbar-brand brand">
+                            <span className="brandStuff">The Cloudy Book Club</span>
                         </NavLink>
                         <button className="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
                             <svg className="navbar-icon">
