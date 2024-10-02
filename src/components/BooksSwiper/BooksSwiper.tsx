@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './BooksSwiper.css';
 
-import { BooksProps } from "../../routes/SwiperRoute"
+import { BooksProps } from "../../routes/SwiperRoute";
 
 // For testing only
 // import data from "./testdata.json";

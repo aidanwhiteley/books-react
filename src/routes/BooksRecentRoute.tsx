@@ -1,16 +1,16 @@
-import BooksSwiper from "../components/BooksSwiper/BooksSwiper";
-import { BooksQueryResult, getBooksByRating } from "../apis/HttpDataApis";
+import BooksRecent from "../components/BooksRecent/BooksRecent";
+import { BooksQueryResult, getBooksByReviewDate } from "../apis/HttpDataApis";
 import { useLoaderData, LoaderFunction} from "react-router-typesafe";
 
 export const loader = (async () => {
-  return await getBooksByRating("GREAT", 0, 20);
+  return await getBooksByReviewDate(0, 20);
 }) satisfies LoaderFunction;
 
 export interface BooksProps {
   booksQueryResult: BooksQueryResult;
 }
 
-export default function SwiperRoute() {
+export default function BooksRecentRoute() {
 
   const booksData = useLoaderData<typeof loader>();
 
@@ -19,7 +19,7 @@ export default function SwiperRoute() {
   }
 
   return (
-    <BooksSwiper {...booksProps} />
+    <BooksRecent {...booksProps} />
   )
 
 }

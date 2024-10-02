@@ -84,18 +84,32 @@ export type BooksQueryResult = {
     }
 }
 
-export async function getBooksByRating(requestedRating : RequestedRating = "ALL", pageSize: number = 20): Promise<BooksQueryResult> {
+export async function getBooksByRating(requestedRating : RequestedRating = "ALL", page: number = 0, pageSize: number = 20): Promise<BooksQueryResult> {
     
     const apiPrefix = '/api/books/?';
 
-    const apiParams = requestedRating === "ALL" ? "page=0&size=" + pageSize :
-        "rating=" + requestedRating.toLocaleLowerCase + "&page=0&size=" +pageSize;
+    const apiParams = "rating=" + requestedRating.toLocaleLowerCase() + "&page=" + page + "&size=" +pageSize;
+
+    console.log('Running get by rating with: ' + apiParams);
 
     const response = await fetch(apiPrefix + apiParams);
-    if (response.status === 401) {
-        throw new NotLoggedOnError('User was not logged on. Status: ' + response.status + ' ' + response.statusText);
-    } else if (!response.ok) {
-        throw new DataRetievalError('Error retrieiving book summary data from the server. Status: ' + response.status + ' ' + response.statusText);
+    if (!response.ok) {
+        throw new DataRetievalError('Error retrieiving books by review rating data from the server. Status: ' + response.status + ' ' + response.statusText);
+    }
+    return response.json()
+}
+
+export async function getBooksByReviewDate(page: number = 0, pageSize: number = 20): Promise<BooksQueryResult> {
+    
+    const apiPrefix = '/api/books/?';
+
+    const apiParams = "&page=" + page + "&size=" +pageSize;
+
+    console.log('Running get by review date with: ' + apiParams);
+
+    const response = await fetch(apiPrefix + apiParams);
+    if (!response.ok) {
+        throw new DataRetievalError('Error retrieiving books by review date from the server. Status: ' + response.status + ' ' + response.statusText);
     }
     return response.json()
 }

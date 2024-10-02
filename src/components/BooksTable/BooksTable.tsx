@@ -1,7 +1,7 @@
 import DataTable, { TableColumn } from 'react-data-table-component';
-import { Rating, BooksQueryResult } from "../../apis/HttpDataApis";
+import { BooksProps } from "../../routes/BooksRecentRoute";
 
-export default function BooksTable(props: BooksQueryResult) {
+export default function BooksTable(props: BooksProps) {
 
     interface DataRow {
         title: string;
@@ -35,7 +35,9 @@ export default function BooksTable(props: BooksQueryResult) {
         },
     ];
 
-    const data = props.content.map(aBook => {
+    const content = props.booksQueryResult.content;
+
+    const data = content.map(aBook => {
         return {
             id: aBook.id,
             title: aBook.title,

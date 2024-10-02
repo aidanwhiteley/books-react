@@ -51,7 +51,8 @@ export default function Header() {
                                             isActive ? "nav-link me-4 active" : isPending ? "nav-link me-4 pending" : ""}>Home</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link me-4" href="#">By date</a>
+                                        <NavLink to='/books/recent' className={({ isActive, isPending }) =>
+                                            isActive ? "nav-link me-4 active" : isPending ? "nav-link me-4 pending" : ""}>Recently reviewed</NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <a className="nav-link me-4" href="#">By rating</a>
