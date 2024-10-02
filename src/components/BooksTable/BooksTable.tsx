@@ -55,8 +55,6 @@ export default function BooksTable(props: BooksProps) {
 
     const handlePageClick = (event: CurrentPage) => {
         // const newOffset = event.selected * itemsPerPage % items.length;
-        console.log(JSON.stringify(event));
-        console.log(typeof event);
         console.log('User requested page number ' + event.selected );
         //setItemOffset(newOffset);
       };
