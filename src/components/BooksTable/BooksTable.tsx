@@ -1,5 +1,6 @@
 import DataTable, { TableColumn } from 'react-data-table-component';
 import { BooksProps } from "../../routes/BooksRecentRoute";
+import ReactPaginate from 'react-paginate';
 
 export default function BooksTable(props: BooksProps) {
 
@@ -36,6 +37,7 @@ export default function BooksTable(props: BooksProps) {
     ];
 
     const content = props.booksQueryResult.content;
+    const pageData = props.booksQueryResult.page;
 
     const data = content.map(aBook => {
         return {
@@ -49,9 +51,40 @@ export default function BooksTable(props: BooksProps) {
         }
     });
 
+    type CurrentPage = {selected: number};
+
+    const handlePageClick = (event: CurrentPage) => {
+        // const newOffset = event.selected * itemsPerPage % items.length;
+        console.log(JSON.stringify(event));
+        console.log(typeof event);
+        console.log('User requested page number ' + event.selected );
+        //setItemOffset(newOffset);
+      };
+
     return (
         <>
             <DataTable columns={columns} data={data} />
+
+            <ReactPaginate
+                nextLabel="next >"
+                onPageChange={handlePageClick}
+                pageRangeDisplayed={3}
+                marginPagesDisplayed={2}
+                pageCount={pageData.totalPages}
+                previousLabel="< previous"
+                pageClassName="page-item"
+                pageLinkClassName="page-link"
+                previousClassName="page-item"
+                previousLinkClassName="page-link"
+                nextClassName="page-item"
+                nextLinkClassName="page-link"
+                breakLabel="..."
+                breakClassName="page-item"
+                breakLinkClassName="page-link"
+                containerClassName="pagination"
+                activeClassName="active"
+                renderOnZeroPageCount={null}
+            />
         </>
     )
 }
