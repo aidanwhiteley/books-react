@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api/books/': {
-        target: 'http://localhost:8080',
+        target: 'https://cloudybookclub.com',
         changeOrigin: true,
         secure: false,      
         ws: true,

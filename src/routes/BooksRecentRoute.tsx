@@ -2,15 +2,18 @@ import BooksRecent from "../components/BooksRecent/BooksRecent";
 import { BooksQueryResult, getBooksByReviewDate } from "../apis/HttpDataApis";
 import { useLoaderData, LoaderFunction, redirect} from "react-router-typesafe";
 
-export const loader = (async ({params, request}) => {
+// eslint-disable-next-line react-refresh/only-export-components
+export const loader = (async ({request}) => {
 
   let page = 0;
   const searchParams = new URL(request.url).searchParams.get("page");
   if (searchParams) {
-    page = parseInt(searchParams) - 1;
-    if (isNaN(page) || (page < 0)) {
+    page = parseInt(searchParams);
+    if (isNaN(page) || (page <= 0)) {
       return redirect("/")
     }
+    // UI is "one based" but API is "zero based"
+    page = page - 1;
   }
 
   return await getBooksByReviewDate(page, 5);

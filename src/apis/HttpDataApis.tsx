@@ -88,7 +88,7 @@ export async function getBooksByRating(requestedRating : RequestedRating = "ALL"
     
     const apiPrefix = '/api/books/?';
 
-    const apiParams = "rating=" + requestedRating.toLocaleLowerCase() + "&page=" + page + "&size=" +pageSize;
+    const apiParams = 'rating=' + requestedRating.toLocaleLowerCase() + '&page=' + page + '&size=' +pageSize;
 
     console.log('Running get by rating with: ' + apiParams);
 
@@ -103,7 +103,20 @@ export async function getBooksByReviewDate(page: number = 0, pageSize: number = 
     
     const apiPrefix = '/api/books/?';
 
-    const apiParams = "&page=" + page + "&size=" +pageSize;
+    const apiParams = '&page=' + page + '&size=' +pageSize;
+
+    const response = await fetch(apiPrefix + apiParams);
+    if (!response.ok) {
+        throw new DataRetievalError('Error retrieiving books by review date from the server. Status: ' + response.status + ' ' + response.statusText);
+    }
+    return response.json()
+}
+
+export async function getBooksBySearch(searchTerm: string, page: number = 0, pageSize: number = 20): Promise<BooksQueryResult> {
+    
+    const apiPrefix = '/api/books/?';
+
+    const apiParams = 'search=' + searchTerm + '&page=' + page + '&size=' +pageSize;
 
     const response = await fetch(apiPrefix + apiParams);
     if (!response.ok) {

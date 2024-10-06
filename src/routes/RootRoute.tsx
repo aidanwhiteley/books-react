@@ -1,8 +1,11 @@
-import Header from "../components/Header/Header";
+import Header from "../components/Header/Header2";
 import Footer from "../components/Footer/Footer";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
+import "./routes.css";
 
 export default function Root() {
+
+    const navigation = useNavigation();
 
     return (
         <>
@@ -11,7 +14,7 @@ export default function Root() {
             <section id="billboard" className="position-relative overflow-hidden bg-light-blue">
                 <div className="container">
                     <div className="row d-flex align-items-center">
-                        <div id="detail">
+                        <div id="detail" className={navigation.state === "loading" ? "loading" : ""}>
                             <Outlet />
                         </div>
                     </div>
