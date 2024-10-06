@@ -105,8 +105,6 @@ export async function getBooksByReviewDate(page: number = 0, pageSize: number = 
 
     const apiParams = "&page=" + page + "&size=" +pageSize;
 
-    console.log('Running get by review date with: ' + apiParams);
-
     const response = await fetch(apiPrefix + apiParams);
     if (!response.ok) {
         throw new DataRetievalError('Error retrieiving books by review date from the server. Status: ' + response.status + ' ' + response.statusText);

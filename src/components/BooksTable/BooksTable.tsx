@@ -1,10 +1,14 @@
 import DataTable, { TableColumn } from 'react-data-table-component';
 import { BooksProps } from "../../routes/BooksRecentRoute";
 import ReactPaginate from 'react-paginate';
+import { useNavigate, Link } from "react-router-dom";
 
 export default function BooksTable(props: BooksProps) {
 
+    const navigate = useNavigate();
+
     interface DataRow {
+        id: string;
         title: string;
         author: string;
         rating: string;
@@ -13,10 +17,15 @@ export default function BooksTable(props: BooksProps) {
         bookAppUrl: string
     }
 
+    const formatTitle = (row: DataRow) => {
+        return <Link to={'/book/' + row.id}> {row.title} </Link>;
+    }
+
     const columns: TableColumn<DataRow>[] = [
         {
             name: 'Title',
-            selector: row => row.title,
+            selector: row => row.author,
+            format: row => formatTitle(row)
         },
         {
             name: 'Author',
@@ -54,9 +63,7 @@ export default function BooksTable(props: BooksProps) {
     type CurrentPage = {selected: number};
 
     const handlePageClick = (event: CurrentPage) => {
-        // const newOffset = event.selected * itemsPerPage % items.length;
-        console.log('User requested page number ' + event.selected );
-        //setItemOffset(newOffset);
+        navigate('/books/recent?page=' + (event.selected + 1));
       };
 
     return (
