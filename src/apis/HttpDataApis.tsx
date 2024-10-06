@@ -107,7 +107,7 @@ export async function getBooksByReviewDate(page: number = 0, pageSize: number = 
 
     const response = await fetch(apiPrefix + apiParams);
     if (!response.ok) {
-        throw new DataRetievalError('Error retrieiving books by review date from the server. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetievalError('Error retrieving books by review date from the server. Status: ' + response.status + ' ' + response.statusText);
     }
     return response.json()
 }
@@ -120,7 +120,7 @@ export async function getBooksBySearch(searchTerm: string, page: number = 0, pag
 
     const response = await fetch(apiPrefix + apiParams);
     if (!response.ok) {
-        throw new DataRetievalError('Error retrieiving books by review date from the server. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetievalError('Error searching for books on the server. Status: ' + response.status + ' ' + response.statusText);
     }
     return response.json()
 }

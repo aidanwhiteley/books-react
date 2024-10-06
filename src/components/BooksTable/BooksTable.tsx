@@ -71,11 +71,39 @@ export default function BooksTable(props: BooksProps) {
     type CurrentPage = {selected: number};
 
     const handlePageClick = (event: CurrentPage) => {
-        console.log('path: ' + location.pathname);
-        console.log('search: ' + location.search);
-        const url = location.pathname + location.search.split("&page=")[0]
-        navigate(url + '&page=' + (event.selected + 1));
-      };
+        // console.log('path: ' + location.pathname);
+        // console.log('search: ' + location.search);
+        // const url = location.pathname + location.search.split("&page=")[0]
+        //navigate(url + '&page=' + (event.selected + 1));
+
+        const searchParams = new URLSearchParams(location.search);
+        console.log('searchParams: ' + searchParams);
+        let queryString = '';
+        let count = 0;
+        for (const [key, value] of searchParams) {
+            if (count === 0) {
+                if (key === 'page') {
+                    queryString = '?page=' + (event.selected + 1);
+                } else {
+                    queryString = '?' + key + '=' + value;
+                }
+            } else {
+                if (key === 'page') {
+                    queryString = '&page=' + (event.selected + 1);
+                } else {
+                    queryString = '&' + key + '=' + value;
+                }
+            } 
+            count++;
+        }
+        if (count === 0) {
+            queryString = '?page=' + (event.selected + 1);
+        }
+
+        console.log('New querystring: ' + queryString);
+        const url = location.pathname + queryString;
+        navigate(url);
+    };
 
     return (
         <>
