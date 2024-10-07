@@ -71,13 +71,8 @@ export default function BooksTable(props: BooksProps) {
     type CurrentPage = {selected: number};
 
     const handlePageClick = (event: CurrentPage) => {
-        // console.log('path: ' + location.pathname);
-        // console.log('search: ' + location.search);
-        // const url = location.pathname + location.search.split("&page=")[0]
-        //navigate(url + '&page=' + (event.selected + 1));
 
         const searchParams = new URLSearchParams(location.search);
-        console.log('searchParams: ' + searchParams);
         let queryString = '';
         let count = 0;
         for (const [key, value] of searchParams) {
@@ -89,21 +84,30 @@ export default function BooksTable(props: BooksProps) {
                 }
             } else {
                 if (key === 'page') {
-                    queryString = '&page=' + (event.selected + 1);
+                    queryString = queryString + '&page=' + (event.selected + 1);
                 } else {
-                    queryString = '&' + key + '=' + value;
+                    queryString = queryString + '&' + key + '=' + value;
                 }
             } 
             count++;
         }
-        if (count === 0) {
-            queryString = '?page=' + (event.selected + 1);
+        if (! searchParams.has("page")) {
+            if (count === 0) {
+                queryString = '?page=' + (event.selected + 1);
+            } else {
+                queryString = queryString + '&page=' + (event.selected + 1);
+            }
         }
 
-        console.log('New querystring: ' + queryString);
         const url = location.pathname + queryString;
         navigate(url);
     };
+
+    let forcePage = 0;
+    const searchParams = new URLSearchParams(location.search);
+    if (searchParams.has('page')) {
+        forcePage = parseInt(searchParams.get('page')!) - 1
+    }
 
     return (
         <>
@@ -129,6 +133,7 @@ export default function BooksTable(props: BooksProps) {
                     containerClassName="pagination"
                     activeClassName="active"
                     renderOnZeroPageCount={null}
+                    forcePage={forcePage}
                 />
             </div>
         </>

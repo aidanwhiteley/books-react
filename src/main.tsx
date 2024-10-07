@@ -6,10 +6,12 @@ import ErrorPage from "./components/ErrorPage/ErrorPage";
 import SwiperRoute from "./routes/SwiperRoute";
 import BooksRecentRoute from './routes/BooksRecentRoute';
 import BooksSearchRoute from './routes/BooksSearchRoute';
+import BooksFindRoute from './routes/BooksFindRoute';
 import { loader as bookByRatingLoader } from "./routes/SwiperRoute"
 import { loader as bookByIdLoader } from "./routes/BookDetailsRoute"
 import { loader as booksRecentLoader } from './routes/BooksRecentRoute';
 import { loader as booksSearchLoader } from './routes/BooksSearchRoute';
+import { loader as booksFindLoader } from './routes/BooksFindRoute';
 import BookDetailsRoute from "./routes/BookDetailsRoute";
 
 const router = createBrowserRouter([
@@ -40,6 +42,11 @@ const router = createBrowserRouter([
             path: "books/search",
             element: <BooksSearchRoute />,
             loader: booksSearchLoader
+          },
+          {
+            path: "books/find",
+            element: <BooksFindRoute />,
+            loader: booksFindLoader
           }
         ]
       }

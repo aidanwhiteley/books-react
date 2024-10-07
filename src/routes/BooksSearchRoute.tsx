@@ -5,7 +5,6 @@ import { BooksQueryResult, getBooksBySearch } from "../apis/HttpDataApis";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const loader = (async ({request}) => {
-  console.log('In loader in books search result: ' + request.url);
   const url = new URL(request.url);
   const search = url.searchParams.get("term") ? url.searchParams.get("term") : '';
   if (!search || search.length === 0) {
@@ -25,7 +24,6 @@ export const loader = (async ({request}) => {
 
 export interface BooksProps {
   booksQueryResult: BooksQueryResult;
-  pagingRoute: string
 }
 
 export default function BooksSearchRoute() {
@@ -33,8 +31,7 @@ export default function BooksSearchRoute() {
   const booksData = useLoaderData<typeof loader>();
 
   const booksProps : BooksProps = {
-    booksQueryResult: booksData,
-    pagingRoute: '/books/search'
+    booksQueryResult: booksData
   }
 
   return (

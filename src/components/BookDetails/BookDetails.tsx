@@ -31,8 +31,6 @@ export default function BookDetails(props: BookProps) {
                                 <p className="rating"><b>Rating: </b>{book.rating.toLocaleLowerCase()}</p>
                                 <p><b>Review Date: </b>{book.createdDateTime[2] + '-' + book.createdDateTime[1] + '-' + book.createdDateTime[0]}</p>
                                 <p><b>Genre: </b>{book.genre}</p>
-                                <p className="reviewDetail"><b>Reviewer's Summary:</b><span className="reviewDetailSummary"
-                                    dangerouslySetInnerHTML={{__html: purify.sanitize(book.summary)}}></span></p>
                                 {displayGooglePreview &&
                                     <p>
                                     <b className="me-3">Book Preview:</b>
@@ -41,6 +39,8 @@ export default function BookDetails(props: BookProps) {
                                         </a>
                                     </p>
                                 }
+                                <p className="reviewDetail"><b>Reviewer's Summary:</b><span className="reviewDetailSummary"
+                                    dangerouslySetInnerHTML={{__html: purify.sanitize(book.summary)}}></span></p>
                             </div>
                         </Tab>
 

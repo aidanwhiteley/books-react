@@ -31,26 +31,27 @@ export default function Header() {
               <Nav.Link as={Link} eventKey="/books/recent" to="/books/recent">
                 Recently Reviewed
               </Nav.Link>
+              <Nav.Link as={Link} eventKey="/books/find" to="/books/find">
+                Find a review
+              </Nav.Link>
             </Nav>
             <div id="book-search">
                 <Form id="search-form" role="search" navigate={false}>
                 <input
                     id="term"
                     className={searching ? "loading" : ""}
-                    aria-label="Search books"
-                    placeholder="Search books"
+                    aria-label="Search book reviews"
+                    placeholder="Search book reviews"
                     type="search"
                     name="term"
                     value={term}
                     onChange={(event) => {
-                        console.log('in change: ' + event.target.value);
                         setTerm(event.target.value);
                     }}
                     onKeyDown={event => {
                         
                         if (event.key === 'Enter') {
                             event.preventDefault();
-                            console.log('Saw an enter key: ' + term);
                             navigate('/books/search?term=' + term);
                         }
                       }
