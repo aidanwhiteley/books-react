@@ -2,8 +2,9 @@ import Header from "../components/Header/Header2";
 import Footer from "../components/Footer/Footer";
 import { Outlet, useNavigation } from "react-router-dom";
 import "./routes.css";
-import  { useEffect, useState, useMemo } from 'react';
-import { getuserProfile } from "../apis/HttpDataApis";
+import { useEffect, useState, useMemo } from 'react';
+import { getuserProfile, UserProfile } from "../apis/HttpDataApis";
+import { profileContext } from "../utils/ProfileContext";
 
 // For testing only
 import data from "./testuser.json";
@@ -11,15 +12,16 @@ import data from "./testuser.json";
 export default function Root() {
 
     const navigation = useNavigation();
-    
-    const [userProfile, setUserProfile] = useState({});
+
+    const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
     const [loggedOn, setLoggedOn] = useState(false);
 
     // Define a memoized function for fetching the user's profile data (or not!)
     const fetchUserProfile = useMemo(() => async () => {
-       //const profile = getuserProfile();
-       const profile = data;
-       console.log('User profile: ' + JSON.stringify(profile));
+        const profile = await getuserProfile();
+        //const profile = data;
+        setUserProfile(profile);
+        console.log('User profile: ' + JSON.stringify(profile));
     }, [loggedOn]);
 
     // Fetch the user's profile on component mount
@@ -28,21 +30,25 @@ export default function Root() {
     }, [fetchUserProfile]);
 
     return (
-        
-        <>
-            <Header />
 
-            <section id="billboard" className="position-relative overflow-hidden bg-light-blue">
-                <div className="container">
-                    <div className="row d-flex align-items-center">
-                        <div id="detail" className={navigation.state === "loading" ? "loading" : ""}>
-                            <Outlet />
+        <>
+            <profileContext.Provider value={userProfile}>
+
+                <Header />
+
+                <section id="billboard" className="position-relative overflow-hidden bg-light-blue">
+                    <div className="container">
+                        <div className="row d-flex align-items-center">
+                            <div id="detail" className={navigation.state === "loading" ? "loading" : ""}>
+                                <Outlet />
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        
-            <Footer />
+                </section>
+
+                <Footer />
+                
+            </profileContext.Provider>
         </>
     )
 }
