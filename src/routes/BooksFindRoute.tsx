@@ -1,14 +1,13 @@
 import BooksFind from "../components/BooksFind/BooksFind";
-import { useLoaderData, LoaderFunction, redirect} from "react-router-typesafe";
+import { useLoaderData, LoaderFunction } from "react-router-typesafe";
 import { getAuthors, getGenres, getReaders, Author, Genre, Reader } from "../apis/HttpDataApis";
+import { useContext } from 'react';
+import { ProfileContext } from '../utils/ProfileContext';
 
 
+export const loader = (async () => {
 
-export const loader = (async ({}) => {
-
-  const authors = await getAuthors();
-  const genres = await getGenres();
-  const readers = await getReaders();
+  const [authors, genres, readers] = await Promise.all([getAuthors(), getGenres(), getReaders()]);
 
   return {authors, genres, readers};
 

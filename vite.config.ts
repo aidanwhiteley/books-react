@@ -23,7 +23,7 @@ export default defineConfig({
           });
         },
       },
-      '/secure/api/books/': {
+      '/secure/api/': {
         target: 'https://cloudybookclub.com',
         changeOrigin: true,
         secure: false,      

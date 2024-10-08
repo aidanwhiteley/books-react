@@ -13,7 +13,6 @@ import { BooksProps } from "../../routes/SwiperRoute";
 // For testing only
 // import data from "./testdata.json";
 
-
 export default function BookSwiper(props: BooksProps) {
 
   const booksData = props.booksQueryResult.content.map(aBook => {
@@ -47,7 +46,7 @@ export default function BookSwiper(props: BooksProps) {
         slidesPerView={'auto'}
         coverflowEffect={{
           rotate: 30,
-          stretch: 20,
+          stretch: 30,
           depth: 20,
           modifier: 1,
           slideShadows: false,
