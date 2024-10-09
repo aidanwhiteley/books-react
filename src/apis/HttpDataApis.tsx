@@ -114,7 +114,7 @@ export type Genre = {
 }
 
 export type Reader = {
-    genre: string,
+    reader: string,
     countOfBooks: number
 }
 

@@ -8,14 +8,18 @@ import Form from 'react-bootstrap/Form';
 import './BooksFind.css';
 import { Outlet } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import { useUserProfile } from '../../components/Root/RootRoute';
 
 export default function BooksFind(props: BooksFindProps) {
 
     const [author, setAuthor] = useState<Option[]>([]);
     const [genre, setGenre] = useState<Option[]>([]);
     const [rating, setRating] = useState<Option[]>([]);
+    const [reader, setReader] = useState<Option[]>([]);
 
     const navigate = useNavigate();
+
+    const { userProfile } = useUserProfile();
 
     const authorsDisplay = props.authors.map(anAuthor => {
         const text = anAuthor.countOfBooks > 1 ? ' books' : ' book';
@@ -33,7 +37,17 @@ export default function BooksFind(props: BooksFindProps) {
         }
     });
 
+    const readerDisplay = props.readers.map(aReader => {
+        const text = aReader.countOfBooks > 1 ? ' books' : ' book';
+        return {
+            label: aReader.reader + ' (' + aReader.countOfBooks + text + ')',
+            genre: aReader.reader
+        }
+    });
+
     const ratingDisplay = ['Great', 'Good', 'Ok', 'Poor', 'Terrible'];
+
+    console.log('Saw of user profile of: ' + userProfile);
 
     return (
         <>
@@ -110,6 +124,31 @@ export default function BooksFind(props: BooksFindProps) {
                                 />
                         </Form.Group>
                     </div>
+                    {userProfile &&
+                        <div className="col-sm">           
+                            <Form.Group>
+                                <Form.Label>Find Reviews By Reviewer</Form.Label>
+                                <Typeahead
+                                    placeholder="Start typing a reviewer..."
+                                    id="reader-select"
+                                    clearButton
+                                    onChange={(selected) => {
+                                            setReader(selected);
+                                            console.log('On change saw reader: ' + JSON.stringify(selected));
+                                            if (selected && selected[0]) {
+                                                setAuthor(new Array<Option>());
+                                                setRating(new Array<Option>());
+                                                navigate('reader/' + selected[0].reader);
+                                            }
+                                        }
+                                    }
+                                    options={readerDisplay}
+                                    selected={reader}
+                                    highlightOnlyResult
+                                    />
+                            </Form.Group>
+                        </div>
+                    }
                 </div>
             </div>
                               
