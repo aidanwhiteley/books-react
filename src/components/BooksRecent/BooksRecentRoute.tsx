@@ -1,5 +1,5 @@
-import BooksRecent from "../components/BooksRecent/BooksRecent";
-import { BooksQueryResult, getBooksByReviewDate } from "../apis/HttpDataApis";
+import BooksRecent from "../BooksRecent/BooksRecent";
+import { BooksQueryResult, getBooksByReviewDate } from "../../apis/HttpDataApis";
 import { useLoaderData, LoaderFunction, redirect} from "react-router-typesafe";
 
 // eslint-disable-next-line react-refresh/only-export-components

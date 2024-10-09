@@ -1,6 +1,6 @@
-import BooksSearch from "../components/BooksSearch/BooksSearch";
+import BooksSearch from "../BooksSearch/BooksSearch";
 import { useLoaderData, LoaderFunction, redirect} from "react-router-typesafe";
-import { BooksQueryResult, getBooksBySearch } from "../apis/HttpDataApis";
+import { BooksQueryResult, getBooksBySearch } from "../../apis/HttpDataApis";
 
 
 // eslint-disable-next-line react-refresh/only-export-components

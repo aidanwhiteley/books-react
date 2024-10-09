@@ -1,10 +1,10 @@
-import Header from "../components/Header/Header2";
-import Footer from "../components/Footer/Footer";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 import { Outlet, useNavigation } from "react-router-dom";
-import "./routes.css";
+import "./RootRoute.css";
 import { useEffect, useState, useMemo } from 'react';
-import { getuserProfile, UserProfile } from "../apis/HttpDataApis";
-import { profileContext } from "../utils/ProfileContext";
+import { getuserProfile, UserProfile } from "../../apis/HttpDataApis";
+import { profileContext } from "../../utils/ProfileContext";
 
 // For testing only
 import data from "./testuser.json";

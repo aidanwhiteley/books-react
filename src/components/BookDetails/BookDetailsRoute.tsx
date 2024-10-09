@@ -1,7 +1,7 @@
 
-import { Book, getBookById } from "../apis/HttpDataApis";
+import { Book, getBookById } from "../../apis/HttpDataApis";
 import { useLoaderData, LoaderFunction} from "react-router-typesafe";
-import BookDetails from "../components/BookDetails/BookDetails";
+import BookDetails from "../BookDetails/BookDetails";
 
 export const loader = (async (request) => {
   return await getBookById(request.params.id!);

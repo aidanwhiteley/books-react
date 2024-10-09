@@ -1,7 +1,7 @@
 
 import { LoaderFunction, useLoaderData, redirect } from "react-router-typesafe";
-import { BooksQueryResult, getBooksByAuthor, getBooksByGenre, getBooksByRating, stringAsRating } from "../apis/HttpDataApis";
-import BooksFindResult from "../components/BooksFind/BooksFindResult";
+import { BooksQueryResult, getBooksByAuthor, getBooksByGenre, getBooksByRating, stringAsRating } from "../../apis/HttpDataApis";
+import BooksFindResult from "./BooksFindResult";
 
 
 export const loader = (async (params) => {

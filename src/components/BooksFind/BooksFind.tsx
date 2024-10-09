@@ -1,4 +1,4 @@
-import { BooksFindProps } from "../../routes/BooksFindRoute";
+import { BooksFindProps } from "./BooksFindRoute";
 import { Typeahead } from 'react-bootstrap-typeahead';
 import { Option } from 'react-bootstrap-typeahead/types/types';
 import 'react-bootstrap-typeahead/css/Typeahead.css';

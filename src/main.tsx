@@ -1,20 +1,20 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import Root from "./routes/RootRoute";
+import Root from "./components/Root/RootRoute";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
-import SwiperRoute from "./routes/SwiperRoute";
-import BooksRecentRoute from './routes/BooksRecentRoute';
-import BooksSearchRoute from './routes/BooksSearchRoute';
-import BooksFindRoute from './routes/BooksFindRoute';
-import BooksFindResultRoute from './routes/BooksFindResultRoute';
-import { loader as bookByRatingLoader } from "./routes/SwiperRoute"
-import { loader as bookByIdLoader } from "./routes/BookDetailsRoute"
-import { loader as booksRecentLoader } from './routes/BooksRecentRoute';
-import { loader as booksSearchLoader } from './routes/BooksSearchRoute';
-import { loader as booksFindLoader } from './routes/BooksFindRoute';
-import { loader as booksFindResultLoader } from './routes/BooksFindResultRoute';
-import BookDetailsRoute from "./routes/BookDetailsRoute";
+import SwiperRoute from "./components/BooksSwiper/BooksSwiperRoute";
+import BooksRecentRoute from './components/BooksRecent/BooksRecentRoute';
+import BooksSearchRoute from './components/BooksSearch/BooksSearchRoute';
+import BooksFindRoute from './components/BooksFind/BooksFindRoute';
+import BooksFindResultRoute from './components/BooksFind/BooksFindResultRoute';
+import { loader as bookByRatingLoader } from "./components/BooksSwiper/BooksSwiperRoute"
+import { loader as bookByIdLoader } from "./components/BookDetails/BookDetailsRoute"
+import { loader as booksRecentLoader } from './components/BooksRecent/BooksRecentRoute';
+import { loader as booksSearchLoader } from './components/BooksSearch/BooksSearchRoute';
+import { loader as booksFindLoader } from './components/BooksFind/BooksFindRoute';
+import { loader as booksFindResultLoader } from './components/BooksFind/BooksFindResultRoute';
+import BookDetailsRoute from "./components/BookDetails/BookDetailsRoute";
 import BooksFindInfo from './components/BooksFind/BookFindInfo';
 
 const router = createBrowserRouter([

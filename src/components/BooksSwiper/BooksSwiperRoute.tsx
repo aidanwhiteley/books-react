@@ -1,5 +1,5 @@
-import BooksSwiper from "../components/BooksSwiper/BooksSwiper";
-import { BooksQueryResult, getBooksByRating } from "../apis/HttpDataApis";
+import BooksSwiper from "./BooksSwiper";
+import { BooksQueryResult, getBooksByRating } from "../../apis/HttpDataApis";
 import { useLoaderData, LoaderFunction} from "react-router-typesafe";
 
 export const loader = (async () => {
