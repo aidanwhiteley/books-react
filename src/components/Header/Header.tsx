@@ -2,14 +2,21 @@ import { Link, useLocation, Form, useNavigation, useNavigate } from 'react-route
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { useState } from "react";
+import { useState, PropsWithChildren } from "react";
 import "./Header.css";
+import { UserProfile } from '../../apis/HttpDataApis';
 
+export interface Props {
+  userprofile: UserProfile | null;
+}
 
-export default function Header() {
+export default function Header(props:  PropsWithChildren<Props>) {
+
     const location = useLocation();
     const navigation = useNavigation();
     const navigate = useNavigate();
+
+    const userProfile = props.userprofile;
 
     const [term, setTerm] = useState('');
 
@@ -34,6 +41,17 @@ export default function Header() {
               <Nav.Link as={Link} eventKey="/books/find" to="/books/find">
                 Find a review
               </Nav.Link>
+
+              {!userProfile && 
+                <Nav.Link as={Link} eventKey="/logon" to="/logon">
+                  Logon
+                </Nav.Link>
+              }
+              {userProfile && 
+                <Nav.Link as={Link} eventKey="/logoff" to="/logoff">
+                  Logoff
+                </Nav.Link>
+              }
             </Nav>
             <div id="book-search">
                 <Form id="search-form" role="search" navigate={false}>

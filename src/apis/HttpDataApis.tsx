@@ -211,6 +211,19 @@ export async function getBooksByGenre(genre: string, page: number = 0, pageSize:
     return response.json()
 }
 
+export async function getBooksByReader(reader: string, page: number = 0, pageSize: number = 20): Promise<BooksQueryResult> {
+
+    const apiPrefix = '/api/books/?';
+
+    const apiParams = 'reader=' + reader + '&page=' + page + '&size=' + pageSize;
+
+    const response = await fetch(apiPrefix + apiParams);
+    if (!response.ok) {
+        throw new DataRetievalError('Error searching for books by reader. Status: ' + response.status + ' ' + response.statusText);
+    }
+    return response.json()
+}
+
 export async function getGenres(): Promise<Genre[]> {
 
     const apiPrefix = '/api/books/genres';

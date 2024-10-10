@@ -1,6 +1,6 @@
 
 import { LoaderFunction, useLoaderData, redirect } from "react-router-typesafe";
-import { BooksQueryResult, getBooksByAuthor, getBooksByGenre, getBooksByRating, stringAsRating } from "../../apis/HttpDataApis";
+import { BooksQueryResult, getBooksByAuthor, getBooksByGenre, getBooksByRating, getBooksByReader, stringAsRating } from "../../apis/HttpDataApis";
 import BooksFindResult from "./BooksFindResult";
 
 
@@ -26,6 +26,8 @@ export const loader = (async (params) => {
     return await getBooksByGenre(value!, page, 5);
   } else if (criteria === 'rating') {
     return await getBooksByRating(stringAsRating(value!), page, 5);
+  } else if (criteria === 'reader') {
+    return await getBooksByReader(value!, page, 5);
   }
 }) satisfies LoaderFunction;
 
