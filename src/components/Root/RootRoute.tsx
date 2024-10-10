@@ -3,7 +3,6 @@ import Footer from "../Footer/Footer";
 import Messaging from "../Messaging/Messaging";
 import { Outlet, useNavigation, useOutletContext } from "react-router-dom";
 import "./RootRoute.css";
-import { useEffect, useState, useMemo } from 'react';
 import { getuserProfile, UserProfile } from "../../apis/HttpDataApis";
 import { useLoaderData, LoaderFunction} from "react-router-typesafe";
 

@@ -213,7 +213,7 @@ export async function getBooksByGenre(genre: string, page: number = 0, pageSize:
 
 export async function getBooksByReader(reader: string, page: number = 0, pageSize: number = 20): Promise<BooksQueryResult> {
 
-    const apiPrefix = '/api/books/?';
+    const apiPrefix = '/secure/api/books/?';
 
     const apiParams = 'reader=' + reader + '&page=' + page + '&size=' + pageSize;
 

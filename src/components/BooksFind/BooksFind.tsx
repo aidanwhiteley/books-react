@@ -41,7 +41,7 @@ export default function BooksFind(props: BooksFindProps) {
         const text = aReader.countOfBooks > 1 ? ' books' : ' book';
         return {
             label: aReader.reader + ' (' + aReader.countOfBooks + text + ')',
-            genre: aReader.reader
+            reader: aReader.reader
         }
     });
 
@@ -68,6 +68,7 @@ export default function BooksFind(props: BooksFindProps) {
                                         if (selected && selected[0]) {
                                             setGenre(new Array<Option>());
                                             setAuthor(new Array<Option>());
+                                            setReader(new Array<Option>());
                                             navigate('rating/' + selected[0]);  
                                         }
                                     }
@@ -91,6 +92,7 @@ export default function BooksFind(props: BooksFindProps) {
                                         if (selected && selected[0]) {
                                             setGenre(new Array<Option>());
                                             setRating(new Array<Option>());
+                                            setReader(new Array<Option>());
                                             navigate('author/' + selected[0].author);
                                         }
                                     }
@@ -114,6 +116,7 @@ export default function BooksFind(props: BooksFindProps) {
                                         if (selected && selected[0]) {
                                             setAuthor(new Array<Option>());
                                             setRating(new Array<Option>());
+                                            setReader(new Array<Option>());
                                             navigate('genre/' + selected[0].genre);
                                         }
                                     }
@@ -124,7 +127,7 @@ export default function BooksFind(props: BooksFindProps) {
                                 />
                         </Form.Group>
                     </div>
-                    {userProfile &&
+                    {userProfile && (userProfile.highestRole === 'ROLE_EDITOR' || userProfile.highestRole === 'ROLE_ADMIN') &&
                         <div className="col-sm">           
                             <Form.Group>
                                 <Form.Label>Find Reviews By Reviewer</Form.Label>
@@ -138,6 +141,7 @@ export default function BooksFind(props: BooksFindProps) {
                                             if (selected && selected[0]) {
                                                 setAuthor(new Array<Option>());
                                                 setRating(new Array<Option>());
+                                                setGenre(new Array<Option>());
                                                 navigate('reader/' + selected[0].reader);
                                             }
                                         }

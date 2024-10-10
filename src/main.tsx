@@ -65,7 +65,7 @@ const router = createBrowserRouter([
                 path: ":criteria/:value",
                 element: <BooksFindResultRoute />,
                 loader: booksFindResultLoader
-              },
+              }
             ]
           },
           {
