@@ -4,6 +4,7 @@ import { BooksQueryResult, getBooksByAuthor, getBooksByGenre, getBooksByRating, 
 import BooksFindResult from "./BooksFindResult";
 
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const loader = (async (params) => {
 
   const criteria = params.params.criteria;

@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './BooksSwiper.css';
 
-import { BooksProps } from "../../routes/SwiperRoute";
+import { BooksProps } from "./BooksSwiperRoute";
 
 // For testing only
 // import data from "./testdata.json";
@@ -29,7 +29,7 @@ export default function BookSwiper(props: BooksProps) {
     };
   }).filter(s => (s.thumbnail !== '#')).slice(0, 15);
 
-  const swiperSlides = booksData.map((book, index) =>
+  const swiperSlides = booksData.map((book, index: number) =>
     <SwiperSlide key={index} data-book-id={book.id}>
       <img src={book.thumbnail} />
     </SwiperSlide>
@@ -39,6 +39,7 @@ export default function BookSwiper(props: BooksProps) {
 
   return (
     <>
+      <h2 className="home-intro text-center">Recently reviewed books on The Cloudy Book Club with a 'Great' review rating</h2>
       <Swiper
         effect={'coverflow'}
         grabCursor={true}

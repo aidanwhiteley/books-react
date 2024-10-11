@@ -286,3 +286,21 @@ export async function getuserProfile(): Promise<UserProfile | null> {
     return response.json()
 }
 
+export async function logoff(): Promise<void> {
+
+    const api = '/secure/api/logout';
+
+    const config = {
+        method: 'POST',
+    }
+
+    const response = await fetch(api, config);
+    if (response.status === 401) {
+        console.debug('Not authorised to acess the logout endpoint. This is expected if the user is not logged in.');
+        return;
+    } else if (!response.ok) {
+        throw new DataRetievalError('Error calling the logout API on the server. Status: ' + response.status + ' ' + response.statusText);
+    }
+    return;
+}
+

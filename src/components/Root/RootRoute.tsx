@@ -1,7 +1,7 @@
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Messaging from "../Messaging/Messaging";
-import { Outlet, useNavigation, useOutletContext } from "react-router-dom";
+import { Outlet, useNavigation, useOutletContext  } from "react-router-dom";
 import "./RootRoute.css";
 import { getuserProfile, UserProfile } from "../../apis/HttpDataApis";
 import { useLoaderData, LoaderFunction} from "react-router-typesafe";
@@ -11,6 +11,7 @@ import { useLoaderData, LoaderFunction} from "react-router-typesafe";
 
 type ContextType = { userProfile: UserProfile | null };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const loader = (async () => {
     return await getuserProfile();
 }) satisfies LoaderFunction;
@@ -19,15 +20,24 @@ export default function Root() {
 
     const navigation = useNavigation();
     const userProfile = useLoaderData<typeof loader>();
-    const message = userProfile ? 'Hi ' + userProfile.firstName + ', here are a few of the recently reviewed books on the Cloudy Book Club that ' +
-        ' got the much coveted \'Great\' rating' : '';
+    const searchParams = new URLSearchParams(location.search);
+
+    let message = '';
+    const loggedOnMessage = userProfile ? 'Hi ' + userProfile.firstName + ', thanks for logging on to the Cloudy Book Club!' : '';
+    const loggedOffMessage = 'You have now logged out of The Cloudy Book Club'; 
+
+    if (searchParams.has('logged-on')) {
+        message = loggedOnMessage;
+    } else if (searchParams.has('logged-out')) {
+        message = loggedOffMessage;
+    }
 
     return (
 
         <>
             <Header userprofile={userProfile} />
 
-            {userProfile && 
+            {message && 
                 <Messaging message={message} />
             }
 
@@ -47,6 +57,7 @@ export default function Root() {
     )
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useUserProfile() {
     return useOutletContext<ContextType>();
 }

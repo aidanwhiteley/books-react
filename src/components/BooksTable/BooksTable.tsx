@@ -1,5 +1,5 @@
 import DataTable, { TableColumn } from 'react-data-table-component';
-import { BooksProps } from "../../routes/BooksRecentRoute";
+import { BooksProps } from "../BooksRecent/BooksRecentRoute";
 import ReactPaginate from 'react-paginate';
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import "./BooksTable.css";
