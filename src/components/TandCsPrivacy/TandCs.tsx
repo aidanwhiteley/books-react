@@ -14,16 +14,17 @@ export default function TandCs() {
                             <div className="helpIntro">
                                 <img className="float-end" width="100" height="100" ng-show="user.picture" src="/fred" />
 
-                                <p>Hi <span ng-if="!isAnonymous">{{ user.firstName }}</span></p>
-                                <p>welcome to {{ env.applicationName }}! Here's some quick info on how to get the best out of the application.
+                                <p>Hi !isAnonymous" user.firstName </p>
+                                <p>welcome to {import.meta.env.VITE_APPLICATION_NAME}! Here's some quick info on how to get the best out of the application.
                                 </p>
                             </div>
 
                             <div ng-if="user && user.firstVisit" className="well">
                                 <h3>First logon</h3>
-                                <p>Thanks so much for logging on to the {{ env.applicationName }} for the first time. There's a few pointers
+                                <p>Thanks so much for logging on to the {import.meta.env.VITE_APPLICATION_NAME} for the first time. There's a few pointers
                                     below about how the application works. You can always re-read these by clicking the Help / Info link at any
-                                    time.</p>
+                                    time.
+                                </p>
                             </div>
 
                             <h3>Your current permissions</h3>
@@ -34,12 +35,12 @@ export default function TandCs() {
                                     has posted a review or comment. <span ng-if="isAnonymous">Logging on via Google or Facebook is the first
                                         step in getting more access to the application and its content.</span></p>
 
-                                <p ng-if="isUser && !user.email">If {{ env.bookClubmembersScope }} and want to get full access to existing
+                                <p ng-if="isUser && !user.email">If {import.meta.env.VITE_BOOK_CLUB_MEMBERS_SCOPE} and want to get full access to existing
                                     reviews and comments and maybe write your own reviews or comments, please drop an email to <a
                                         href="mailto:{{env.bookClubAdminEmail}}?Subject=Book%20Club%20Signup"
                                         target="_top">{{ env.bookClubAdminEmail }}</a> and we'll get you added to the list of registered users asap.
                                 </p>
-                                <p ng-if="isUser && user.email">If {{ env.bookClubmembersScope }}, please check your {{ user.email }} email
+                                <p ng-if="isUser && user.email">If {import.meta.env.VITE_BOOK_CLUB_MEMBERS_SCOPE}, please check your {{ user.email }} email
                                     account (including the spam folder) for an email confirming
                                     that access has been provided to {{ env.applicationName }}. If you no longer use that email address (which was
                                     looked up from your {{ user.authProvider | lowercase }} account), please drop an email to <a

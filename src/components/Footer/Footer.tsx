@@ -22,7 +22,7 @@ export default function Footer() {
                                         <h5 className="widget-title pb-2">Help</h5>
                                         <ul className="menu-list list-unstyled">
                                             <li className="menu-item pb-2">
-                                                <a href="#">Help and T&Cs</a>
+                                                <a href="tandcs">Help and T&Cs</a>
                                             </li>
                                             <li className="menu-item pb-2">
                                                 <a href="#">Privacy</a>

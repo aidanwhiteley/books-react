@@ -20,7 +20,7 @@ import { loader as booksFindLoader } from './components/BooksFind/BooksFindRoute
 import { loader as booksFindResultLoader } from './components/BooksFind/BooksFindResultRoute';
 import { loader as logoffLoader } from './components/LogonOut/LogoffRoute';
 import BooksFindInfo from './components/BooksFind/BookFindInfo';
-import TandCs from './components/T&CsPrivacy/TandCs';
+import TandCs from './components/TandCsPrivacy/TandCs';
 
 
 const router = createBrowserRouter([
