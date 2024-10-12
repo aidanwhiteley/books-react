@@ -8,7 +8,9 @@ import BooksRecentRoute from './components/BooksRecent/BooksRecentRoute';
 import BooksSearchRoute from './components/BooksSearch/BooksSearchRoute';
 import BooksFindRoute from './components/BooksFind/BooksFindRoute';
 import BooksFindResultRoute from './components/BooksFind/BooksFindResultRoute';
+import BookDetailsRoute from "./components/BookDetails/BookDetailsRoute";
 import LogoffRoute from './components/LogonOut/LogoffRoute';
+import LogonRoute from './components/LogonOut/LogonRoute';
 import { loader as profileLoader } from './components/Root/RootRoute';
 import { loader as bookByRatingLoader } from "./components/BooksSwiper/BooksSwiperRoute"
 import { loader as bookByIdLoader } from "./components/BookDetails/BookDetailsRoute"
@@ -17,9 +19,9 @@ import { loader as booksSearchLoader } from './components/BooksSearch/BooksSearc
 import { loader as booksFindLoader } from './components/BooksFind/BooksFindRoute';
 import { loader as booksFindResultLoader } from './components/BooksFind/BooksFindResultRoute';
 import { loader as logoffLoader } from './components/LogonOut/LogoffRoute';
-import BookDetailsRoute from "./components/BookDetails/BookDetailsRoute";
 import BooksFindInfo from './components/BooksFind/BookFindInfo';
-import LogonRoute from './components/LogonOut/LogonRoute';
+import TandCs from './components/T&CsPrivacy/TandCs';
+
 
 const router = createBrowserRouter([
   {
@@ -78,6 +80,10 @@ const router = createBrowserRouter([
             path: "logoff",
             element: <LogoffRoute />,
             loader: logoffLoader
+          },
+          {
+            path: "tandcs",
+            element: <TandCs />
           },
         ]
       }
