@@ -2,4 +2,9 @@
     opacity: 0.25;
     transition: opacity 200ms;
     transition-delay: 200ms;
-  }
+}
+
+#main-content {
+    padding-top: 30px;
+    padding-bottom: 40px;
+}

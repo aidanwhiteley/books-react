@@ -1,4 +1,4 @@
-import { BookProps } from "../../routes/BookDetailsRoute";
+import { BookProps } from "./BookDetailsRoute";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import "./BossDetails.css";

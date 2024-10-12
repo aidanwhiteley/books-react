@@ -39,7 +39,7 @@ export default function BookSwiper(props: BooksProps) {
 
   return (
     <>
-      <h2 className="home-intro text-center">Recently reviewed books on The Cloudy Book Club with a 'Great' review rating</h2>
+      <h2 className="home-intro text-center">Books recently reviewed on The Cloudy Book Club with a 'Great' rating</h2>
       <Swiper
         effect={'coverflow'}
         grabCursor={true}

@@ -24,10 +24,12 @@ export default function Root() {
 
     let message = '';
     const loggedOnMessage = userProfile ? 'Hi ' + userProfile.firstName + ', thanks for logging on to the Cloudy Book Club!' : '';
+    const lastLoggedOn = userProfile && userProfile.lastLogon ? ' Your last logon was on ' + userProfile.lastLogon[2] + '/' + userProfile.lastLogon[1] + 
+        '/' + userProfile.lastLogon[0] + '.' : '';
     const loggedOffMessage = 'You have now logged out of The Cloudy Book Club'; 
 
     if (searchParams.has('logged-on')) {
-        message = loggedOnMessage;
+        message = loggedOnMessage + lastLoggedOn;
     } else if (searchParams.has('logged-out')) {
         message = loggedOffMessage;
     }
@@ -41,7 +43,7 @@ export default function Root() {
                 <Messaging message={message} />
             }
 
-            <section id="billboard" className="position-relative overflow-hidden bg-light-blue">
+            <section id="main-content" className="">
                 <div className="container">
                     <div className="row d-flex align-items-center">
                         <div id="detail" className={navigation.state === "loading" ? "loading" : ""}>

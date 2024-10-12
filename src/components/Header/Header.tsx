@@ -24,9 +24,15 @@ export default function Header(props:  PropsWithChildren<Props>) {
     const searching = navigation.location && new URLSearchParams(navigation.location.search).has("term");
 
     return (
-        <Navbar expand="lg" className="theme-navbar">
+        <Navbar expand="lg" bg="light" data-bs-theme="light" sticky="top">
         <Container>
           <Navbar.Brand as={Link} to="/">
+          <img
+                alt=""
+                src="/images/book-club-logo.png"
+                height="30"
+                className="d-inline-block align-top"
+              />{' '}
             The Cloudy Book Club
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

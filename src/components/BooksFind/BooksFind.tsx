@@ -47,8 +47,6 @@ export default function BooksFind(props: BooksFindProps) {
 
     const ratingDisplay = ['Great', 'Good', 'Ok', 'Poor', 'Terrible'];
 
-    console.log('Saw of user profile of: ' + userProfile);
-
     return (
         <>
             <h2>Find a book review</h2>
