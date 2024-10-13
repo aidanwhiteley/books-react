@@ -21,6 +21,7 @@ import { loader as booksFindResultLoader } from './components/BooksFind/BooksFin
 import { loader as logoffLoader } from './components/LogonOut/LogoffRoute';
 import BooksFindInfo from './components/BooksFind/BookFindInfo';
 import TandCs from './components/TandCsPrivacy/TandCs';
+import Privacy from './components/TandCsPrivacy/Privacy';
 
 
 const router = createBrowserRouter([
@@ -84,6 +85,10 @@ const router = createBrowserRouter([
           {
             path: "tandcs",
             element: <TandCs />
+          },
+          {
+            path: "privacy",
+            element: <Privacy />
           },
         ]
       }

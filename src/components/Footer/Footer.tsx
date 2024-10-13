@@ -22,10 +22,10 @@ export default function Footer() {
                                         <h5 className="widget-title pb-2">Help</h5>
                                         <ul className="menu-list list-unstyled">
                                             <li className="menu-item pb-2">
-                                                <a href="tandcs">Help and T&Cs</a>
+                                                <a href="/tandcs">Help and T&Cs</a>
                                             </li>
                                             <li className="menu-item pb-2">
-                                                <a href="#">Privacy</a>
+                                                <a href="/privacy">Privacy</a>
                                             </li>
                                             <li className="menu-item pb-2">
                                                 <a href="/feeds/rss">RSS feed</a>
@@ -55,7 +55,9 @@ export default function Footer() {
                                 <div className="col-lg-3 col-sm-6 pb-3">
                                     <div className="footer-menu contact-item">
                                         <h5 className="widget-title pb-2">Contact Us</h5>
-                                        <p>Do you have any queries or suggestions? <a href="mailto:">contact@cloudybookclub.com</a>
+                                        <p>Do you have any queries or suggestions? 
+                                            <a href={'mailto:' + import.meta.env.VITE_BOOK_CLUB_ADMIN_EMAIL + ' ' + '?subject=' + import.meta.env.VITE_APPLICATION_NAME + 
+                                                ' - contact from website'}>{import.meta.env.VITE_BOOK_CLUB_ADMIN_EMAIL}</a>
                                         </p>
                                     </div>
                                 </div>

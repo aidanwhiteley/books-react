@@ -24,7 +24,7 @@ export default function Header(props:  PropsWithChildren<Props>) {
     const searching = navigation.location && new URLSearchParams(navigation.location.search).has("term");
 
     return (
-        <Navbar expand="lg" bg="light" data-bs-theme="light" sticky="top">
+        <Navbar collapseOnSelect expand="lg" bg="light" data-bs-theme="light" sticky="top">
         <Container>
           <Navbar.Brand as={Link} to="/">
           <img

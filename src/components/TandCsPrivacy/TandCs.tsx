@@ -1,5 +1,16 @@
+import { useUserProfile } from '../../components/Root/RootRoute';
 
 export default function TandCs() {
+    
+    const { userProfile } = useUserProfile();
+    console.log('userProfile: ' + JSON.stringify(userProfile));
+    const isAnonymous = !userProfile;
+    console.log('isAnonymous: ' + isAnonymous);
+    const isUser = userProfile && (userProfile.highestRole === 'ROLE_USER');
+    const isEditor =  userProfile && (userProfile.highestRole === 'ROLE_EDITOR');
+    const isAdmin =  userProfile && (userProfile.highestRole === 'ROLE_ADMIN');
+    const adminEmail = import.meta.env.VITE_BOOK_CLUB_ADMIN_EMAIL;
+
 
     return (
         <>
@@ -7,65 +18,87 @@ export default function TandCs() {
                 <div className="row">
 
                     <div className="col-md-12">
-                        <div className="card help">
+                        <div className="help">
 
                             <h1>Help, Information &amp; T&amp;Cs</h1>
 
                             <div className="helpIntro">
-                                <img className="float-end" width="100" height="100" ng-show="user.picture" src="/fred" />
+                                {/* { (isUser && userProfile.authProvider && userProfile.picture) &&
+                                    <img className="float-end" width="100" height="100" src={userProfile.picture} alt="Users profile picture" />
+                                } */}
 
-                                <p>Hi !isAnonymous" user.firstName </p>
+                                <p>Hi {(userProfile && userProfile.firstName) && userProfile.firstName} </p>
                                 <p>welcome to {import.meta.env.VITE_APPLICATION_NAME}! Here's some quick info on how to get the best out of the application.
                                 </p>
                             </div>
 
-                            <div ng-if="user && user.firstVisit" className="well">
-                                <h3>First logon</h3>
-                                <p>Thanks so much for logging on to the {import.meta.env.VITE_APPLICATION_NAME} for the first time. There's a few pointers
-                                    below about how the application works. You can always re-read these by clicking the Help / Info link at any
-                                    time.
-                                </p>
-                            </div>
+                            {userProfile && userProfile.firstVisit &&
+                                <div className="well">
+                                    <h3>First logon</h3>
+                                    <p>Thanks so much for logging on to the {import.meta.env.VITE_APPLICATION_NAME} for the first time. There's a few pointers
+                                        below about how the application works. You can always re-read these by clicking the Help / Info link at any
+                                        time.
+                                    </p>
+                                </div>
+                            }
 
                             <h3>Your current permissions</h3>
-                            <div ng-if="(isAnonymous || isUser && (!isAdmin))">
-                                <p ng-if="isAnonymous">Thanks for browsing the site.</p>
-                                <p>You can currently read basic book review information and comments entered by our members. However, you
-                                    cannot post your own reviews or comment on the reviews of others. Additionally, you can't see details of who
-                                    has posted a review or comment. <span ng-if="isAnonymous">Logging on via Google or Facebook is the first
-                                        step in getting more access to the application and its content.</span></p>
+                            {(isAnonymous || isUser) &&
+                                <div>
+                                    {isAnonymous &&
+                                        <p>Thanks for browsing the site.</p>
+                                    }
+                                    <p>You can currently read book reviews and comments entered by our members. However, you
+                                        cannot post your own reviews or comment on the reviews of others. Additionally, you can't see details of who
+                                        has posted a review or comment. 
+                                        {isAnonymous &&
+                                            <span> Logging on via Google or Facebook is the first
+                                                step in getting more access to the application and its content.
+                                            </span>
+                                        }
+                                    </p>
 
-                                <p ng-if="isUser && !user.email">If {import.meta.env.VITE_BOOK_CLUB_MEMBERS_SCOPE} and want to get full access to existing
-                                    reviews and comments and maybe write your own reviews or comments, please drop an email to <a
-                                        href="mailto:{{env.bookClubAdminEmail}}?Subject=Book%20Club%20Signup"
-                                        target="_top">{{ env.bookClubAdminEmail }}</a> and we'll get you added to the list of registered users asap.
-                                </p>
-                                <p ng-if="isUser && user.email">If {import.meta.env.VITE_BOOK_CLUB_MEMBERS_SCOPE}, please check your {{ user.email }} email
-                                    account (including the spam folder) for an email confirming
-                                    that access has been provided to {{ env.applicationName }}. If you no longer use that email address (which was
-                                    looked up from your {{ user.authProvider | lowercase }} account), please drop an email to <a
-                                        href="mailto:{{env.bookClubAdminEmail}}?Subject=Book%20Club%20Signup"
-                                        target="_top">{{ env.bookClubAdminEmail }}</a> and we'll get you added to the list of registered users asap.
-                                </p>
+                                    {(isUser && !userProfile.email) &&
+                                        <p>If {import.meta.env.VITE_BOOK_CLUB_MEMBERS_SCOPE} and want to get full access to existing
+                                            reviews and comments and maybe write your own reviews or comments, please drop an email 
+                                            to <a href={'mailto:' + import.meta.env.VITE_BOOK_CLUB_ADMIN_EMAIL + ' ' + '?subject=' + import.meta.env.VITE_APPLICATION_NAME +
+                                                ' - access request'}>{import.meta.env.VITE_BOOK_CLUB_ADMIN_EMAIL}</a> and we'll get you added to the list of registered editors asap.
+                                        </p>
+                                    }
+                                    {(isUser && userProfile.email) &&
+                                        <p>If {import.meta.env.VITE_BOOK_CLUB_MEMBERS_SCOPE}, please check your { userProfile.email } email
+                                            account (including the spam folder) for an email confirming
+                                            that access has been provided to {import.meta.env.VITE_APPLICATION_NAME}. If you no longer use that email address (which was
+                                            looked up from your {userProfile.authProvider.toLowerCase()} account), please drop an email 
+                                            to <a href={'mailto:' + import.meta.env.VITE_BOOK_CLUB_ADMIN_EMAIL + ' ' + '?subject=' + import.meta.env.VITE_APPLICATION_NAME +
+                                                ' - access request'}>{import.meta.env.VITE_BOOK_CLUB_ADMIN_EMAIL}</a> and we'll get you added to the list of registered editors asap.
+                                        </p>
+                                    }
+                                </div>
+                            }
 
-                            </div>
-                            <div ng-if="isEditor && (!isAdmin)">
-                                <p>Thanks for registering with {{ env.applicationName }}.</p>
-                                <p>You currently have full permissons to be able to:</p>
-                                <ul>
-                                    <li>Create, update and delete your own book reviews</li>
-                                    <li>See the name (and maybe the picture) of other people who have been writing book reviews</li>
-                                    <li>Comment on other people's book reviews (and later delete your comment if necessary <i
-                                        className="ti-face-smile"></i>)</li>
-                                    <li>Search by book reviewer (plus all the usual search criteria)</li>
-                                </ul>
-                                <p>Note: the application doesn't allow you to get in touch with book reviewers directly e.g. you can't see
-                                    someone elses email address.</p>
-                            </div>
-                            <div ng-if="isAdmin">
-                                <p>Thanks for logging in to the site with admin privileges.</p>
-                                <p>You are a god user. You can do everything!</p>
-                            </div>
+                            {(isEditor && !isAdmin) &&
+                                <div>
+                                    <p>Thanks for registering with {import.meta.env.VITE_APPLICATION_NAME}.</p>
+                                    <p>You currently have full permissons to be able to:</p>
+                                    <ul>
+                                        <li>Create, update and delete your own book reviews</li>
+                                        <li>See the name (and maybe the picture) of other people who have been writing book reviews</li>
+                                        <li>Comment on other people's book reviews (and later delete your comment if necessary <i
+                                            className="ti-face-smile"></i>)</li>
+                                        <li>Search by book reviewer (plus all the usual search criteria)</li>
+                                    </ul>
+                                    <p>Note: the application doesn't allow you to get in touch with book reviewers directly e.g. you can't see
+                                        someone elses email address.</p>
+                                </div>
+                            }
+
+                            {isAdmin &&
+                                <div>
+                                    <p>Thanks for logging in to the site with admin privileges.</p>
+                                    <p>You are a god user. You can do everything!</p>
+                                </div>
+                            }
 
                             <h3>How does it all work</h3>
                             <ul className="helpList">
@@ -102,16 +135,16 @@ export default function TandCs() {
                             <ul className="helpList">
                                 <li>If writing a review or comment on the site, please remember that:</li>
                                 <ul>
-                                    <li>While your name may only visible to other &quot;members&quot; of the site, anything you write in a
+                                    <li>While your name may only visible to other &quot;editors&quot; of the site, anything you write in a
                                         review or comment is publically visible on t'internet and will, eventually, be slurped by Google. </li>
                                     <li>If you logon, your name, picture (if any) and email address is read from Google or Facebook and your
-                                        name and picture (but not email address) is visible to other web site &quot;members&quot; on any reviews
+                                        name and picture (but not email address) is visible to other web site &quot;editors&quot; on any reviews
                                         or comments you make</li>
                                     <li>Be nice - I'm told authors like Jeffery Archer and E.L. James regularly read the reviews on this site.
                                         Even your least favourite authors probably have feelings (and some, no doubt, can be litigious).</li>
                                 </ul>
                                 <li>When first logging on to the application you will be asked by Google or Facebook whether you are happy for
-                                    {{ env.applicationName }} to access your basic profile details (including your name, email address and
+                                    {import.meta.env.VITE_APPLICATION_NAME} to access your basic profile details (including your name, email address and
                                     picture). If you are <b>not</b> happy, say &quot;no&quot; - simples.
                                 </li>
                                 <li>You can delete or update any book review you have written at any point. If you have commented on a book
@@ -122,7 +155,7 @@ export default function TandCs() {
                                     delete a comment, it will be shown as &quot;deleted by &lt;your name&gt;&quot; rather than completely
                                     removed.
                                 </li>
-                                <li>Finally, {{ env.applicationName }} is not responsible for the reviews or comments posted by web site
+                                <li>Finally, {import.meta.env.VITE_APPLICATION_NAME} is not responsible for the reviews or comments posted by web site
                                     members. However, we will immediately take down any
                                     user generated content that is highlighted to us as being clearly libellous or otherwise illegal. Please use
                                     the <i className="ti-email"></i> Contact link to get in touch.
@@ -130,32 +163,27 @@ export default function TandCs() {
                             </ul>
 
                             <h3>Mobiles and tablets</h3>
-                            <p>The application should work fine on mobile and tablet screens - please let me know via the Contact link if it
+                            <p>The application should work fine on mobile and tablet screens - please let me know via the Contact link in the page footer if it
                                 doesn't on your device.</p>
-                            <p>However, some menu items are only available on larger (desktop) screens (including the above mentioned
-                                Contact link <i className="ti-face-smile"></i>)!</p>
 
                             <h3>Logons</h3>
-                            <p>Logons to {{ env.applicationName }} currently last a day (and this will be increased when all the bugs are
-                                ironed out). If you don't click the logout button, your kids will be logged on as you if they can also use the
+                            <p>Logons to {import.meta.env.VITE_APPLICATION_NAME} currently last a day. If you don't click the logout button, 
+                                your kids will be logged on as you if they can also use the
                                 device you log on with!</p>
-                            <p>If you usually stay logged on to Google or Facebook on the device you are accessing {{ env.applicationName }}
-                                with, when you click the "Logon with ..." button you will be automatically logged into the
-                                {{ env.applicationName }} with the user you are currently logged into Google or Facebook with.</p>
-                            <p>Basically, if you share devices, think about when you want to logout from {{ env.applicationName }} and Google
+                            <p>If you usually stay logged on to Google or Facebook on the device you are accessing {import.meta.env.VITE_APPLICATION_NAME} with,
+                                when you click the "Logon with ..." button you will be automatically logged into the
+                                {import.meta.env.VITE_APPLICATION_NAME} with the user you are currently logged into Google or Facebook with.</p>
+                            <p>Basically, if you share devices, think about when you want to logout from {import.meta.env.VITE_APPLICATION_NAME} and Google
                                 / Facebook.</p>
 
                             <h3>Privacy Policy</h3>
-                            <p>There's some stuff <a href="#/privacy">here</a>.</p>
-
-                            <h3>Source Code</h3>
-                            <p>The source code for this application is freely available <a href="https://github.com/aidanwhiteley"
-                                target="_blank">here</a>.</p>
+                            <p>There's some stuff <a href="privacy">here</a>.</p>
 
                             <hr />
 
-                            <p>Finally, <span ng-if="isAnonymous || isUser">if you do register for the site,</span> please remember - the
-                                first rule of <del><i>Fight Club</i></del> {{ env.applicationName }}<br>&quot;<i>You do not give any Jeffery
+                            <p>Finally, 
+                                {(isAnonymous || isUser) && <span>if you do register for the site,</span>} please remember - the
+                                first rule of <del><i>Fight Club</i></del> {import.meta.env.VITE_APPLICATION_NAME}<br/>&quot;<i>You do not give any Jeffery
                                     Archer book more than than one star in a review!</i>&quot;
                             </p>
 

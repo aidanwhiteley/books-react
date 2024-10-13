@@ -109,18 +109,21 @@ export default function BooksTable(props: BooksProps) {
         forcePage = parseInt(searchParams.get('page')!) - 1
     }
 
+    const previous = window.innerWidth > 1023 ? '< previous' : '<';
+    const next = window.innerWidth > 1023 ? 'next >' : '>';
+
     return (
         <>
             <DataTable columns={columns} data={data} />
 
             <div id="pagination" className="h-100 d-flex align-items-center justify-content-center mt-4">
                 <ReactPaginate
-                    nextLabel="next >"
+                    nextLabel={next}
                     onPageChange={handlePageClick}
                     pageRangeDisplayed={3}
                     marginPagesDisplayed={2}
                     pageCount={pageData.totalPages}
-                    previousLabel="< previous"
+                    previousLabel={previous}
                     pageClassName="page-item"
                     pageLinkClassName="page-link"
                     previousClassName="page-item"

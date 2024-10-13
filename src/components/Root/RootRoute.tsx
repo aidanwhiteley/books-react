@@ -1,7 +1,7 @@
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Messaging from "../Messaging/Messaging";
-import { Outlet, useNavigation, useOutletContext  } from "react-router-dom";
+import { Outlet, useNavigation, useOutletContext, useLocation  } from "react-router-dom";
 import "./RootRoute.css";
 import { getuserProfile, UserProfile } from "../../apis/HttpDataApis";
 import { useLoaderData, LoaderFunction} from "react-router-typesafe";
@@ -21,6 +21,9 @@ export default function Root() {
     const navigation = useNavigation();
     const userProfile = useLoaderData<typeof loader>();
     const searchParams = new URLSearchParams(location.search);
+    const homepage = location.pathname === '/';
+
+    const containerClass = homepage ? 'container-fluid' : 'container';
 
     let message = '';
     const loggedOnMessage = userProfile ? 'Hi ' + userProfile.firstName + ', thanks for logging on to the Cloudy Book Club!' : '';
@@ -44,7 +47,7 @@ export default function Root() {
             }
 
             <section id="main-content" className="">
-                <div className="container">
+                <div className={containerClass}>
                     <div className="row d-flex align-items-center">
                         <div id="detail" className={navigation.state === "loading" ? "loading" : ""}>
                             <Outlet context={{ userProfile } satisfies ContextType} />
