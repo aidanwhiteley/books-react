@@ -10,14 +10,14 @@ export default function Footer() {
                     <div className="row">
                         <div className="footer-top-area">
                             <div className="row d-flex flex-wrap justify-content-between">
-                                <div className="col-lg-3 col-sm-6 pb-3">
+                                <div className="col-lg-5 col-sm-6 pb-3">
                                     <div className="footer-menu">
                                         <img src="/images/book-club-logo.jpeg" alt="logo" />
-                                        <p><b>The Cloudy Book Club</b> - reminding me of what books I have read recently so I don't buy them again!</p>
+                                        <p><b>{import.meta.env.VITE_APPLICATION_NAME}</b> - reminding me of what books I have read recently so I don't buy them again!</p>
                                     </div>
                                 </div>
                                 
-                                <div className="col-lg-3 col-sm-6 pb-3">
+                                <div className="col-lg-2 col-sm-6 pb-3">
                                     <div className="footer-menu">
                                         <h5 className="widget-title pb-2">Help</h5>
                                         <ul className="menu-list list-unstyled">
@@ -34,17 +34,17 @@ export default function Footer() {
                                     </div>
                                 </div>
 
-                                <div className="col-lg-3 col-sm-6 pb-3">
+                                <div className="col-lg-2 col-sm-6 pb-3">
                                     <div className="footer-menu">
-                                        <h5 className="widget-title pb-2">Source code</h5>
+                                        <h5 className="widget-title pb-2">Software</h5>
                                         <ul className="menu-list list-unstyled ">
                                             <li className="menu-item pb-2">
-                                                <a href="https://github.com/aidanwhiteley/books">Back end code</a>
+                                                <a href="https://github.com/aidanwhiteley/books">Code - server side</a>
                                             </li>
                                             <li className="menu-item pb-2">
-                                                <a href="https://github.com/aidanwhiteley/books-react">Front end code</a>
+                                                <a href="https://github.com/aidanwhiteley/books-react">Code - front end</a>
                                             </li>
-                                            <li>
+                                            <li className="github-stars">
                                                 <GitHubButton href="https://github.com/aidanwhiteley/books" data-color-scheme="no-preference: light; light: light; dark: light;" 
                                                     data-size="large" data-show-count="true" aria-label="Stars on GitHub">Stars</GitHubButton>
                                             </li>
@@ -75,7 +75,7 @@ export default function Footer() {
                         
                         <div className="col-md-4 col-sm-6">
                             <div className="copyright">
-                                <p>© Copyright 2024 Aidan Whiteley.
+                                <p>© Copyright 2024 <a href="https://aidanwhiteley.com/">Aidan Whiteley</a>.
                                 </p>
                             </div>
                         </div>

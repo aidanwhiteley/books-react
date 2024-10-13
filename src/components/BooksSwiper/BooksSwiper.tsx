@@ -46,9 +46,9 @@ export default function BookSwiper(props: BooksProps) {
         centeredSlides={true}
         slidesPerView={'auto'}
         coverflowEffect={{
-          rotate: 30,
-          stretch: 30,
-          depth: 20,
+          rotate: 20,
+          stretch: 10,
+          depth: 30,
           modifier: 1,
           slideShadows: false,
         }}
@@ -60,7 +60,7 @@ export default function BookSwiper(props: BooksProps) {
       >
         {swiperSlides}
       </Swiper>
-      <p className="text-center lead">Books recently reviewed on The Cloudy Book Club with a 'great' rating</p>
+      <p className="text-center lead">Books recently reviewed on {import.meta.env.VITE_APPLICATION_NAME} with a 'great' rating</p>
     </>
   );
 }

@@ -16,7 +16,7 @@ export default function BookDetails(props: BookProps) {
     return (
 
         <>
-            <div className="card">
+            <div className="">
                 <div className="bookContent">
                     <Tabs defaultActiveKey="bookDetails" id="book-tabs" className="mb-3">
 
@@ -34,7 +34,7 @@ export default function BookDetails(props: BookProps) {
                                 {displayGooglePreview &&
                                     <p>
                                     <b className="me-3">Book Preview:</b>
-                                        <a href={"https://books.google.co.uk/books?id=" + book.googleBookId + "&printsec=frontcover#v=onepage&q&f=true"} target="_blank">
+                                        <a href={"https://books.google.co.uk/books?id=" + book.googleBookId + "&printsec=frontcover#v=onepage&q&f=true&gbpv=1"} target="_blank">
                                             <img className="" src="/images/gbs_preview_button1.gif" />
                                         </a>
                                     </p>

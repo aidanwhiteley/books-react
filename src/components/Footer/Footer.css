@@ -1,3 +1,15 @@
 #footer {
     margin-top: 30px;
 }
+
+#footer a {
+    text-decoration: none;
+}
+
+#footer-bottom a {
+    text-decoration: none; 
+}
+
+.github-stars {
+    margin-top: 20px;
+}

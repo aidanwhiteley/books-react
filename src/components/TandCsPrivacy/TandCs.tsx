@@ -9,8 +9,6 @@ export default function TandCs() {
     const isUser = userProfile && (userProfile.highestRole === 'ROLE_USER');
     const isEditor =  userProfile && (userProfile.highestRole === 'ROLE_EDITOR');
     const isAdmin =  userProfile && (userProfile.highestRole === 'ROLE_ADMIN');
-    const adminEmail = import.meta.env.VITE_BOOK_CLUB_ADMIN_EMAIL;
-
 
     return (
         <>

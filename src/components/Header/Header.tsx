@@ -33,7 +33,7 @@ export default function Header(props:  PropsWithChildren<Props>) {
                 height="30"
                 className="d-inline-block align-top"
               />{' '}
-            The Cloudy Book Club
+            {import.meta.env.VITE_APPLICATION_NAME}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
