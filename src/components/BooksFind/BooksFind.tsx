@@ -62,7 +62,6 @@ export default function BooksFind(props: BooksFindProps) {
                                 clearButton
                                 onChange={(selected) => {
                                         setRating(selected);
-                                        console.log('On change saw rating: ' + JSON.stringify(selected));
                                         if (selected && selected[0]) {
                                             setGenre(new Array<Option>());
                                             setAuthor(new Array<Option>());
@@ -86,7 +85,6 @@ export default function BooksFind(props: BooksFindProps) {
                                 clearButton
                                 onChange={(selected) => {
                                         setAuthor(selected);
-                                        console.log('On change saw author: ' + JSON.stringify(selected));
                                         if (selected && selected[0]) {
                                             setGenre(new Array<Option>());
                                             setRating(new Array<Option>());
@@ -110,7 +108,6 @@ export default function BooksFind(props: BooksFindProps) {
                                 clearButton
                                 onChange={(selected) => {
                                         setGenre(selected);
-                                        console.log('On change saw genre: ' + JSON.stringify(selected));
                                         if (selected && selected[0]) {
                                             setAuthor(new Array<Option>());
                                             setRating(new Array<Option>());
@@ -135,7 +132,6 @@ export default function BooksFind(props: BooksFindProps) {
                                     clearButton
                                     onChange={(selected) => {
                                             setReader(selected);
-                                            console.log('On change saw reader: ' + JSON.stringify(selected));
                                             if (selected && selected[0]) {
                                                 setAuthor(new Array<Option>());
                                                 setRating(new Array<Option>());

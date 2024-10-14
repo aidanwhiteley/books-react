@@ -9,6 +9,7 @@ import BooksSearchRoute from './components/BooksSearch/BooksSearchRoute';
 import BooksFindRoute from './components/BooksFind/BooksFindRoute';
 import BooksFindResultRoute from './components/BooksFind/BooksFindResultRoute';
 import BookDetailsRoute from "./components/BookDetails/BookDetailsRoute";
+import BookCreateEditRoute from './components/BookCreateEdit/BookCreateEditRoute';
 import LogoffRoute from './components/LogonOut/LogoffRoute';
 import LogonRoute from './components/LogonOut/LogonRoute';
 import { loader as profileLoader } from './components/Root/RootRoute';
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
             path: "books/search",
             element: <BooksSearchRoute />,
             loader: booksSearchLoader
+          },
+          {
+            path: "books/create",
+            element: <BookCreateEditRoute />,
           },
           {
             path: "books/find",

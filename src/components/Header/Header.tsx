@@ -48,6 +48,12 @@ export default function Header(props:  PropsWithChildren<Props>) {
                 Find a review
               </Nav.Link>
 
+              {(userProfile && (userProfile.highestRole === 'ROLE_EDITOR' || userProfile.highestRole === 'ROLE_ADMIN')) &&
+                <Nav.Link as={Link} eventKey="/create" to="/books/create">
+                  Add a book review
+                </Nav.Link>
+              }
+
               {!userProfile && 
                 <Nav.Link as={Link} eventKey="/logon" to="/logon">
                   Logon

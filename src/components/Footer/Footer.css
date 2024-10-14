@@ -1,5 +1,6 @@
 #footer {
     margin-top: 30px;
+    font-size: 14px;
 }
 
 #footer a {
@@ -12,4 +13,12 @@
 
 .github-stars {
     margin-top: 20px;
+}
+
+#footer h5 {
+    font-size: 14px;
+}
+
+.copyright {
+    font-size: 14px;
 }

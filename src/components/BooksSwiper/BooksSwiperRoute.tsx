@@ -3,7 +3,7 @@ import { BooksQueryResult, getBooksByRating } from "../../apis/HttpDataApis";
 import { useLoaderData, LoaderFunction} from "react-router-typesafe";
 
 export const loader = (async () => {
-  return await getBooksByRating("GREAT", 0, 20);
+  return await getBooksByRating("GREAT", 0, 30);
 }) satisfies LoaderFunction;
 
 export interface BooksProps {

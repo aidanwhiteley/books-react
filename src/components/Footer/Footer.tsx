@@ -5,6 +5,7 @@ export default function Footer() {
 
     return (
         <>
+            <hr />
             <footer id="footer">
                 <div className="container">
                     <div className="row">
@@ -65,8 +66,9 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                <hr />
+                
             </footer>
+
             <div id="footer-bottom">
                 <div className="container">
                     <div className="row d-flex flex-wrap justify-content-between">
@@ -75,7 +77,7 @@ export default function Footer() {
                         
                         <div className="col-md-4 col-sm-6">
                             <div className="copyright">
-                                <p>© Copyright 2024 <a href="https://aidanwhiteley.com/">Aidan Whiteley</a>.
+                                <p className="text-center">© Copyright 2024 <a href="https://aidanwhiteley.com/">Aidan Whiteley</a>.
                                 </p>
                             </div>
                         </div>

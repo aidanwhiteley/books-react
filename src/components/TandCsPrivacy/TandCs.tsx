@@ -3,9 +3,7 @@ import { useUserProfile } from '../../components/Root/RootRoute';
 export default function TandCs() {
     
     const { userProfile } = useUserProfile();
-    console.log('userProfile: ' + JSON.stringify(userProfile));
     const isAnonymous = !userProfile;
-    console.log('isAnonymous: ' + isAnonymous);
     const isUser = userProfile && (userProfile.highestRole === 'ROLE_USER');
     const isEditor =  userProfile && (userProfile.highestRole === 'ROLE_EDITOR');
     const isAdmin =  userProfile && (userProfile.highestRole === 'ROLE_ADMIN');
