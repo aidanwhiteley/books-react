@@ -143,7 +143,7 @@ export default function BooksFind(props: BooksFindProps) {
                                     options={readerDisplay}
                                     selected={reader}
                                     highlightOnlyResult
-                                    />
+                                />
                             </Form.Group>
                         </div>
                     }

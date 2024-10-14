@@ -7,8 +7,8 @@ export default defineConfig({
   server: {
     proxy: {
       '/api/books/': {
-        target: 'https://cloudybookclub.com',
-        //target: 'http://localhost:8080',
+        //target: 'https://cloudybookclub.com',
+        target: 'http://localhost:8080',
         changeOrigin: true,
         secure: false,      
         ws: true,
@@ -25,8 +25,8 @@ export default defineConfig({
         },
       },
       '/secure/api/': {
-        target: 'https://cloudybookclub.com',
-        //target: 'http://localhost:8080',
+        //target: 'https://cloudybookclub.com',
+        target: 'http://localhost:8080',
         changeOrigin: true,
         secure: false,      
         ws: true,
@@ -43,8 +43,8 @@ export default defineConfig({
         },
       },
       '/login/': {
-        target: 'https://cloudybookclub.com',
-        //target: 'http://localhost:8080',
+        //target: 'https://cloudybookclub.com',
+        target: 'http://localhost:8080',
         changeOrigin: true,
         secure: false,      
         ws: true,
@@ -61,8 +61,8 @@ export default defineConfig({
         },
       },
       '/feeds/': {
-        target: 'https://cloudybookclub.com',
-        //target: 'http://localhost:8080',
+        //target: 'https://cloudybookclub.com',
+        target: 'http://localhost:8080',
         changeOrigin: true,
         secure: false,      
         ws: true,

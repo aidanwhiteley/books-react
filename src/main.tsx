@@ -20,6 +20,7 @@ import { loader as booksSearchLoader } from './components/BooksSearch/BooksSearc
 import { loader as booksFindLoader } from './components/BooksFind/BooksFindRoute';
 import { loader as booksFindResultLoader } from './components/BooksFind/BooksFindResultRoute';
 import { loader as logoffLoader } from './components/LogonOut/LogoffRoute';
+import { loader as bookCreateEditLoader } from './components/BookCreateEdit/BookCreateEditRoute';
 import BooksFindInfo from './components/BooksFind/BookFindInfo';
 import TandCs from './components/TandCsPrivacy/TandCs';
 import Privacy from './components/TandCsPrivacy/Privacy';
@@ -58,6 +59,7 @@ const router = createBrowserRouter([
           {
             path: "books/create",
             element: <BookCreateEditRoute />,
+            loader: bookCreateEditLoader
           },
           {
             path: "books/find",

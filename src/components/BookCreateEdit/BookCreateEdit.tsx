@@ -1,17 +1,34 @@
 import './BookCreateEdit.css';
 import { Form } from "react-router-dom";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { BookCreateProps } from "./BookCreateEditRoute";
+import { Typeahead } from 'react-bootstrap-typeahead';
+import { Option } from 'react-bootstrap-typeahead/types/types';
+import 'react-bootstrap-typeahead/css/Typeahead.css';
+import 'react-bootstrap-typeahead/css/Typeahead.bs5.css';
 
 export default function BookCreateEdit(props: BookCreateProps) {
 
-    const [genre, setGenre] = useState('');
+    const [rating, setRating] = useState('');
+    const [genre, setGenre] = useState<Option[]>([]);
 
+    const genreDisplay = props.genres.map(aGenre => {
+        const text = aGenre.countOfBooks > 1 ? ' books' : ' book';
+        return {
+            label: aGenre.genre + ' (' + aGenre.countOfBooks + text + ')',
+            genre: aGenre.genre
+        }
+    });
 
     const onRatingChangeHandler = (event) => {
-        setGenre(event.target.value);
-        console.log("User Selected Value - ", event.target.value);
+        setRating(event.target.value);
+        console.log("Saw rating: " + event.target.value);
     };
+
+    const onGenreChangeHandler = (selected) => {
+        setGenre(selected);
+        console.log("Saw genre: ", selected);
+    }
 
     return (
         <>
@@ -42,7 +59,7 @@ export default function BookCreateEdit(props: BookCreateProps) {
                                     {props.ratings.map((rating, index) => {
                                         return (
                                             <option key={index}>
-                                                {rating.toLowerCase()}
+                                                {rating}
                                             </option>
                                         );
                                     })}
@@ -50,8 +67,20 @@ export default function BookCreateEdit(props: BookCreateProps) {
                             </div>
                             <div className="col-md-8">
                                 <label htmlFor="genre">Genre</label>
-                                <input id="genre" className="form-control" placeholder="Enter the books main genre" 
-                                    type="text" min="1" max="35" />
+                                <Typeahead
+                                    placeholder="Enter the books main genre"
+                                    id="genre"
+                                    clearButton
+                                    allowNew
+                                    newSelectionPrefix="Add a new genre: "
+                                    onChange={onGenreChangeHandler}
+                                    options={genreDisplay}
+                                    //selected={genre}
+                                    onInputChange={(text: string, e: ChangeEvent<HTMLInputElement>) => {
+                                        console.log("On input change: " + text, e);
+                                        setGenre({"genre": text, label: text})
+                                    }}
+                                />
                             </div>
 
                             <div className="col-md-12">
