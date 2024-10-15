@@ -286,6 +286,30 @@ export async function getuserProfile(): Promise<UserProfile | null> {
     return response.json()
 }
 
+export async function createBookReview(newBookReview: Book): Promise<Book | null> {
+
+    const api = '/secure/api/books';
+
+    const config = {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+        body: JSON.stringify(newBookReview)
+    }
+
+    const response = await fetch(api, config);
+    if (response.status === 401) {
+        console.debug('Not authorised to create book reviews. This is expected if the user doesnt have the EDITOR or ADMIN role.');
+        return null;
+    } else if (!response.ok) {
+        throw new DataRetievalError('Error trying to store book review details on the server. Status: ' + response.status + ' ' + response.statusText);
+    }
+
+    return response.json;
+}
+
 export async function logoff(): Promise<void> {
 
     const api = '/secure/api/logout';

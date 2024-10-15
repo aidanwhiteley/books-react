@@ -1,16 +1,23 @@
 import './BookCreateEdit.css';
 import { Form } from "react-router-dom";
-import { ChangeEvent, useState } from "react";
 import { BookCreateProps } from "./BookCreateEditRoute";
 import { Typeahead } from 'react-bootstrap-typeahead';
-import { Option } from 'react-bootstrap-typeahead/types/types';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import 'react-bootstrap-typeahead/css/Typeahead.bs5.css';
+import purify from "dompurify";
 
 export default function BookCreateEdit(props: BookCreateProps) {
 
-    const [rating, setRating] = useState('');
-    const [genre, setGenre] = useState<Option[]>([]);
+    console.log('create props: ' + JSON.stringify(props));
+
+    let errorDisplay = '';
+    if (props.errorMessages.length === 1) {
+        errorDisplay = '<div class="alert alert-warning" role="alert">' + props.errorMessages[0] + '</div>'
+    } else if (props.errorMessages.length > 1) {
+        const messages = props.errorMessages.map((message) =>
+            '<li>' + message + '</li>');
+        errorDisplay = '<div class="alert alert-warning" role="alert"><ul>' + messages.join(' ') + '</ul></div>'
+    }
 
     const genreDisplay = props.genres.map(aGenre => {
         const text = aGenre.countOfBooks > 1 ? ' books' : ' book';
@@ -19,16 +26,6 @@ export default function BookCreateEdit(props: BookCreateProps) {
             genre: aGenre.genre
         }
     });
-
-    const onRatingChangeHandler = (event) => {
-        setRating(event.target.value);
-        console.log("Saw rating: " + event.target.value);
-    };
-
-    const onGenreChangeHandler = (selected) => {
-        setGenre(selected);
-        console.log("Saw genre: ", selected);
-    }
 
     return (
         <>
@@ -42,20 +39,22 @@ export default function BookCreateEdit(props: BookCreateProps) {
 
                     <div className="content">
 
-                        <Form name="bookForm" className="row g-3">
+                        <div id="message" dangerouslySetInnerHTML={{__html: purify.sanitize(errorDisplay)}}></div>
+
+                        <Form name="bookForm" method="post" className="row g-3">
                             <div className="col-md-6">
                                 <label htmlFor="title">Book Title</label>
-                                <input type="text" id="title" className="form-control" placeholder="Enter the book title" 
-                                    value="" min="2" max="100" required />
+                                <input type="text" id="title" name="title" className="form-control" placeholder="Enter the book title" 
+                                    min="1" max="100" required />
                             </div>
                             <div className="col-md-6">
                                 <label htmlFor="author">Author</label>
-                                <input type="text" id="author" className="form-control" placeholder="Enter the authors name" 
-                                    value="" min="1" max="75" required />
+                                <input type="text" id="author" name="author" className="form-control" placeholder="Enter the authors name" 
+                                    min="1" max="75" required />
                             </div>
                             <div className="col-md-4">
                                 <label htmlFor="rating">Your Rating Of The Book</label>
-                                <select id="rating" className="form-control" onChange={onRatingChangeHandler}>
+                                <select id="rating" name="rating" className="form-control">
                                     {props.ratings.map((rating, index) => {
                                         return (
                                             <option key={index}>
@@ -72,21 +71,17 @@ export default function BookCreateEdit(props: BookCreateProps) {
                                     id="genre"
                                     clearButton
                                     allowNew
+                                    inputProps={{ name: 'genre' }}
                                     newSelectionPrefix="Add a new genre: "
-                                    onChange={onGenreChangeHandler}
                                     options={genreDisplay}
                                     //selected={genre}
-                                    onInputChange={(text: string, e: ChangeEvent<HTMLInputElement>) => {
-                                        console.log("On input change: " + text, e);
-                                        setGenre({"genre": text, label: text})
-                                    }}
                                 />
                             </div>
 
                             <div className="col-md-12">
                                 <label htmlFor="summary">Your review / summary</label>
-                                <textarea id="summaryArea" rows={8} name="summary" className="form-control" placeholder="What did you think of the book?" 
-                                    value="" aria-describedby="summaryHelpBlock" required></textarea>
+                                <textarea id="summary" name="summary" rows={8} className="form-control" placeholder="What did you think of the book?" 
+                                    aria-describedby="summaryHelpBlock" required></textarea>
                                 <small id="summaryHelpBlock" className="form-text">
                                     Enter anything you like that may help someone else to decide whether the book is worth reading or not. Probably best not to say what the ending is!<br/>
                                     Remember: all entries are publicly visible.
