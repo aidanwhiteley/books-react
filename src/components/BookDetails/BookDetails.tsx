@@ -7,8 +7,11 @@ import purify from "dompurify";
 export default function BookDetails(props: BookProps) {
 
     const book = props.book;
-    const bookCover = book.googleBookDetails.volumeInfo.imageLinks.thumbnail ? book.googleBookDetails.volumeInfo.imageLinks.thumbnail
+    let bookCover = '';
+    if (book.googleBookDetails && book.googleBookDetails.volumeInfo && book.googleBookDetails.volumeInfo.imageLinks) {
+        book.googleBookDetails.volumeInfo.imageLinks.thumbnail ? book.googleBookDetails.volumeInfo.imageLinks.thumbnail
             : book.googleBookDetails.volumeInfo.imageLinks.smallThumbnail;
+    }
     const altText = 'Picture of book cover for ' + book.title;
     const displayGooglePreview = book.googleBookDetails && book.googleBookDetails.accessInfo.embeddable &&
         book.googleBookDetails.accessInfo.viewability !== 'NO_PAGES';
@@ -44,15 +47,17 @@ export default function BookDetails(props: BookProps) {
                             </div>
                         </Tab>
 
+                        {(book.googleBookDetails && book.googleBookDetails.volumeInfo) &&
                         <Tab eventKey="googleBookSummary" title="Google Book Summary">
-                            <div className="bookInfo">
-                                {bookCover && 
-                                    <img src={bookCover.replace('http://', 'https://')} className="float-start rounded img-thumbnail me-3" alt={altText} />
-                                }
-                                <p><b>Google Summary: </b></p>
-                                <div id="googleSummaryDetail" dangerouslySetInnerHTML={{__html: purify.sanitize(book.googleBookDetails.volumeInfo.description)}}></div>
-                            </div>
-                        </Tab>
+                                <div className="bookInfo">
+                                    {bookCover && 
+                                        <img src={bookCover.replace('http://', 'https://')} className="float-start rounded img-thumbnail me-3" alt={altText} />
+                                    }
+                                    <p><b>Google Summary: </b></p>
+                                    <div id="googleSummaryDetail" dangerouslySetInnerHTML={{__html: purify.sanitize(book.googleBookDetails.volumeInfo.description)}}></div>
+                                </div>
+                            </Tab>
+                        }
 
                     </Tabs>
                 </div>

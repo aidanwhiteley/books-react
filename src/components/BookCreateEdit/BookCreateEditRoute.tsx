@@ -1,5 +1,5 @@
 import BookCreateEdit from './BookCreateEdit';
-import { getGenres, Genre, Book, createBookReview } from "../../apis/HttpDataApis";
+import { getGenres, Genre, Book, createBookReview, stringAsRating } from "../../apis/HttpDataApis";
 import { useLoaderData, LoaderFunction, useActionData, ActionFunction} from "react-router-typesafe";
 
 export interface BookCreateProps {
@@ -13,24 +13,25 @@ export const loader = (async () => {
   return await getGenres();
 }) satisfies LoaderFunction;
 
-export const action = (async ( request ) => {
-  console.log('step 1');
-  const formData = await request.formData;
-  console.log('step 2');
+export const action = (async ({request}) => {
+
+  const formData = await request.formData();
   const bookFormData = Object.fromEntries(formData);
-  console.log('step 3');
 
-  console.log('bookFormData: ' + JSON.stringify(bookFormData));
-
-  let newBook: Promise<Book | null> = null;
+  let newBook: Book | null = null;
   const errorMessages = validateBookData(bookFormData);
   if (errorMessages.length === 0) {
+
+    let genreWithoutCount = bookFormData.genre as string;
+    const lastIndex = genreWithoutCount.lastIndexOf('(');
+    genreWithoutCount = genreWithoutCount.substring(0, lastIndex - 1).trim();
+
     const newBookReview : Book = {
-      title: bookFormData.title,
-      author: bookFormData.author,
-      rating: bookFormData.rating,
-      genre: bookFormData.genre,
-      summary: bookFormData.summary
+      title: bookFormData.title as string,
+      author: bookFormData.author as string,
+      rating: stringAsRating(bookFormData.rating as string),
+      genre: genreWithoutCount,
+      summary: bookFormData.summary as string
     }
 
     newBook = await createBookReview(newBookReview);
@@ -44,6 +45,7 @@ export const action = (async ( request ) => {
   }
 
   return booksCreateProps;
+
 }) satisfies ActionFunction
 
 function validateBookData(bookFormData): string[] {
