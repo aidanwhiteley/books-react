@@ -31,7 +31,7 @@ export type Comment = {
     owner: any,
     id: string,
     commentText: string,
-    entered: Date,
+    entered: number[],
     deleted: boolean,
     deletedBy: string,
     // Next field is just a _hint_ to the client side - it is enforced on the server
@@ -295,7 +295,7 @@ export async function getuserProfile(): Promise<UserProfile | null> {
 export async function getGoogleBooks(title: string, author: string): Promise<GoogleBookSearchResult | null> {
 
     const api = '/secure/api/googlebooks/?';
-    const apiParams = 'title=' + title + '&author=' + author; 
+    const apiParams = 'title=' + title; // + '&author=' + author; 
 
     const response = await fetch(api + apiParams);
     if (response.status === 401) {

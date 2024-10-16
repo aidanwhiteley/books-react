@@ -16,6 +16,10 @@ export default function BookDetails(props: BookProps) {
     const displayGooglePreview = book.googleBookDetails && book.googleBookDetails.accessInfo.embeddable &&
         book.googleBookDetails.accessInfo.viewability !== 'NO_PAGES';
 
+    const comments = book.comments.map((aComment, index) => 
+         <li key={index} className="comment-entry">On {aComment.entered[2]}/{aComment.entered[1]}/{aComment.entered[0]}  {aComment.owner.fullName} commented - {aComment.commentText}</li>
+    );
+
     return (
 
         <>
@@ -44,11 +48,16 @@ export default function BookDetails(props: BookProps) {
                                 }
                                 <p className="reviewDetail"><b>Reviewer's Summary:</b><span className="reviewDetailSummary"
                                     dangerouslySetInnerHTML={{__html: purify.sanitize(book.summary)}}></span></p>
+
+                                {(book.createdBy && book.createdBy.fullName) &&
+                                    <p><b>Reviewer:</b> {book.createdBy.fullName}</p>
+                                }  
+                                
                             </div>
                         </Tab>
 
                         {(book.googleBookDetails && book.googleBookDetails.volumeInfo) &&
-                        <Tab eventKey="googleBookSummary" title="Google Book Summary">
+                            <Tab eventKey="googleBookSummary" title="Google Book Summary">
                                 <div className="bookInfo">
                                     {bookCover && 
                                         <img src={bookCover.replace('http://', 'https://')} className="float-start rounded img-thumbnail me-3" alt={altText} />
@@ -59,6 +68,16 @@ export default function BookDetails(props: BookProps) {
                             </Tab>
                         }
 
+                        <Tab eventKey="reviewComments" title="Review Comments">
+
+                            {(comments.length === 0) && 
+                                <p className="mt-4">No comments have been left on this book review yet</p>
+                            }
+
+                            {(comments.length > 0) && 
+                                <ul>{comments}</ul>
+                            }
+                        </Tab>
                     </Tabs>
                 </div>
             </div>
