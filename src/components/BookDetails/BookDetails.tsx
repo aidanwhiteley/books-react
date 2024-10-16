@@ -7,9 +7,9 @@ import purify from "dompurify";
 export default function BookDetails(props: BookProps) {
 
     const book = props.book;
-    let bookCover = '';
+    let bookCover : string | null = '';
     if (book.googleBookDetails && book.googleBookDetails.volumeInfo && book.googleBookDetails.volumeInfo.imageLinks) {
-        book.googleBookDetails.volumeInfo.imageLinks.thumbnail ? book.googleBookDetails.volumeInfo.imageLinks.thumbnail
+        bookCover = book.googleBookDetails.volumeInfo.imageLinks.thumbnail ? book.googleBookDetails.volumeInfo.imageLinks.thumbnail
             : book.googleBookDetails.volumeInfo.imageLinks.smallThumbnail;
     }
     const altText = 'Picture of book cover for ' + book.title;

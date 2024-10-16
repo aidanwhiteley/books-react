@@ -1,6 +1,6 @@
 import BookCreateEdit from './BookCreateEdit';
 import { getGenres, Genre, Book, createBookReview, stringAsRating } from "../../apis/HttpDataApis";
-import { useLoaderData, LoaderFunction, useActionData, ActionFunction} from "react-router-typesafe";
+import { useLoaderData, LoaderFunction, useActionData, ActionFunction, redirect} from "react-router-typesafe";
 
 export interface BookCreateProps {
   genres: Genre[];
@@ -18,7 +18,8 @@ export const action = (async ({request}) => {
   const formData = await request.formData();
   const bookFormData = Object.fromEntries(formData);
 
-  let newBook: Book | null = null;
+  console.log('Saw bookFormData as: ' + JSON.stringify(bookFormData));
+
   const errorMessages = validateBookData(bookFormData);
   if (errorMessages.length === 0) {
 
@@ -31,17 +32,19 @@ export const action = (async ({request}) => {
       author: bookFormData.author as string,
       rating: stringAsRating(bookFormData.rating as string),
       genre: genreWithoutCount,
-      summary: bookFormData.summary as string
+      summary: bookFormData.summary as string,
+      googleBookId: bookFormData.googleBookId as string
     }
 
-    newBook = await createBookReview(newBookReview);
+    await createBookReview(newBookReview);
+    return redirect("/books/recent")
   }
 
   const booksCreateProps : BookCreateProps = {
     genres: [],
     ratings: [],
     errorMessages: errorMessages,
-    book: newBook
+    book: null
   }
 
   return booksCreateProps;

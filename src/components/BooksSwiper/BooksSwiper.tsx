@@ -22,12 +22,12 @@ export default function BookSwiper(props: BooksProps) {
         author: aBook.author,
         rating: aBook.rating,
         bookAppUrl: '/book/' + aBook.id,
-        thumbnail: (aBook.googleBookId ? 
+        thumbnail: ((aBook.googleBookId && aBook.googleBookDetails) ? 
           aBook.googleBookDetails.volumeInfo.imageLinks.thumbnail ? aBook.googleBookDetails.volumeInfo.imageLinks.thumbnail.replace('http:', 'https:') : '' : ''),
-        smallThumbnail: (aBook.googleBookId ? 
+        smallThumbnail: ((aBook.googleBookId && aBook.googleBookDetails) ? 
           aBook.googleBookDetails.volumeInfo.imageLinks.smallThumbnail ? aBook.googleBookDetails.volumeInfo.imageLinks.smallThumbnail.replace('http:', 'https:') : '' : '')
     };
-  }).filter(s => (s.thumbnail !== '#')).slice(0, 15);
+  }).filter(s => (s.thumbnail !== ''));
 
   const swiperSlides = booksData.map((book, index: number) =>
     <SwiperSlide key={index} data-book-id={book.id}>

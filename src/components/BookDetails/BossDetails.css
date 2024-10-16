@@ -16,8 +16,13 @@
 #googleSummaryDetail {
     font-size: 16px;
 }
+
 #googleSummaryDetail p {
     font-size: 16px;
+}
+
+#googleSummaryDetail b {
+    font-weight: normal;
 }
 
 .rating {

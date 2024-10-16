@@ -144,6 +144,12 @@ export type UserProfile = {
     "highestRole": Role
 }
 
+// The results from searching the Google Books API is not paginated
+// (unlike searching for Book Reviews directly in this application)
+export type GoogleBookSearchResult = {
+    totalItems: number,
+    items: GoogleBookDetails[]
+}
 
 
 export async function getBooksByRating(requestedRating: RequestedRating = "ALL", page: number = 0, pageSize: number = 20): Promise<BooksQueryResult> {
@@ -286,7 +292,22 @@ export async function getuserProfile(): Promise<UserProfile | null> {
     return response.json()
 }
 
-export async function createBookReview(newBookReview: Book): Promise<Book | null> {
+export async function getGoogleBooks(title: string, author: string): Promise<GoogleBookSearchResult | null> {
+
+    const api = '/secure/api/googlebooks/?';
+    const apiParams = 'title=' + title + '&author=' + author; 
+
+    const response = await fetch(api + apiParams);
+    if (response.status === 401) {
+        console.debug('Not authorised to search for Google Books data. This is expected if the user is not logged on.');
+        return null;
+    } else if (!response.ok) {
+        throw new DataRetievalError('Error searching Google Books data via the server. Status: ' + response.status + ' ' + response.statusText);
+    }
+    return response.json()
+}
+
+export async function createBookReview(newBookReview: Book): Promise<null> {
 
     const api = '/secure/api/books';
 
@@ -303,11 +324,12 @@ export async function createBookReview(newBookReview: Book): Promise<Book | null
     if (response.status === 401) {
         console.debug('Not authorised to create book reviews. This is expected if the user doesnt have the EDITOR or ADMIN role.');
         return null;
+    // Note that the API actually returns a 201 (created) with a redirect location for the newly created book
     } else if (!response.ok) {
         throw new DataRetievalError('Error trying to store book review details on the server. Status: ' + response.status + ' ' + response.statusText);
     }
 
-    return response.json;
+    return null;
 }
 
 export async function logoff(): Promise<void> {

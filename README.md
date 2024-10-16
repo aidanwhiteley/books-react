@@ -9,3 +9,33 @@
 
 3. Change serverside book search to be
 https://www.googleapis.com/books/v1/volumes?q=+intitle:flowers%20for%20algernon+inauthor:daniel%20keyes
+
+
+    @GetMapping(value = {"/googlebooks", "googlebooks/"}, params = {"title", "author"})
+    public BookSearchResult findGoogleBooksByTitleAndAuthor(@RequestParam String title, @RequestParam String author) {
+        return googleBooksDaoSync.searchGoogBooksByTitleAndAuthor(title, author);
+    }
+
+
+    public BookSearchResult searchGoogBooksByTitleAndAuthor(String title, String author) {
+
+        String encodedTitle = URLEncoder.encode(title, StandardCharsets.UTF_8);
+        String encodedAuthor = URLEncoder.encode(author, StandardCharsets.UTF_8);
+
+        googleBooksRestTemplate.getMessageConverters().add(0,
+                new StringHttpMessageConverter(StandardCharsets.UTF_8));
+
+        final String searchString = googleBooksApiConfig.getSearchUrl() + "+intitle: " + encodedTitle +
+                "+inauthor:" + author + "&" + googleBooksApiConfig.getCountryCode() +
+                "&" + googleBooksApiConfig.getMaxResults();
+
+   @Test
+   void findByTitleAndAuthor() {
+
+   Wire mock file
+   {
+  "request" : {
+    "url" : "/books/v1/volumes?q=+intitle:Design+Patterns+inauthor:Gamma&country=GB&maxResults=30",
+    "method" : "GET"
+  },
+
