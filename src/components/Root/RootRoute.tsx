@@ -1,7 +1,7 @@
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Messaging from "../Messaging/Messaging";
-import { Outlet, useNavigation, useOutletContext, ScrollRestoration   } from "react-router-dom";
+import { Outlet, useNavigation, useOutletContext } from "react-router-dom";
 import "./RootRoute.css";
 import { getuserProfile, UserProfile } from "../../apis/HttpDataApis";
 import { useLoaderData, LoaderFunction} from "react-router-typesafe";
@@ -57,7 +57,6 @@ export default function Root() {
             </section>
 
             <Footer />
-            <ScrollRestoration />
         </>
     )
 }

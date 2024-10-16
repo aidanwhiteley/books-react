@@ -32,6 +32,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <Root />,
     loader: profileLoader,
+    // TODO - create a nicer error page for when API calls from Root fail i.e. before we have rendered a page layout
     errorElement: <ErrorPage />,
     children: [
       {
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
           { 
             index: true, 
             element: <SwiperRoute />, 
-            loader: bookByRatingLoader
+            loader: bookByRatingLoader,
           },
           {
             path: "book/:id",
