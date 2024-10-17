@@ -20,8 +20,11 @@ export default function Footer() {
                                 
                                 <div className="col-lg-2 col-sm-6 pb-3">
                                     <div className="footer-menu">
-                                        <h5 className="widget-title pb-2">Help</h5>
+                                        <h5 className="widget-title pb-2">Usual stuff</h5>
                                         <ul className="menu-list list-unstyled">
+                                            <li className="menu-item pb-2">
+                                                <a href="/stats">Book review stats</a>
+                                            </li>
                                             <li className="menu-item pb-2">
                                                 <a href="/tandcs">Help and T&Cs</a>
                                             </li>
@@ -30,7 +33,7 @@ export default function Footer() {
                                             </li>
                                             <li className="menu-item pb-2">
                                                 <a href="/feeds/rss">RSS feed</a>
-                                            </li>
+                                            </li>   
                                         </ul>
                                     </div>
                                 </div>
