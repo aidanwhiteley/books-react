@@ -17,13 +17,13 @@ export default function BookCreateEdit(props: BookCreateProps) {
 
     console.log('create props: ' + JSON.stringify(props));
 
-    let errorDisplay = '';
+    let errorDisplay = <span></span>;
     if (props.errorMessages.length === 1) {
-        errorDisplay = '<div class="alert alert-warning" role="alert">' + props.errorMessages[0] + '</div>'
+        errorDisplay = <div className="alert alert-warning" role="alert"> {props.errorMessages[0]} </div>
     } else if (props.errorMessages.length > 1) {
-        const messages = props.errorMessages.map((message) =>
-            '<li>' + message + '</li>');
-        errorDisplay = '<div class="alert alert-warning" role="alert"><ul>' + messages.join(' ') + '</ul></div>'
+        const messages = props.errorMessages.map((message) =>  <li>{message}</li> );
+        console.log('messages: ', messages);
+        errorDisplay = <div className="alert alert-warning" role="alert"><ul> {messages} </ul></div>
     }
 
     const genreDisplay = props.genres.map(aGenre => {
@@ -85,7 +85,7 @@ export default function BookCreateEdit(props: BookCreateProps) {
 
                     <div className="content">
 
-                        <div id="message" dangerouslySetInnerHTML={{__html: purify.sanitize(errorDisplay)}}></div>
+                        <div id="message">{errorDisplay}</div>
 
                         <Form name="bookForm" method="post" className="row g-3">
                             <div className="col-md-6">
