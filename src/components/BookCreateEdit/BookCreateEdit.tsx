@@ -4,7 +4,6 @@ import { BookCreateProps } from "./BookCreateEditRoute";
 import { Typeahead } from 'react-bootstrap-typeahead';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import 'react-bootstrap-typeahead/css/Typeahead.bs5.css';
-import purify from "dompurify";
 import { getGoogleBooks, GoogleBookSearchResult } from "../../apis/HttpDataApis";
 import { useState, MouseEvent } from "react";
 
@@ -22,7 +21,6 @@ export default function BookCreateEdit(props: BookCreateProps) {
         errorDisplay = <div className="alert alert-warning" role="alert"> {props.errorMessages[0]} </div>
     } else if (props.errorMessages.length > 1) {
         const messages = props.errorMessages.map((message) =>  <li>{message}</li> );
-        console.log('messages: ', messages);
         errorDisplay = <div className="alert alert-warning" role="alert"><ul> {messages} </ul></div>
     }
 
@@ -41,7 +39,6 @@ export default function BookCreateEdit(props: BookCreateProps) {
         const googleBooks = await getGoogleBooks(title, author)
         setGoogleSearched(true);
         setCurrentGoogleBook(0);
-        console.log('Found the following books: ' + JSON.stringify(googleBooks));
         if (googleBooks) {
             setGoogleBooksSearchResult(googleBooks);
         }

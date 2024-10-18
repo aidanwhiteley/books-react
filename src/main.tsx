@@ -22,9 +22,11 @@ import { loader as booksFindResultLoader } from './components/BooksFind/BooksFin
 import { loader as logoffLoader } from './components/LogonOut/LogoffRoute';
 import { loader as bookCreateEditLoader } from './components/BookCreateEdit/BookCreateEditRoute';
 import { action as bookCreateEditAction } from './components/BookCreateEdit/BookCreateEditRoute';
+import { loader as statsLoader } from './components/BookSummary/BooksSummaryRoute';
 import BooksFindInfo from './components/BooksFind/BookFindInfo';
 import TandCs from './components/TandCsPrivacy/TandCs';
 import Privacy from './components/TandCsPrivacy/Privacy';
+import BooksSummaryRoute from './components/BookSummary/BooksSummaryRoute';
 
 
 const router = createBrowserRouter([
@@ -91,6 +93,11 @@ const router = createBrowserRouter([
             path: "logoff",
             element: <LogoffRoute />,
             loader: logoffLoader
+          },
+          {
+            path: "books/stats", 
+            element: <BooksSummaryRoute />,
+            loader: statsLoader
           },
           {
             path: "tandcs",

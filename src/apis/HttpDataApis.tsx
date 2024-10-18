@@ -108,7 +108,7 @@ export type RatingCount = {
     countOfBooks: number
 }
 
-export type Genre = {
+export type GenreCount = {
     genre: string,
     countOfBooks: number
 }
@@ -121,6 +121,12 @@ export type Reader = {
 export type Author = {
     author: string,
     countOfBooks: number
+}
+
+export type SummaryStats = {
+    count: number,
+    booksByRating: RatingCount[],
+    bookByGenre: Genre[]
 }
 
 export type Role = 'ROLE_USER' | 'ROLE_EDITOR' | 'ROLE_ADMIN';
@@ -303,6 +309,17 @@ export async function getGoogleBooks(title: string, author: string): Promise<Goo
         return null;
     } else if (!response.ok) {
         throw new DataRetievalError('Error searching Google Books data via the server. Status: ' + response.status + ' ' + response.statusText);
+    }
+    return response.json()
+}
+
+export async function getSummaryStats(): Promise<SummaryStats> {
+
+    const api = '/api/books/stats';
+
+    const response = await fetch(api);
+    if (!response.ok) {
+        throw new DataRetievalError('Error retrieiving Books application summary stats. Status: ' + response.status + ' ' + response.statusText);
     }
     return response.json()
 }
