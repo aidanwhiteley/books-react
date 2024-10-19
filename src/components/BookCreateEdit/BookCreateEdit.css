@@ -1,0 +1,24 @@
+.googleBookImageImport {
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+
+.googleBookText {
+    background-color: #fffbfb;
+    padding: 10px;        
+    border-radius: 20px;
+}
+
+.previous-button {
+    width: 40%;
+}
+
+.next-button {
+    width: 40%;
+}
+
+#checkBoxBookMatch {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 20px;
+}

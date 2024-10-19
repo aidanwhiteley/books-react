@@ -1,0 +1,42 @@
+#app { height: 100% }
+
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 200px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 250px;
+  height: 250px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.home-intro {
+  font-size: 22px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: white;
+  padding: 20px;
+  border-radius: 100%;
+  border: 2px solid black;
+  color: rgb(42, 39, 39);
+}
+.swiper-pagination-bullet{
+  width: 20px;
+  height: 20px;
+  background-color: red;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+  font-size: 12px;
+}

@@ -10,11 +10,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "dompurify": "^3.1.7",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-bootstrap": "^2.10.4",
+    "react-bootstrap-typeahead": "^6.3.2",
+    "react-data-table-component": "^7.6.2",
+    "react-dom": "^18.3.1",
+    "react-github-btn": "^1.4.0",
+    "react-paginate": "^8.2.0",
+    "react-router-dom": "^6.26.1",
+    "react-router-typesafe": "^1.5.0",
+    "styled-components": "^6.1.13",
+    "swiper": "^11.1.14"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@types/dompurify": "^3.0.5",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",

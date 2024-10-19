@@ -1,0 +1,1193 @@
+{
+    "content": [
+        {
+            "createdBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "createdDateTime": [
+                2024,
+                9,
+                15,
+                7,
+                26,
+                21,
+                684000000
+            ],
+            "lastModifiedBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "lastModifiedDateTime": [
+                2024,
+                9,
+                15,
+                7,
+                36,
+                50,
+                592000000
+            ],
+            "id": "66e68c1d638b3a720f8ad9cb",
+            "comments": [],
+            "title": "The Road Trip",
+            "author": "Beth O'Leary",
+            "genre": "Novel",
+            "summary": "A pretty bog standard rom-com novel. My only excuse for reading it is that I was on holiday at the time.\nThere's nothing much in it to surprise anyone - with the possible exception of the motives of Rodney for going to the wedding.\nIn fact, many of the characters in the book exhibit some pretty unlikable behaviours - even one of the lead two sisters.\nBut it is easy read escapsism.",
+            "rating": "OK",
+            "googleBookId": "TsMrzgEACAAJ",
+            "googleBookDetails": {
+                "id": "TsMrzgEACAAJ",
+                "selfLink": "https://www.googleapis.com/books/v1/volumes/TsMrzgEACAAJ",
+                "volumeInfo": {
+                    "title": "The Road Trip",
+                    "subtitle": null,
+                    "authors": [
+                        "Beth O'Leary"
+                    ],
+                    "description": "<p><b>The instant UK <i>Sunday Times</i> Bestseller</b><br> <br> <b>'Beth O'Leary is that rare, one-in-a-million talent who can make you laugh, swoon, cry and ache all in the same book' Emily Henry</b><br> <br> <b>'Read this! Absolutely loved it!' Christina Lauren</b><br> <br> Addie and her sister are on an epic road trip to a friend's wedding in rural Scotland. But, not long after setting off, a car slams into theirs. The driver is none other than Addie's ex, who she hasn't seen since their traumatic break-up two years earlier.<br> <br> Dylan and his best mate are heading to the wedding too, so Addie has no choice but to offer them a ride. And with four hundred miles to go, they can't avoid confronting the very messy history of their relationship . . .<br> <br> Will they make it to the wedding? And, more importantly, is this really the end of the road for Addie and Dylan?<br> <br> <br> <b>'Funny, relatable and tender' <i>Red</i></b><br> <br> <b>'This book is perfect' Rosie Walsh</b><br> <br> <b>'</b><b>Beth is quite rightly earning her title as \"Queen of Uplit\"' <i>Prima</i></b><br> <br> <b><i>'</i>If Richard Curtis and Nora Ephron made a story baby' Zoella Book Club</b><br> <br> <b>'So romantic and moving and brilliantly told' Louise O'Neill</b><br> <br> <b>'O'Leary does it again! <i>The Road Trip</i> is another sure-fire hit, filled with characters you won't forget' Mike Gayle</b><br> <br> <b>'An achingly tender love story' Richard Roper</b></p>",
+                    "imageLinks": {
+                        "smallThumbnail": "http://books.google.com/books/content?id=TsMrzgEACAAJ&printsec=frontcover&img=1&zoom=5&imgtk=AFLRE72pZTCpLQqGGyoOND02tyY31Cc4bhgzYP0DDRCFp7WNVXgSp4Xi09QnK_vLVK8XwyhqpwhtilErfcf3hFFrSgWtZyWU6b1-4gEFOWjXPhAf3pgNte5DPJTpovPVb5YdiBDo87fO&source=gbs_api",
+                        "thumbnail": "http://books.google.com/books/content?id=TsMrzgEACAAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE72K78nZaS-HjScL923g42_wHjtHNq-RVs8zlff5Ao9Ku2JbxIWbdhIzUR5eYiCC9YyNWpj4yuoQo6hdRRHcPgWauIN-sc3eXHJaB_liBQzW08JVaJecvxlJ_s5hppmU5cDMpM6-&source=gbs_api",
+                        "small": null,
+                        "medium": null,
+                        "large": null,
+                        "extraLarge": null
+                    },
+                    "previewLink": "http://books.google.de/books?id=TsMrzgEACAAJ&hl=&source=gbs_api"
+                },
+                "accessInfo": {
+                    "viewability": "NO_PAGES",
+                    "embeddable": false,
+                    "publicDomain": false
+                }
+            },
+            "allowUpdate": false,
+            "allowDelete": false,
+            "allowComment": false
+        },
+        {
+            "createdBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "createdDateTime": [
+                2024,
+                9,
+                15,
+                7,
+                8,
+                5,
+                515000000
+            ],
+            "lastModifiedBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "lastModifiedDateTime": [
+                2024,
+                9,
+                15,
+                7,
+                15,
+                59,
+                837000000
+            ],
+            "id": "66e687d5638b3a720f8ad9ca",
+            "comments": [],
+            "title": "The Book Thief",
+            "author": "Markas Zusak",
+            "genre": "Historical Novel",
+            "summary": "The book centres around the life of a young German girl - Liesel - during the second world war. As well as being a story about Liesel, her friends and a little bit of book stealing, it is the story of German civilians under the Nazis and, later, under the allied bombs.\nIt's a great page turning story as well as making you think.\nThe one aspect of the book I thought really unnecessary was the \"device\" of having the narrator of the book being Death. It made the book hard to start (as this narrator role was overplayed) and could, to my mind, easily have been stripped out of the book completely.\nStill a great book though.",
+            "rating": "GREAT",
+            "googleBookId": "FNF1CwAAQBAJ",
+            "googleBookDetails": {
+                "id": "FNF1CwAAQBAJ",
+                "selfLink": "https://www.googleapis.com/books/v1/volumes/FNF1CwAAQBAJ",
+                "volumeInfo": {
+                    "title": "The Book Thief",
+                    "subtitle": "TikTok made me buy it! The life-affirming international bestseller",
+                    "authors": [
+                        "Markus Zusak"
+                    ],
+                    "description": "<p><b>'Life affirming, triumphant and tragic . . . masterfully told. . . but also a wonderful page-turner'</b> Guardian<br><b>'Brilliant and hugely ambitious'</b> New York Times<br><b>'Extraordinary' </b>Telegraph<br>___<br><b>HERE IS A SMALL FACT - YOU ARE GOING TO DIE</b><br><br>1939. Nazi Germany. The country is holding its breath. Death has never been busier.<br> Liesel, a nine-year-old girl, is living with a foster family on Himmel Street. Her parents have been taken away to a concentration camp. Liesel steals books. This is her story and the story of the inhabitants of her street when the bombs begin to fall.<br><br><b>SOME IMPORTANT INFORMATION - THIS NOVEL IS NARRATED BY DEATH</b><br>___<br><br><b>What readers are saying about <i>The Book Thief</i>:</b><br><br>***** 'I loved every page of this book. So many great quotes, observations on humanity and images...I just didn't want it to end.<br>***** 'I loved this book. It is not only one of the best I've read this year, it is one of the best I've ever read.' <br>***** 'This is the sort of book the restores your faith in humanity and leaves you feeling uplifted, even when it makes you shed a tear.</p>",
+                    "imageLinks": {
+                        "smallThumbnail": "http://books.google.com/books/publisher/content?id=FNF1CwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE72lc8WPisX9b5K6rA1siWfh7fZrlmDDtW5LbhcnUlO86XdYPLl0K877bTnZfmVOeM0zbu9ndKxsM30d3sM9LSvqcssVZF9hXKQRgzLR-X0M-kZfsGeUy93qdu3_YZ5-lVcKOj6Y&source=gbs_api",
+                        "thumbnail": "http://books.google.com/books/publisher/content?id=FNF1CwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE70mE-NffKiUmTBM1uyDEQfyqzVDQ3rbvWIwjKky8I2OgIooNQaLXWirId5jbQD4qUzJJ8Kl7KuFFZs9XhPm1Eeb387OW9ws35toPWzmJ_KjBSBkOr169fMxgr7jpAIGBfH05lCG&source=gbs_api",
+                        "small": "http://books.google.com/books/publisher/content?id=FNF1CwAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE72L_uP-NFT6qZ1AKpZo0uxwIZAO1L4UlPnt4-QE8uJX0klZ4kyv14yDmDuEkoOoHAg3f-xEDeQOUaO8TA1JEYhhh2EzxerhX8y_p93gUCKs7138gcM3So3GW1acLDXRb6NxxsrK&source=gbs_api",
+                        "medium": "http://books.google.com/books/publisher/content?id=FNF1CwAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE71NbFHNWM8f5gFyL0gup5-ItM6H-1-VqBar2agojkpwhj7_MTXHjwrG0DyAlZ4HC8vSE3BTLb-SCq-29N9zn_t5IV4GOUEyCVYh5cf6Jn_D8TwXFyMYQFtZxMuQ6YTQoUwiJ5nW&source=gbs_api",
+                        "large": null,
+                        "extraLarge": null
+                    },
+                    "previewLink": "http://books.google.de/books?id=FNF1CwAAQBAJ&hl=&source=gbs_api"
+                },
+                "accessInfo": {
+                    "viewability": "PARTIAL",
+                    "embeddable": true,
+                    "publicDomain": false
+                }
+            },
+            "allowUpdate": false,
+            "allowDelete": false,
+            "allowComment": false
+        },
+        {
+            "createdBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "createdDateTime": [
+                2024,
+                8,
+                29,
+                8,
+                41,
+                20,
+                110000000
+            ],
+            "lastModifiedBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "lastModifiedDateTime": [
+                2024,
+                8,
+                29,
+                8,
+                56,
+                26,
+                838000000
+            ],
+            "id": "66d03430638b3a720f8ad9c9",
+            "comments": [],
+            "title": "In Memoriam",
+            "author": "Alice Winn",
+            "genre": "Novel",
+            "summary": "Alice Winn's rather good first novel is the story of two boys at a rather posh public school (loosely based on the author's own school - Marlborough) in 1914 who feel compelled to sign up to join the fighting in France in 1914.\nIt is a testament to the author's writing skills that, even after having read several other novels set in that time frame, the description of the life and fighting on the western front is still so shocking and depressing.\nIt is also a story about forbidden love and I, for one, didn't know that Brazil was so early in legalising homosexuality.\nThe author's historical note at the end of the novel is also well worth reading to understand the sources for much of the novel.",
+            "rating": "GOOD",
+            "googleBookId": "L-vFEAAAQBAJ",
+            "googleBookDetails": {
+                "id": "L-vFEAAAQBAJ",
+                "selfLink": "https://www.googleapis.com/books/v1/volumes/L-vFEAAAQBAJ",
+                "volumeInfo": {
+                    "title": "In Memoriam",
+                    "subtitle": "A novel",
+                    "authors": [
+                        "Alice Winn"
+                    ],
+                    "description": "<b>GMA BUZZ PICK • INTERNATIONAL BEST SELLER AND AWARD WINNER • A haunting, virtuosic debut novel about two young men who fall in love during World War I • “Will live in your mind long after you’ve closed the final pages.” —Maggie O’Farrell, best-selling author of <i>Hamnet</i> and <i>The Marriage Portrait</i><br><br>A Best Book of the Year: <i>The New Yorker, The Washington Post, </i>NPR<br><br><i>“In Memoriam</i> is the story of a great tragedy, but it is also a moving portrait of young love.”—<i>The New York Times</i></b><br><br>It’s 1914, and World War I is ceaselessly churning through thousands of young men on both sides of the fight. The violence of the front feels far away to Henry Gaunt, Sidney Ellwood and the rest of their classmates, safely ensconced in their idyllic boarding school in the English countryside. News of the heroic deaths of their friends only makes the war more exciting.<br><br>Gaunt, half German, is busy fighting his own private battle--an all-consuming infatuation with his best friend, the glamorous, charming Ellwood--without a clue that Ellwood is pining for him in return. When Gaunt's family asks him to enlist to forestall the anti-German sentiment they face, Gaunt does so immediately, relieved to escape his overwhelming feelings for Ellwood. To Gaunt's horror, Ellwood rushes to join him at the front, and the rest of their classmates soon follow. Now death surrounds them in all its grim reality, often inches away, and no one knows who will be next.<br><br>An epic tale of both the devastating tragedies of war and the forbidden romance that blooms in its grip, <i>In Memoriam </i>is a breathtaking debut.",
+                    "imageLinks": {
+                        "smallThumbnail": "http://books.google.com/books/publisher/content?id=L-vFEAAAQBAJ&printsec=frontcover&img=1&zoom=5&imgtk=AFLRE70a9SalxrG8y4O1TsLwS9ai8Lni12O3a9vD_OChPIk1lIqlrFbbFgafbb-jnEXJRoGFJAtABvtZDNOXhk3b07wIhZprQOMcH3qTL8_69qRezC4foGqhdwOYemZ3zpm6OIbR3wr0&source=gbs_api",
+                        "thumbnail": "http://books.google.com/books/publisher/content?id=L-vFEAAAQBAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE72bbQ6m_aLxO8x3LN9T1nEeCRIgkL45lFGMywFTfeQGO8rVt91nWfAe-M_lXQopneknEgrDmlqjF9_AIuXQWt-p9DCjqynikDl6Z1MpOysz1vuM1oN5LMp1mp-L_hzmRIYZqdaY&source=gbs_api",
+                        "small": null,
+                        "medium": null,
+                        "large": null,
+                        "extraLarge": null
+                    },
+                    "previewLink": "http://books.google.de/books?id=L-vFEAAAQBAJ&hl=&source=gbs_api"
+                },
+                "accessInfo": {
+                    "viewability": "NO_PAGES",
+                    "embeddable": false,
+                    "publicDomain": false
+                }
+            },
+            "allowUpdate": false,
+            "allowDelete": false,
+            "allowComment": false
+        },
+        {
+            "createdBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "createdDateTime": [
+                2024,
+                8,
+                26,
+                13,
+                48,
+                4,
+                297000000
+            ],
+            "lastModifiedBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "lastModifiedDateTime": [
+                2024,
+                8,
+                26,
+                13,
+                48,
+                4,
+                297000000
+            ],
+            "id": "66cc8794638b3a720f8ad9c8",
+            "comments": [],
+            "title": "A Spy Alone",
+            "author": "Charles Beaumont",
+            "genre": "Spy / Thriller",
+            "summary": "Enjoyable hokum.\nAn ex spy investigates a Russian spy ring at Oxford.\nAs the book progresses it becomes more and more unbelievable. For example, what you can do with a locked iPhone is more than a little surprising (but then the story line needs it).\nThe poking fun at a prime minister and his svengali who share a lot of characteristics with Boris and Cummings is enjoyable. As an aside, I had to look up Dominic Cummings name - a pleasant surprise at how soon he has faded from my memory!",
+            "rating": "OK",
+            "googleBookId": "SvP7zwEACAAJ",
+            "googleBookDetails": {
+                "id": "SvP7zwEACAAJ",
+                "selfLink": "https://www.googleapis.com/books/v1/volumes/SvP7zwEACAAJ",
+                "volumeInfo": {
+                    "title": "A Spy Alone",
+                    "subtitle": null,
+                    "authors": [
+                        "Charles Beaumont"
+                    ],
+                    "description": "<p>Everyone knows about the Cambridge Spies from the Fifties, identified and broken up after passing national secrets to the Soviets for years. But no spy ring was ever unearthed at Oxford. Because one never existed? Or because it was never found...?</p><p>2022: Former spy Simon Sharman is eking out a living in the private sector. When a commission to delve into the financial dealings of a mysterious Russian oligarch comes across his desk, he jumps at the chance.</p><p>But as Simon investigates, worrying patterns begin to emerge. His subject made regular trips to Oxford, but for no apparent reason. There are payments from offshore accounts that suddenly just... stop.</p><p>Has he found what none of his former colleagues believed possible, a Russian spy ring now nestled at the heart of the British Establishment? Or is he just another paranoid ex-spook left out in the cold, obsessed with redemption?</p><p>From Oxford's hallowed quadrangles to brush contacts on Hampstead Heath, agent-running in Vienna and mysterious meetings in Prague, A Spy Alone is a gripping international thriller and a searing portrait of modern Britain in the age of cynical populism. Perfect for readers of Charles Cumming, Mick Herron and John le Carré.</p>",
+                    "imageLinks": {
+                        "smallThumbnail": "http://books.google.com/books/content?id=SvP7zwEACAAJ&printsec=frontcover&img=1&zoom=5&imgtk=AFLRE70t2YYuJ_S-Hab78IomDT8jpa0o0CQkX1tFRe5o7jMVixc1sz_pcq7QM2NL50rPwj-MalKmGdOgTNaUk7_CbptDUTz15ZxhkfbMNGWs3dbSZaRKRq-igreuJK7FIUxh4SycJBak&source=gbs_api",
+                        "thumbnail": "http://books.google.com/books/content?id=SvP7zwEACAAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE711qNOzNd132kuA9DbjWfIDaf_bQEcvccVkYklQXUSx-CECLWviyjZjjj7NTemB5JnY3TMYqpioih1bHNGkGHuUlj6GOTGySegS89YN2n05MqkvpolXS1LneqWodU4U4BldVNC5&source=gbs_api",
+                        "small": null,
+                        "medium": null,
+                        "large": null,
+                        "extraLarge": null
+                    },
+                    "previewLink": "http://books.google.de/books?id=SvP7zwEACAAJ&hl=&source=gbs_api"
+                },
+                "accessInfo": {
+                    "viewability": "NO_PAGES",
+                    "embeddable": false,
+                    "publicDomain": false
+                }
+            },
+            "allowUpdate": false,
+            "allowDelete": false,
+            "allowComment": false
+        },
+        {
+            "createdBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "createdDateTime": [
+                2024,
+                7,
+                22,
+                18,
+                14,
+                5,
+                467000000
+            ],
+            "lastModifiedBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "lastModifiedDateTime": [
+                2024,
+                7,
+                22,
+                18,
+                21,
+                5,
+                126000000
+            ],
+            "id": "669ea16d5bd1fc62381fc299",
+            "comments": [],
+            "title": "The Echo Chamber",
+            "author": "John Boyne",
+            "genre": "Novel",
+            "summary": "Well that was very different to the other John Boyne novels I've read! This could be described as more of a comedic farce than a plain story book novel.\n\nThe book is about a family doing mostly ok in life who fall foul of social media. So lots of pot shots at the anonymous keyboard warriors on social media platforms who make other people's lives hell if the don't conform to the \"woke\" view.\n\nA fun novel played strictly for laughs.",
+            "rating": "OK",
+            "googleBookId": "MKMkEAAAQBAJ",
+            "googleBookDetails": {
+                "id": "MKMkEAAAQBAJ",
+                "selfLink": "https://www.googleapis.com/books/v1/volumes/MKMkEAAAQBAJ",
+                "volumeInfo": {
+                    "title": "The Echo Chamber",
+                    "subtitle": null,
+                    "authors": [
+                        "John Boyne"
+                    ],
+                    "description": "<p><b>'His relish is infectious' </b><i>Times</i><br><b>'The funniest book I've read in ages. Savage but compelling'</b> Ian Rankin<br><b>'Funny, rumbustious, unstinting and wonderfully Hogarthian' </b><i>The Observer</i><br>'<b>Sharp, funny, and beautifully written... a brilliant reflection on the landscape we now live in' </b>Joanna Cannon<br><b>_______________</b><br><br>What a thing of wonder a mobile phone is. Six ounces of metal, glass and plastic, fashioned into a sleek, shiny, precious object. At once, a gateway to other worlds - and a treacherous weapon in the hands of the unwary, the unwitting, the inept.<br><br>The Cleverley family live a gilded life, little realising how precarious their privilege is, just one tweet away from disaster. George, the patriarch, is a stalwart of television interviewing, a 'national treasure' (his words), his wife Beverley, a celebrated novelist (although not as celebrated as she would like), and their children, Nelson, Elizabeth, Achilles, various degrees of catastrophe waiting to happen.<br><br>Together they will go on a journey of discovery through the Hogarthian jungle of the modern living where past presumptions count for nothing and carefully curated reputations can be destroyed in an instant. Along the way they will learn how volatile, how outraged, how unforgiving the world can be when you step from the proscribed path.<br><br>Powered by John Boyne's characteristic humour and razor-sharp observation, <i>The Echo Chamber </i>is a satiric helter skelter, a dizzying downward spiral of action and consequence, poised somewhere between farce, absurdity and oblivion. To err is maybe to be human but to really foul things up you only need a phone.<br><br><b><i>The new novel by John Boyne, WATER, is available for pre-order now.</i></b></p>",
+                    "imageLinks": {
+                        "smallThumbnail": "http://books.google.com/books/publisher/content?id=MKMkEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE71nzk8tfuEv4itKPgu0Ia7EU0egi1sj3DhOspeVq6J7Puu-oB6-v0HE2LfzJ4cFoWU6YlrsJjU38kMoe5XAze8HPrlhsgHYTiGVzEE_YuuaghJ_xoC8cMZpXjcG-cl7BWPAsucx&source=gbs_api",
+                        "thumbnail": "http://books.google.com/books/publisher/content?id=MKMkEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE71R1oD2aBGLc5xyumJpd8QArwWoOix-JHJbCY8Fta2CCA8XYTn0FLQMmX9_nMV3OBhuWqnLzIC7cNsd8J6TfV9EBWOhpzmbmtwDbraV_itr1L0C5GYSIkJz3Tih43-palQFm4xF&source=gbs_api",
+                        "small": "http://books.google.com/books/publisher/content?id=MKMkEAAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE73J6MvNHDMNn1qhM0VXjzzKItgA3JtUzWiysMZyVi9nI8_EcRpb4gZFiaUxLyih520Sc5qjieIn-W_1jGHy_67NJPGMcFe2CBVdjXhB0snxxTeeGsv8sC7AVzqehUuIDhEtLhSc&source=gbs_api",
+                        "medium": "http://books.google.com/books/publisher/content?id=MKMkEAAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE73R1tqzTklAuXzO3F_sRlEXJYXnXXr_Jp5Q8p71SYT-x-KcgJI34OWhchnMbfcCp31a4zfl5LeR3XKanCh61fAxxG8ysppin5zyDYm_UlGtI9c6a3shX18Ac5AXJjlsQRpejjHx&source=gbs_api",
+                        "large": "http://books.google.com/books/publisher/content?id=MKMkEAAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE70w4VyxoW1xXuZOSXOQsEQqycTk0urUN3NGftesyzaw5oe-mLj7maOLthJKK5okHBq2iyldT7IT5fLCWwOr-_WT-o-wR1zEIGD95SVHg_lJs9wDM9x9MCe8KAhBzbqQfcfJTHfP&source=gbs_api",
+                        "extraLarge": "http://books.google.com/books/publisher/content?id=MKMkEAAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE731P3p12akz4zJ6l4mI9TKmFrk-BZDEEErMriMKUPfsSBiPKC1VqOV01gsAAU8U25Faqij7S-Cnfz6O-PMg_0mjwQrDPCiTRrNUbiHRnRkdn-kXvNtWwwO-6SQg8SgPNO25zpLm&source=gbs_api"
+                    },
+                    "previewLink": "http://books.google.de/books?id=MKMkEAAAQBAJ&hl=&source=gbs_api"
+                },
+                "accessInfo": {
+                    "viewability": "PARTIAL",
+                    "embeddable": true,
+                    "publicDomain": false
+                }
+            },
+            "allowUpdate": false,
+            "allowDelete": false,
+            "allowComment": false
+        },
+        {
+            "createdBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "createdDateTime": [
+                2024,
+                7,
+                20,
+                11,
+                31,
+                10,
+                120000000
+            ],
+            "lastModifiedBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "lastModifiedDateTime": [
+                2024,
+                7,
+                21,
+                6,
+                7,
+                9,
+                663000000
+            ],
+            "id": "669b9ffe5bd1fc62381fc298",
+            "comments": [],
+            "title": "Rules Of Civility",
+            "author": "Amor Towles",
+            "genre": "Novel",
+            "summary": "Another great novel from Amor Towles\n In fact, this is my book of the year so far.\n\nThis was written a while before the other two books I've read by Towles but if I had to try to identify a common thread in all three books it might be good manners. That might seem a little trite and obvious given this books title but it is also true for the other two to some extent.\n\nThis book is mostly set in late 1930s New York and follows the life of a very self possessed woman called Kathy Kontent. The story is great but the characterisations and dialogue are even better.\n\nA book to savour.",
+            "rating": "GREAT",
+            "googleBookId": "e0x7nXrbVdkC",
+            "googleBookDetails": {
+                "id": "e0x7nXrbVdkC",
+                "selfLink": "https://www.googleapis.com/books/v1/volumes/e0x7nXrbVdkC",
+                "volumeInfo": {
+                    "title": "Rules of Civility",
+                    "subtitle": "A Novel",
+                    "authors": [
+                        "Amor Towles"
+                    ],
+                    "description": "<p><b>From the #1</b> <i><b>New York Times</b></i><b>-bestselling author of</b> <i><b>The Lincoln Highway and</b> <b>A Gentleman in Moscow</b></i><b>, a “sharply stylish” (</b><i><b>Boston Globe</b></i><b>) book about a young woman in post-Depression era New York who suddenly finds herself thrust into high society—now with over one million readers worldwide</b><br><br>On the last night of 1937, twenty-five-year-old Katey Kontent is in a second-rate Greenwich Village jazz bar when Tinker Grey, a handsome banker, happens to sit down at the neighboring table. This chance encounter and its startling consequences propel Katey on a year-long journey into the upper echelons of New York society—where she will have little to rely upon other than a bracing wit and her own brand of cool nerve.<br><br>With its sparkling depiction of New York’s social strata, its intricate imagery and themes, and its immensely appealing characters, <i>Rules of Civility</i> won the hearts of readers and critics alike.</p>",
+                    "imageLinks": {
+                        "smallThumbnail": "http://books.google.com/books/content?id=e0x7nXrbVdkC&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE71hx3-JNV-Y0Lv4lnKsaX1GhaNFEfKz9hbj62_Q5pu2WsLBYtXnYXJerEoUUIeA_20jMrNkpc1aiePJrwQGRocWQvr78WJp1071lWIBwy-KoQjEVsSf7BlQ1Yly_61q_AHrZgyl&source=gbs_api",
+                        "thumbnail": "http://books.google.com/books/content?id=e0x7nXrbVdkC&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE70u0p11PmeIYrm6MEIchk4rj2KdYxCkGxjFGmuNMrIp0qD1RE6bSToMoariNwGNkxnRpebiL7D2IzClbLXwED3-szwLLtk_202rp9VDqtPtaGjQh4xVD9Pa38MtLl9y44s9gdWk&source=gbs_api",
+                        "small": "http://books.google.com/books/content?id=e0x7nXrbVdkC&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE71yfXsUb3faYSQroyzJks0oDHKdWespw6UKZEgSyMrH_Ff7rQ-bmggVtj1ci99UlBNpg10sNxxjupIoz2zQgeFjg7C9Bn-CD_FXhm-y8CLqsRcwb-OOwpIrU4OeZ6G9jcVi1r4F&source=gbs_api",
+                        "medium": "http://books.google.com/books/content?id=e0x7nXrbVdkC&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE70ryhe6xShC408d215BCQ5K0wxCod8frncA5L8OTmHGA8b9TMGBMaM_qJ09pJOz47VJk1ssOE2OWW8ldxPoxSEsiEEEb6fqVDURPYYMtQqhVnQ97zxxWwFAVdXltLsPmkFAhHea&source=gbs_api",
+                        "large": "http://books.google.com/books/content?id=e0x7nXrbVdkC&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE71dRY-pGWxD6KKzaLaWRR0jU50inTmqT_jJfwcnpiYsFGzpna1Q8EIpyZ5He4izEzC0vX0bO9sTyKOKc7WKc4oDdgGLhqKBywcpYBoJwDRmksPs3td9thKTzELoLq2GyDBgOoCU&source=gbs_api",
+                        "extraLarge": "http://books.google.com/books/content?id=e0x7nXrbVdkC&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE71SoiFOdioB3-Cmo7TsqFSXA4TDF3ZIkAa4MtHiWIkEi5h3kq_2XUqPT_4RrSlN5fTdshP_zjZegx5CX6PCnCTadLRoPUXoUqBX9iHNGKZDjM-v3BO5AJfmysqexUhVXxJHLrxA&source=gbs_api"
+                    },
+                    "previewLink": "http://books.google.de/books?id=e0x7nXrbVdkC&hl=&source=gbs_api"
+                },
+                "accessInfo": {
+                    "viewability": "PARTIAL",
+                    "embeddable": true,
+                    "publicDomain": false
+                }
+            },
+            "allowUpdate": false,
+            "allowDelete": false,
+            "allowComment": false
+        },
+        {
+            "createdBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "createdDateTime": [
+                2024,
+                7,
+                10,
+                21,
+                11,
+                10,
+                587000000
+            ],
+            "lastModifiedBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "lastModifiedDateTime": [
+                2024,
+                7,
+                11,
+                6,
+                17,
+                55,
+                750000000
+            ],
+            "id": "668ef8ee5bd1fc62381fc297",
+            "comments": [],
+            "title": "Orlando King",
+            "author": "Isabel Colegate",
+            "genre": "Novel",
+            "summary": "The story is good and immersive. The first of the three books in this collection (actually Orlando King - the book is a collection of 3 novels) is about the eponymous lead character who comes to England in the 1930s (from an island existence in Brittany). Living a fairly charmed life he seems to effortlessly make progress at work, love and life and soon becomes an MP. The book ends at the start of the 2nd world war when things aren't going quite so well for Orlando.\n\nSo the less good\na) the author appears to trying to create a unique writing style and her big idea is to change the focus of the novel (in terms of characters, location and time) between sentences! Not just between chapters or even paragraphs! Read one sentence and then wonder what the hell the next sentence is all about. One whole mark out of five docked from the rating for this monstrosity of an idea\nb) there's an irritating Introduction by someone called Melissa Harrison who provides unnecessary spoilers while claiming \"These are not spoilers... Isabel Colegate intends the Greek myths of Oedipus and Antigone to be evident from the first page\". As it happens, I do remember quite a bit of the Oedipus story but YES there are spoilers in the introduction. So do yourself a favour and don't read it. Another whole mark out of five docked from the book rating.\n\nAs can be seen, the book may have got a great rating from me otherwise!",
+            "rating": "OK",
+            "googleBookId": "IcXVDwAAQBAJ",
+            "googleBookDetails": {
+                "id": "IcXVDwAAQBAJ",
+                "selfLink": "https://www.googleapis.com/books/v1/volumes/IcXVDwAAQBAJ",
+                "volumeInfo": {
+                    "title": "Orlando King",
+                    "subtitle": null,
+                    "authors": [
+                        "Isabel Colegate"
+                    ],
+                    "description": "<b>The masterpiece of one of the most important and overlooked British women writers of the twentieth century, with a new introduction by Melissa Harrison; 'Isabel Colegate has no rival' (<i>The Times</i>)</b><br><i><i><br></i></i><b>'If you are curious as to why Britain is still ruled by a tiny cadre of not-very-introspective aristo-capitalists, <i>Orlando King</i> is essential reading' <i>Sunday Times</i></b><br><br><b>'Colegate's sharp-eyed trilogy about a young man on the make in 1930s London feels particularly resonant right now, given its acute take on male privilege and power' <i>i paper</i>, Summer Reading Picks 2020</b><br><br><b>'An extraordinary achievement' Frances Wilson, <i>Times Literary Supplement</i>, </b><b>Summer Reading Picks 2020</b><b><br></b><i><i><br></i>Orlando King</i> is a trilogy about a beautiful young man, raised in a remote and eccentric wilderness, arriving in 1930s London and setting the world of politics ablaze. In a time of bread riots and hunger marches, with the spectre of Fascism casting an ever lengthening shadow over Europe, Orlando glidingly cuts a swathe through the thickets of business, the corridors of politics, the pleasure gardens of the Cliveden set, acquiring wealth, adulation, a beautiful wife, and a seat in Parliament. But the advent of war brings with it Orlando's downfall; and his daughter Agatha, cloistered with him in his banishment, is left to pick through the rubble of his smoking, ruined legacy. <br> <br>Elegant and muscular, powerful and razor-sharp, <i>Orlando King </i>is a bildungsroman, Greek tragedy and political saga all in one; a glittering exorcism of the inter-war generation's demons to rival the work of Evelyn Waugh and Muriel Spark.",
+                    "imageLinks": {
+                        "smallThumbnail": "http://books.google.com/books/publisher/content?id=IcXVDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE70PHRLWN4mwGOcNfLTMKtoFUuFCEe5cnwB-5FYtZjZ1LBQxDFSnugXFqIhgbTsxPoLI1UiYlZZL4ZPp9gmTfLXKu1LTewvKOZB7cLMcPsR0rQVdwTCzKxbT3Qy9qRcWX9IltsjK&source=gbs_api",
+                        "thumbnail": "http://books.google.com/books/publisher/content?id=IcXVDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE70wU4nwEcVBtXQUvlGrqYlvGjqdk0mLCRIeLRRe17yct5CF14IokUuYk7jCTPFYjuJS0-UoE1PQ6SLq9AuVXBRQI3iH__iUPlNNwrF3Qv96eHU8cWuW-e8hwZHChaGkAdLyT-PW&source=gbs_api",
+                        "small": "http://books.google.com/books/publisher/content?id=IcXVDwAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE705vTwRh3Fh3SHibK_T09cqEcTWaZkvTCMDHPNWtEy5035h1I9raYXdpZraTkAU9dKMNZBV208YD6mz0oiwr2YFVNUNvUWBFOBtBX7NKGy-tWc_mHozs21yHJKmXdJ41w3VW-ot&source=gbs_api",
+                        "medium": "http://books.google.com/books/publisher/content?id=IcXVDwAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE71WDMzYfq8PZDoNhiM-ZAaACp-uBAZgcWo8eB4_y6DuUh9wVbk7Riv2Y0Opyprhjgqh5B7xCh7P2w19EWdLqtMURuIYLheSK2y1_78t9i3MTRiV3ck28AaYubtyy2JQ8eegAP5i&source=gbs_api",
+                        "large": "http://books.google.com/books/publisher/content?id=IcXVDwAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE70XYctSri8QlWE1ydfIDTEViTKjk2-tIq2DRWssa3iLgJ-11zNrUghTy7KZKs5tCpWojTxmFGpIvR4RLLvJjnWGP0bz2biRKt1skH3HMBzlZ2vz34BUuvfrn53gv-TO6jZ-IAke&source=gbs_api",
+                        "extraLarge": "http://books.google.com/books/publisher/content?id=IcXVDwAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE72HNRqIpclGi0yFL99zT8v2sEomta0dtVKSK8UyiUqr281ejDWeIAf5stLOhP96YGtBhIroPvYA2qy2GCxKgBJceQt8bCCYExGXljA1zzl1Z8E8mxlMdMHcJA07SmllwgEdEwLy&source=gbs_api"
+                    },
+                    "previewLink": "http://books.google.de/books?id=IcXVDwAAQBAJ&hl=&source=gbs_api"
+                },
+                "accessInfo": {
+                    "viewability": "PARTIAL",
+                    "embeddable": true,
+                    "publicDomain": false
+                }
+            },
+            "allowUpdate": false,
+            "allowDelete": false,
+            "allowComment": false
+        },
+        {
+            "createdBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "createdDateTime": [
+                2024,
+                6,
+                11,
+                4,
+                44,
+                10,
+                100000000
+            ],
+            "lastModifiedBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "lastModifiedDateTime": [
+                2024,
+                6,
+                11,
+                4,
+                44,
+                10,
+                100000000
+            ],
+            "id": "6667d61a8fb68a04fe537969",
+            "comments": [],
+            "title": "Joe Country",
+            "author": "Mick Heron",
+            "genre": "Spy / Thriller",
+            "summary": "I've read a couple of books from Mick Heron's \"Slow Horses\" series. The premise is that MI6 agents who have got into trouble in some way are \"exiled\" to Slough House in London (hence \"slow horses\"). The books are a fun read but I can't help feeling that the characters and stories are getting more and more over the top. The boss (Jackson Lamb) is more and more obnoxious. The nerd character (Roderick Ho) is just plain annoying. The storyline more and more unbelievable.\nHowever, suspending disbelief for a bit, the book was an enjoyable read.",
+            "rating": "OK",
+            "googleBookId": "KtduDwAAQBAJ",
+            "googleBookDetails": {
+                "id": "KtduDwAAQBAJ",
+                "selfLink": "https://www.googleapis.com/books/v1/volumes/KtduDwAAQBAJ",
+                "volumeInfo": {
+                    "title": "Joe Country",
+                    "subtitle": null,
+                    "authors": [
+                        "Mick Herron"
+                    ],
+                    "description": "<b>If Spook Street is where spies live, Joe Country is where they go to die.</b><br>  <br>In Slough House, the London outpost for disgraced MI5 spies, memories are stirring, all of them bad. Catherine Standish is buying booze again, Louisa Guy is raking over the ashes of lost love, and new recruit Lech Wicinski, whose sins make him an outcast even among the slow horses, is determined to discover who destroyed his career, even if he tears his life apart in the process.<br>  <br> Meanwhile, in Regent’s Park, Diana Taverner’s tenure as First Desk is running into difficulties. If she’s going to make the Service fit for purpose, she might have to make deals with a familiar old devil . . .<br>  <br> And with winter taking its grip, Jackson Lamb would sooner be left brooding in peace, but even he can’t ignore the dried blood on his carpets. So when the man responsible for killing a slow horse breaks cover at last, Lamb sends the slow horses out to even the score.",
+                    "imageLinks": {
+                        "smallThumbnail": "http://books.google.com/books/publisher/content?id=KtduDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE700VHAfCgb9wgzF9H6NiwlzAwgapU8k1lO_a3jN5ftShprUgbRG5tmtnbN_fnUXvOTwwCNTPstHm0jvTo30V2SNSAaMRdEaFX2yPekTiHOlqjEbetgzNh5pHuxmlC25Nw-og-xb&source=gbs_api",
+                        "thumbnail": "http://books.google.com/books/publisher/content?id=KtduDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE729Fr1vSJrxVDJwHEDzKZ89bHb00u0_FdyN0EZkDLoDYtlqQCYjaICvM7-H64xnJTdPmoyH_6a0ZDLZ7yqmjSB2ffvOl15xlEwXJqbtClmYEQpotofxpieUJ5zakcwLYp0dHyIK&source=gbs_api",
+                        "small": "http://books.google.com/books/publisher/content?id=KtduDwAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE70tycMK46fSRD15CwGIpLOVC5zvII8hKVxPpD1AUAmmLBRAYGuAPySKY4K4YUncxvcb_xeOxWOfyK1gnGx71dANFteSzkgnBFAi2fxpyLUiljxMkBPA-OrdDvgE16u0NyKQdq9S&source=gbs_api",
+                        "medium": "http://books.google.com/books/publisher/content?id=KtduDwAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE72O_qHSfe5vjSHyNkWUENi2__zNmN_GnQUpEIusUP3sJuKveDtggLzCHVYia1XiZSi54qW5QY71SYpxm5V98JjOQuGgmxjYpx2HPBCnXLNRB9htHlnGV8dgZk1HSiu1JgDFIhhA&source=gbs_api",
+                        "large": "http://books.google.com/books/publisher/content?id=KtduDwAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE72uQyZQsrkv1mlrcpHQnPA7GkD29P8CGfUkBCi6ZyxG0sF5EdRvQ53sZ4wPkEy5iYhfjXauKQVfpm0WlpxyP1VRi46rTwfMx2AZ5r5V5WtzAOLdBjBlu93-GXgPFo9_-_8aFVvM&source=gbs_api",
+                        "extraLarge": null
+                    },
+                    "previewLink": "http://books.google.de/books?id=KtduDwAAQBAJ&hl=&source=gbs_api"
+                },
+                "accessInfo": {
+                    "viewability": "PARTIAL",
+                    "embeddable": true,
+                    "publicDomain": false
+                }
+            },
+            "allowUpdate": false,
+            "allowDelete": false,
+            "allowComment": false
+        },
+        {
+            "createdBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "createdDateTime": [
+                2024,
+                6,
+                9,
+                13,
+                6,
+                53,
+                905000000
+            ],
+            "lastModifiedBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "lastModifiedDateTime": [
+                2024,
+                6,
+                9,
+                13,
+                8,
+                6,
+                460000000
+            ],
+            "id": "6665a8ed8fb68a04fe537968",
+            "comments": [],
+            "title": "The Flea Palace",
+            "author": "Elif Shafak",
+            "genre": "Novel",
+            "summary": "Being something of an Elif Shafak fan, I've read a few of her books now. However, I'd have to say that this is my least favourite so far. That's not to say it's a bad book - it still got a \"GOOD\" rating from me. However, I think it is quite different in structure to the other books I've read. Specifically, it seems to be more a series of vignettes of many characters' lives rather than having one, strong main story line.\n\nThe writing is still great and there were some sentences that stopped me and made me re-read them a few times. But I wouldn't call it a great story book.\n\nIf looking for an Elif Shafak book to read first I'd suggest either The Architects Apprentice or The Island Of Missing Trees before this one.",
+            "rating": "GOOD",
+            "googleBookId": "J5lz5kw3ohcC",
+            "googleBookDetails": {
+                "id": "J5lz5kw3ohcC",
+                "selfLink": "https://www.googleapis.com/books/v1/volumes/J5lz5kw3ohcC",
+                "volumeInfo": {
+                    "title": "The Flea Palace",
+                    "subtitle": null,
+                    "authors": [
+                        "Elif Shafak"
+                    ],
+                    "description": "<p>By turns comic and tragic, Elif Shafak's <i>The Flea Palace</i> is an outstandingly original novel driven by an overriding sense of social justice.<br><br>Bonbon Palace was once a stately apartment block in Istanbul. Now it is a sadly dilapidated home to ten wildly different individuals and their families.<br><br>There's a womanizing, hard-drinking academic with a penchant for philosophy; a 'clean freak' and her lice-ridden daughter; a lapsed Jew in search of true love; and a charmingly naïve mistress whose shadowy past lurks in the building. When the garbage at Bonbon Palace is stolen, a mysterious sequence of events unfolds that result in a soul-searching quest for truth.<br><br>\"An enchanting combination of compassion and cruelty . . . Elif Shafak is the best author to come out of Turkey in the last decade\" - Orhan Pamuk<br><br>\"Hyper-active and hilarious\" - <i>Independent<br><br></i>Elif Shafak is the acclaimed author of <i>The Bastard of Istanbul</i> and <i>The Forty Rules of Love</i> and is the most widely read female novelist in Turkey. Her work has been translated into more than thirty languages. She is a contributor for <i>The Telegraph</i>, <i>Guardian </i>and the<i> New York Times</i> and her TED talk on the politics of fiction has received 500 000 viewers since July 2010. She is married with two children and divides her time between Istanbul and London.</p>",
+                    "imageLinks": {
+                        "smallThumbnail": "http://books.google.com/books/content?id=J5lz5kw3ohcC&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE71YHWZe6cmT2dIB3TQK3QUhR17FXJeKtguXVs0TYZj8B54v_5mkPkxvxsAlC8ZG97mnYvCX2W106_FEiN7NOivuvFGVE-I06ORmhetZX8IEFrjy4TFdagu0EnZYiBxPV7eeCtCK&source=gbs_api",
+                        "thumbnail": "http://books.google.com/books/content?id=J5lz5kw3ohcC&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE72VfQQNfkDjs_o-sq7bLzl77GxXWXb7Sv3MdOiKJGo12YIvnZ8rR2PncM323UmjSj0Sh55NvUiPMdRbIW1AHA6R-fWOAA0iGFoltGYbA8PzJUj8PoCzGPipAgziDMHKdcrvoxit&source=gbs_api",
+                        "small": "http://books.google.com/books/content?id=J5lz5kw3ohcC&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE73pqf1zKC2xipX9rFfMlJpsIHJ-U7xIxvL5Ey1anr4MZpel17TMDYcR5i1XsqU2p_j8bRPfll0s5Sp8L_Vcgghs6S-fhjzTmlleycY83BO527BkGDeiuLE40yDxzlQOkjIxtg-8&source=gbs_api",
+                        "medium": "http://books.google.com/books/content?id=J5lz5kw3ohcC&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE72OYBggs6It7SnP-hNLaCtbedeuk_WCR0yyMh1o1tF4mR-qKfUoQjxi_W5WSgXdXmy9Zt7pxpopoUQAho9KCRyFK9STpY-2jxrxOzfXAemnCVbjHI0mO17mckNr2lgzYjW_7PjO&source=gbs_api",
+                        "large": "http://books.google.com/books/content?id=J5lz5kw3ohcC&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE707I52oiwXWm-7eVd8aCDfQ2a4sGHIskCk_7BkOsLbKHo3rEfhj-5awRbesZ3e06Ng1fIkTdtuTRD9fTMCooupfz04XMS9Zmd02cc0MgNHJ-5UlKrdrw4YsXTqL05f8h83xFMSl&source=gbs_api",
+                        "extraLarge": "http://books.google.com/books/content?id=J5lz5kw3ohcC&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE70N5jAL8iUg61Y__0X6UO3ulGUwQWjQDCKqH4HFDV6vEGriWprnIBJTAiHucTaGoYKrYpN1P5unUDx6SkkohkmxeZZx0fVNHYAv_okN449poyfzflVG6b7kRTCN67GGoE-FYPMc&source=gbs_api"
+                    },
+                    "previewLink": "http://books.google.de/books?id=J5lz5kw3ohcC&hl=&source=gbs_api"
+                },
+                "accessInfo": {
+                    "viewability": "PARTIAL",
+                    "embeddable": true,
+                    "publicDomain": false
+                }
+            },
+            "allowUpdate": false,
+            "allowDelete": false,
+            "allowComment": false
+        },
+        {
+            "createdBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "createdDateTime": [
+                2024,
+                5,
+                11,
+                11,
+                24,
+                15,
+                612000000
+            ],
+            "lastModifiedBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "lastModifiedDateTime": [
+                2024,
+                5,
+                11,
+                12,
+                35,
+                33,
+                553000000
+            ],
+            "id": "663f555ff890234211c2ecf6",
+            "comments": [],
+            "title": "The Heart's Invisible Furies",
+            "author": "John Boyne",
+            "genre": "Novel",
+            "summary": "Loved this novel. It's another \"whole life\" novel following key periods in the life of the lead character (Cyril Avery) - much like many of William Boyd's novels.\n\nThis story follows the life of Cyril from his birth just after the end of the second world war though to his dotage 70 plus years later. He comes from an unusual family and the novel follows the struggles, loves and losses of his personal life. What makes this novel great is the way it sucks you in such that you care care for the lead character and his friends and family.\n\nWhile there are (no real spoiler) lots of tragic losses in Cyril's life it is also a book of great humour. Indeed, towards the end of the novel there are scenes where John Boyne really does seem to be playing it for laughs (and it works well!).\n\nAs I was reading the book, I couldn't help thinking how much of the author's life was in Cyril's life so I found it a real plus that John Boyne ends the book with half a dozen pages explaining just that.\n\nA book that fully deserves the rare \"great\" rating in The Cloudy Book Club.!",
+            "rating": "GREAT",
+            "googleBookId": "wsuXDQAAQBAJ",
+            "googleBookDetails": {
+                "id": "wsuXDQAAQBAJ",
+                "selfLink": "https://www.googleapis.com/books/v1/volumes/wsuXDQAAQBAJ",
+                "volumeInfo": {
+                    "title": "The Heart's Invisible Furies",
+                    "subtitle": "A Novel",
+                    "authors": [
+                        "John Boyne"
+                    ],
+                    "description": "<b>Named Book of the Month Club's Book of the Year, 2017<br>Selected one of <i>New York Times </i>Readers’ Favorite Books of 2017<br>Winner of the 2018 Goldsboro Books Glass Bell Award <br><br>From the beloved <i>New York Times</i> bestselling author of <i>The Boy In the Striped Pajamas</i>, a sweeping, heartfelt saga about the course of one man's life, beginning and ending in post-war Ireland<br><br></b>Cyril Avery is not a <i>real</i> Avery -- or at least, that's what his adoptive parents tell him. And he never will be. But if he isn't a real Avery, then who is he?<br><br>Born out of wedlock to a teenage girl cast out from her rural Irish community and adopted by a well-to-do if eccentric Dublin couple via the intervention of a hunchbacked Redemptorist nun, Cyril is adrift in the world, anchored only tenuously by his heartfelt friendship with the infinitely more glamourous and dangerous Julian Woodbead. At the mercy of fortune and coincidence, he will spend a lifetime coming to know himself and where he came from - and over his many years, will struggle to discover an identity, a home, a country, and much more.<br><br>In this, Boyne's most transcendent work to date, we are shown the story of Ireland from the 1940s to today through the eyes of one ordinary man. <i>The Heart's Invisible Furies</i> is a novel to make you laugh and cry while reminding us all of the redemptive power of the human spirit.",
+                    "imageLinks": {
+                        "smallThumbnail": "http://books.google.com/books/publisher/content?id=wsuXDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE73WCW0NRY9Tkn7lOJ-7DlEBob23Lma8kIuWxcK_FweeGVR3EgdAW4NUJPwQnk0hdiqyjsMZoOvTXFbVq8ByKbLyV0MvxsyJsSWa4g93J3pjUc62cQ4zgU3PCBqjzIQCsJE7CHz4&source=gbs_api",
+                        "thumbnail": "http://books.google.com/books/publisher/content?id=wsuXDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE73jgiM_oCDdc1u-837lSiFNGfRS1crmbpeWMMmWq8c2zohfVixz9WsBr02C1dVuUu7yje0DpNHDhqnSoApRksj09kJ1c_tUsbo1Hq89N-4gb2Pmh_RZoxqFo_m_q5hSvOrIbKsc&source=gbs_api",
+                        "small": "http://books.google.com/books/publisher/content?id=wsuXDQAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE72qnCvq3kmpRdN1pgFesBQkyXbH3w5Uc3OUGmJp59T_yNxXgFlMxYVMNVTwZGTb_em0T8yFPuCAozdZZ10OGOdtrIr3jeAOH5M5RJd5Uohyj1wXwb-4ncXhRmUiXRL1q4DRXfyJ&source=gbs_api",
+                        "medium": "http://books.google.com/books/publisher/content?id=wsuXDQAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE709CUMOraQ1qW_IHZ9XLYXByw3FyhT0Zc3fxRIPKUsGRMhpqQZDmo0OQ5SyJfxWSSiKo2ig93ccGEMP0QD8lbT66SGwp9bZsGbQKuJ05kUM2NOs2nr3th4UBEBolKsQvNj6jgS1&source=gbs_api",
+                        "large": "http://books.google.com/books/publisher/content?id=wsuXDQAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE73Vr80W6e1j5WZBqiNWSG-GTnZq1t-A5Ojw3oUdK2VudIZWnfizKZ5bStcQw0MonyVD0V1106faaiN3Qg8f_FNyfyTzdaNDuAtcuz5ieOXMvXSDhP5Q7j2r7PxFQPyI-s8Bss4t&source=gbs_api",
+                        "extraLarge": "http://books.google.com/books/publisher/content?id=wsuXDQAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE72E01r5Sa2H7qkCnGUj8p1w54T9cbNzfcQH9gKYJOjP83Sguof2q9MuFP7U2TmnZ-GgzNT8ChLEatX5eOwK0DqSBCYz7GXxnwzNj_0Bn3tP0I3OLrmxjlKnJIOg6991s86aDHhU&source=gbs_api"
+                    },
+                    "previewLink": "http://books.google.de/books?id=wsuXDQAAQBAJ&hl=&source=gbs_api"
+                },
+                "accessInfo": {
+                    "viewability": "PARTIAL",
+                    "embeddable": true,
+                    "publicDomain": false
+                }
+            },
+            "allowUpdate": false,
+            "allowDelete": false,
+            "allowComment": false
+        },
+        {
+            "createdBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "createdDateTime": [
+                2024,
+                3,
+                20,
+                18,
+                25,
+                32,
+                349000000
+            ],
+            "lastModifiedBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "lastModifiedDateTime": [
+                2024,
+                3,
+                20,
+                18,
+                32,
+                52,
+                408000000
+            ],
+            "id": "65fb2a1cd64d2058a3c93d8c",
+            "comments": [
+                {
+                    "owner": {
+                        "authenticationServiceId": "",
+                        "firstName": "",
+                        "lastName": "",
+                        "fullName": "",
+                        "email": "",
+                        "link": "",
+                        "picture": "",
+                        "authProvider": null
+                    },
+                    "id": "8d5806ef-97be-42c3-9a73-a5ad25897e94",
+                    "commentText": "",
+                    "entered": [
+                        2024,
+                        4,
+                        15,
+                        18,
+                        59,
+                        59,
+                        378000000
+                    ],
+                    "deleted": true,
+                    "deletedBy": "",
+                    "allowDelete": false
+                }
+            ],
+            "title": "Death In A Strange Country",
+            "author": "Donna Leon",
+            "genre": "Crime Thriller",
+            "summary": "I'd not heard of Donna Leon or the Brunetti series of cop novels. Which is odd as there are about 30 of them in the series and very popular by all accounts.\n\nThe basic plot is that Brunetti is a in good Venice cop with a \"Peter Principle\" boss. This particular story starts with finding an American serviceman dead in a Venice canal. A strong theme though the book (and the series I would hazard to guess) is that there are dark, hidden forces at play (so mafia, corrupt senior politicians and business men).\n\nThe book is well written and goes a long at a fair old pace - so it's never dull.\n\nI'd read another in the series but maybe not for a while.",
+            "rating": "GOOD",
+            "googleBookId": "Gda_13FNjqUC",
+            "googleBookDetails": {
+                "id": "Gda_13FNjqUC",
+                "selfLink": "https://www.googleapis.com/books/v1/volumes/Gda_13FNjqUC",
+                "volumeInfo": {
+                    "title": "Death in a Strange Country",
+                    "subtitle": null,
+                    "authors": [
+                        "Donna Leon"
+                    ],
+                    "description": "<b>The <i>New York Times</i>–bestselling series continues with the murder of an American soldier in Venice: “This is definitely an author to watch (<i>Kirkus Reviews</i>).</b><br>  <br> Early one morning, Commissario Guido Brunetti of the Venice police confronts a grisly sight when the body of a young man is fished out of a fetid canal. All clues point to a violent mugging, but for Brunetti the motive of robbery seems altogether too convenient. When something discovered in the victim’s apartment suggests the existence of a high-level conspiracy, Brunetti becomes convinced that somebody, somewhere, is taking great pains to provide a ready-made solution to the crime.<br>  <br> Rich with atmosphere and marvelous plotting, <i>Death in a Strange Country</i> is a superb novel in Donna Leon’s chilling Venetian mystery series.<br>  <br><b>Praise for Donna Leon and the Commissario Brunetti Mysteries</b><br> “One of the best international crime writers is Donna Leon, and her Commissario Guido Brunetti tales set in Venice are at the apex of continental thrillers.” —<i>Rocky Mountain News</i><br>  <br> “Leon’s books shimmer in the grace of their setting and are warmed by the charm of her characters.” —<i>The New York Times Book Review</i><br>  <br> “Brunetti . . . long ago joined the ranks of the classic fictional detectives.” —<i>Evening Standard</i><br>  <br> “Commissario Brunetti, most charismatic current Euro-cop, uncovers deadly ants’ nest of corruption. A highly accomplished, scary read.” —<i>The </i><i>Guardian</i>",
+                    "imageLinks": {
+                        "smallThumbnail": "http://books.google.com/books/content?id=Gda_13FNjqUC&printsec=frontcover&img=1&zoom=5&imgtk=AFLRE72xrbbNJa-Ra642Ad52taop7XhBEFNQWYj9j166yOrxGn1Y1qRp2rpHRmm33-vKy8Ge52IFhN__kzIccPf1r6TL31tV-vl18bgedDJAqvE9PmUO4RnDfreX0xzUPHw0PAEz7_oO&source=gbs_api",
+                        "thumbnail": "http://books.google.com/books/content?id=Gda_13FNjqUC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE72kx3s4Lrin1cB-IGpsPH83EVXfgUl0bIaB14ejsaH18m9-O8TwiubjM1jO2pZuH4NjZqr3iVf9wmyjzTXmJ5rMS00bhKhez2O9a1s0mPy0R0KFDv5LPd_f1n2xjfqZtgPbk6ZA&source=gbs_api",
+                        "small": null,
+                        "medium": null,
+                        "large": null,
+                        "extraLarge": null
+                    },
+                    "previewLink": "http://books.google.de/books?id=Gda_13FNjqUC&hl=&source=gbs_api"
+                },
+                "accessInfo": {
+                    "viewability": "NO_PAGES",
+                    "embeddable": false,
+                    "publicDomain": false
+                }
+            },
+            "allowUpdate": false,
+            "allowDelete": false,
+            "allowComment": false
+        },
+        {
+            "createdBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "createdDateTime": [
+                2024,
+                3,
+                6,
+                18,
+                51,
+                59,
+                429000000
+            ],
+            "lastModifiedBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "lastModifiedDateTime": [
+                2024,
+                3,
+                6,
+                18,
+                59,
+                21,
+                209000000
+            ],
+            "id": "65e8bb4f6550fa3ef0102710",
+            "comments": [],
+            "title": "Dawnlands",
+            "author": "Phillipa Gregory",
+            "genre": "Historical Novel",
+            "summary": "An enjoyable book. Set in the late Stuart period as King James II is making himself unpopular leading to the Monmouth Rebellion and the arrival of William of Orange and Mary.\nI probably enjoyed the history more than than the stories of the books main characters. I'm pretty certain Gregory puts lots of research into the retelling of the key historical events in the book. While aware of the Bloody Asizes I learnt a lot about their background.\nHowever, the storylines and dialogue for the books characters isn't quite in the same league, for me, as (say) a William Boyd or Eli Shafak novel. \nIt's still very much wort a read though.",
+            "rating": "GOOD",
+            "googleBookId": "-j50EAAAQBAJ",
+            "googleBookDetails": {
+                "id": "-j50EAAAQBAJ",
+                "selfLink": "https://www.googleapis.com/books/v1/volumes/-j50EAAAQBAJ",
+                "volumeInfo": {
+                    "title": "Dawnlands",
+                    "subtitle": null,
+                    "authors": [
+                        "Philippa Gregory"
+                    ],
+                    "description": "<b>From Philippa Gregory, the #1 bestselling author of <i>Tidelands</i> and <i>Dark Tides</i>. The spellbinding Fairmile series continues as the fiercely independent Alinor and her family find themselves entangled in palace intrigue, political upheaval, and life-changing secrets in seventeenth-century England.</b><br><br> It is 1685 and England is on the brink of a renewed civil war. King Charles II has died without an heir and his brother James is to take the throne. But the people are bitterly divided, and many do not welcome the new king or his young queen. Ned Ferryman cannot persuade his sister, Alinor, that he is right to return from America with his Pokanoket servant, Rowan, to join the rebel army. Instead, Alinor and her daughter Alys, have been coaxed by the manipulative Livia to save the queen from the coming siege. The rewards are life-changing: the family could return to their beloved Tidelands, and Alinor could rule where she was once lower than a servant.<br><br> Alinor’s son is determined to stay clear of the war, but, in order to keep his own secrets in the past, Livia traps him in a plan to create an imposter Prince of Wales – a surrogate baby to the queen.<br><br> From the last battle in the desolate Somerset Levels to the hidden caves on the slave island of Barbados, this third volume of an epic story follows a family from one end of the empire to another, to find a new dawn in a world which is opening up before them, with greater rewards and dangers than ever before.<br><br><b>A compelling and powerful story of political intrigue and personal ambition, set between the palaces of London, the tidelands of Foulmire and the shores of Barbados.</b><br><br><b>Praise for <i>Dawnlands</i>:</b><br><br> ‘This sprawling, epic addition to the series will delight Gregory’s many fans' <b><i>The Times</i></b><br>  <br> ‘Fast-paced, gripping and meticulously researched, the latest novel from Philippa Gregory is historical fiction at its best ...' <b><i>Daily Express</i></b><br><br> 'Spellbinding’ <b><i>Woman’s Own</i></b><br><br> ‘I love falling into a Philippa Gregory novel, her vibrant take on historical events always brings past eras alive ...' <b><i>Platinum Magazine</i></b>",
+                    "imageLinks": {
+                        "smallThumbnail": "http://books.google.com/books/publisher/content?id=-j50EAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE73_rSSBqd65EpTrePfgHNjXQ3sps2QoQPveo-7r--uhYiwW3pBnZ2at2eNQG4UsgJ0KLXUf9F_8QPKIKOU0pRaf4nOb1j3kya6_4nloFeeTxbeMlURvmpa48mHIL8nWkSSFHtC7&source=gbs_api",
+                        "thumbnail": "http://books.google.com/books/publisher/content?id=-j50EAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE72ygUsvR639k2JWGojZ3a_tn09GpNHlduymCIZurgWerSu8JetAx9mNIInsloCfyhFqlwOTEWz42pssGuGQJZVn7ajWpP5RPpOOq1w9FvrDzg6_yXByeiaxD4cHwplJWpEc-1sT&source=gbs_api",
+                        "small": "http://books.google.com/books/publisher/content?id=-j50EAAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE715VKmO9V6iHtf9azq9Pw2XyQ4SJcHEYO1xLiRMLUwqn9kjd_gDGEBSkBwoE7DNhMS1kf6sEE89GI_yqTRmfQjiI4ZAdkGV_qWGzVeLT73XKlIhSu22S6HYY8x1hws-JbyUA9cf&source=gbs_api",
+                        "medium": "http://books.google.com/books/publisher/content?id=-j50EAAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE71augG4znZDvsjMVOe_yxS0p-6TFFalTVP68q9CoKG_bAejt3pY5_I0lx4lt33Ug6Dnc4PHvMwL9OHzgaKPExQ_09FZpAedO-geSclsp8Z2YM9XsU1DT3L8R3sXE_KhgF620Sj5&source=gbs_api",
+                        "large": "http://books.google.com/books/publisher/content?id=-j50EAAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE72sXkijuMv1EM2UnQbkjXQG6L4fkNm4_EVvmelWC5dgxb5e0_b3-O9coXSw12SXCoOLBX1exOHDC3UoPrJmvXgZqaiP3ptgC5JrgYrBW6GRo4c5wi1i_dY730e6rX0N89iCvJv_&source=gbs_api",
+                        "extraLarge": "http://books.google.com/books/publisher/content?id=-j50EAAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE70-6C7YuBQAOYLm7E814PjRken8iB21Pi_-2yLvqPxasnDithBJZbNCXmrKIE1PH48tfiZSAl1Vl3Dr0FiSJ3_2VnbdwhTG_qyl1DIEUJVs7CY3_MPvmJ2GLbKSGdzTr7k1J-_D&source=gbs_api"
+                    },
+                    "previewLink": "http://books.google.de/books?id=-j50EAAAQBAJ&hl=&source=gbs_api"
+                },
+                "accessInfo": {
+                    "viewability": "PARTIAL",
+                    "embeddable": true,
+                    "publicDomain": false
+                }
+            },
+            "allowUpdate": false,
+            "allowDelete": false,
+            "allowComment": false
+        },
+        {
+            "createdBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "createdDateTime": [
+                2024,
+                2,
+                16,
+                8,
+                30,
+                22,
+                539000000
+            ],
+            "lastModifiedBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "lastModifiedDateTime": [
+                2024,
+                2,
+                16,
+                8,
+                30,
+                22,
+                539000000
+            ],
+            "id": "65cf1d1e6550fa3ef010270f",
+            "comments": [],
+            "title": "Even Dogs In The Wild",
+            "author": "John Rebus",
+            "genre": "Whodunnit",
+            "summary": "I'd read a few books in the John Rebus detective series but the last one I read had him retiring from the Scottish police. This novel picks up with him retired but asked back to help in a case by his old colleagues.\nAs ever with Ian Rankin the story line is tight and well plotted. Perhaps the best element, for me, is the way his characters speak and act. That always goes hand in hand with the plot - with neither forcing the other into unbelievable words or actions.\nJust short of a great ranking, I'd certainly read another in a year or so's time.",
+            "rating": "GOOD",
+            "googleBookId": "4849rgEACAAJ",
+            "googleBookDetails": {
+                "id": "4849rgEACAAJ",
+                "selfLink": "https://www.googleapis.com/books/v1/volumes/4849rgEACAAJ",
+                "volumeInfo": {
+                    "title": "Even Dogs in the Wild",
+                    "subtitle": null,
+                    "authors": [
+                        "Ian Rankin"
+                    ],
+                    "description": "<p><i>Hands in his pockets, Rebus turned to face Cafferty.</i><br> <i>They were old men now, similar builds, similar backgrounds. Sat together in a pub, the casual onlooker might mistake them for pals who'd known one another since school.</i><br> <i>But their history told a different story.</i><br> <br> Retirement doesn't suit John Rebus. He wasn't made for hobbies, holidays or home improvements. Being a cop is in his blood.<br> <br> So when DI Siobhan Clarke asks for his help on a case, Rebus doesn't need long to consider his options.<br> <br> Clarke's been investigating the death of a senior lawyer whose body was found along with a threatening note. On the other side of Edinburgh, Big Ger Cafferty - Rebus's long-time nemesis - has received an identical note and a bullet through his window.<br> <br> Now it's up to Clarke and Rebus to connect the dots and stop a killer.<br> <br> Meanwhile, DI Malcolm Fox joins forces with a covert team from Glasgow who are tailing a notorious crime family. There's something they want, and they'll stop at nothing to get it.<br> <br> It's a game of dog eat dog - in the city, as in the wild.<br> <br> <b>EVEN DOGS IN THE WILD</b> <b>brings back Ian Rankin's greatest characters in a story exploring the darkest corners of our instincts and desires.</b></p>",
+                    "imageLinks": {
+                        "smallThumbnail": "http://books.google.com/books/content?id=4849rgEACAAJ&printsec=frontcover&img=1&zoom=5&imgtk=AFLRE70wLGlfC8C2isg6n19n3o3miIvmnrIGUuHErkyI4nYtZGonwHgqQoHvwMGhpEpZvN8zjK2IY8NRZF1bc7fFjbSbU1z0CIJgF3SAEAFvCV8Qgxfq6ZpXdrzE0BeC5uLF7XqOm9Lm&source=gbs_api",
+                        "thumbnail": "http://books.google.com/books/content?id=4849rgEACAAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE70GsLNEMKv-hv7KuFdJqY-v8oT_KeWJoMuX0xj46YAxHlmNyEIbZE4wOBUWACWi_wGRlWrbp6vOnPCH76LH_8ivKrU7LgEo6E8rrZcNso4PKqNYlxwAGloT4Pk6hMW1y2tcb93g&source=gbs_api",
+                        "small": null,
+                        "medium": null,
+                        "large": null,
+                        "extraLarge": null
+                    },
+                    "previewLink": "http://books.google.de/books?id=4849rgEACAAJ&hl=&source=gbs_api"
+                },
+                "accessInfo": {
+                    "viewability": "NO_PAGES",
+                    "embeddable": false,
+                    "publicDomain": false
+                }
+            },
+            "allowUpdate": false,
+            "allowDelete": false,
+            "allowComment": false
+        },
+        {
+            "createdBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "createdDateTime": [
+                2024,
+                1,
+                23,
+                7,
+                32,
+                8,
+                381000000
+            ],
+            "lastModifiedBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "lastModifiedDateTime": [
+                2024,
+                1,
+                23,
+                8,
+                47,
+                7,
+                928000000
+            ],
+            "id": "65af6b78b07e1b1fa0a583eb",
+            "comments": [],
+            "title": "The Marlow Murder Club",
+            "author": "Robert Thorogood",
+            "genre": "Whodunnit",
+            "summary": "Given that the author chose to name his book \"The Marlow Murder Club\" it's not unreasonable to assume there might be a tiny bit of jumping on the bandwagon of Richard Osman's \"The Thursday Murder Club\" series.\n\nSo, yes, there are quite a few similarities. The cops struggling with some murders and an elderly lady leading some amateurs in investigating and solving the murders. It's not a direct one-for-one drop in replacement but it's similar. The writing is good. Slightly different to Osman's but both are well written and an enjoyable read.\n\nBut one, in what will presumably be a series by Robert Thorogood, is probably enough for me for a while.",
+            "rating": "OK",
+            "googleBookId": "0bbiDwAAQBAJ",
+            "googleBookDetails": {
+                "id": "0bbiDwAAQBAJ",
+                "selfLink": "https://www.googleapis.com/books/v1/volumes/0bbiDwAAQBAJ",
+                "volumeInfo": {
+                    "title": "The Marlow Murder Club (The Marlow Murder Club Mysteries, Book 1)",
+                    "subtitle": null,
+                    "authors": [
+                        "Robert Thorogood"
+                    ],
+                    "description": "<p> The first in a stunning new series introducing the Marlow Murder Club! </p> <p> ‘A hugely enjoyable murder mystery written with wonderful verve, humour and compassion. Utterly delightful’ Robert Webb </p> <p> ‘I love Robert Thorogood’s writing’ Peter James </p> <p> From the creator of the BBC One hit TV series, Death in Paradise </p> <p> To solve an impossible murder, you need an impossible hero... </p> <p>Seventy-seven-year-old Judith Potts is blissfully happy. She lives alone in a faded mansion in Marlow, sets crosswords for The Times, and there’s no man in her life to tell her what to do or how much whisky to drink.</p> <p>One evening, while out swimming in the Thames, Judith witnesses a brutal murder. When the local police don’t believe her story, Judith and two unlikely friends decide to investigate for themselves. Together, they are the Marlow Murder Club.</p> <p>But soon another body turns up, and it seems they have a real-life serial killer on their hands. Now the puzzle they set out to solve has become a trap from which they might never escape...</p> <p> READERS LOVE THE MARLOW MURDER CLUB </p> <p>‘Miss Marple with attitude’ 5* Amazon Review</p> <p>‘I want to be Judith Potts when I grow up’ 5* Amazon Review</p> <p>’Wonderful escapism!’ 5* Amazon Review</p> <p>’Absolutely loved it!’ 5* Amazon Review</p> <p>’My favourite book of the year!’ 5* Amazon Review</p> <p>’I had an absolute blast reading this book’ 5* Amazon Review</p> <p>‘So enjoyable, I laughed out loud !’ 5* Amazon Review</p>",
+                    "imageLinks": {
+                        "smallThumbnail": "http://books.google.com/books/publisher/content?id=0bbiDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE73QFaJKYws4q0-S6DxGan2rxmg8g-83wjNacl6X0po_QrtOuX5hJmrJ8lblgjAXBqQ9xFUu012JA0pQgV1ClXzyaroaJEJ9vjqKevsFuR_CqHV6EWFqFlvXcxDMbnSsZ795nDNq&source=gbs_api",
+                        "thumbnail": "http://books.google.com/books/publisher/content?id=0bbiDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE72agi-srmswDxnT5WmL-N9Yj_JZ03gkCR-hSg5iG69NwhaB9x6zcSoxWmGS3fh7ir3l_rHT0XgLf6MtvEKyDuTggk4WBizFZMg4opdYFcG5dEtrmby5tm32f8gQciYiTKoz2tR5&source=gbs_api",
+                        "small": "http://books.google.com/books/publisher/content?id=0bbiDwAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE72NlVgKirNCgAVkDmvHeE2qN1SN2GjtFggVq1l5Z6mMYdGhidcq7aRahk7KUfCPEjB-EwpyveAFgOccs-ZHAATy3Rwb3jf4seDrVrBE6GN6XfQmqp5T1rJfo6kEx8EK3-7K4E4z&source=gbs_api",
+                        "medium": "http://books.google.com/books/publisher/content?id=0bbiDwAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE73OZOaymG-OD1aoHctb4sDLgCYDpqV52LVhA2hqbt0fc_YRawYsHbTKOZde25LcJQYMnvCwqs1nmx18mWenxM1f5docRGe4sw8aWXc_FHvSNBMkgtsrVfPvgkhOwbNeu-1uWT5G&source=gbs_api",
+                        "large": "http://books.google.com/books/publisher/content?id=0bbiDwAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE71InqQKaxmDFBcmoiPzoH8PN_PKH-Dp0PCI2qNDRDf3chv5pPf1Xl2FGU7F0HEYPl5Kdy3TzQ1n8V2YLCppYR4WNN4I3MGbykW-a5Q6WRNtA2113LJ6xcU6nL1_Onmt2XUuLSQE&source=gbs_api",
+                        "extraLarge": "http://books.google.com/books/publisher/content?id=0bbiDwAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE72NFR0mrIvDFUoFSpqxilvxsZEsFK8I96FaZeA6lE8GJwMrPId78bXi96yVFOwEosGU4aDXSNaVye46FP5ngDgoO9EIu0jXwcGVKfyef3jdsmR2chjs1vH5s4HU49xOC6fjiKO9&source=gbs_api"
+                    },
+                    "previewLink": "http://books.google.de/books?id=0bbiDwAAQBAJ&hl=&source=gbs_api"
+                },
+                "accessInfo": {
+                    "viewability": "PARTIAL",
+                    "embeddable": true,
+                    "publicDomain": false
+                }
+            },
+            "allowUpdate": false,
+            "allowDelete": false,
+            "allowComment": false
+        },
+        {
+            "createdBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "createdDateTime": [
+                2024,
+                1,
+                18,
+                16,
+                52,
+                40,
+                721000000
+            ],
+            "lastModifiedBy": {
+                "authenticationServiceId": "",
+                "firstName": "",
+                "lastName": "",
+                "fullName": "",
+                "email": "",
+                "link": "",
+                "picture": "",
+                "authProvider": null
+            },
+            "lastModifiedDateTime": [
+                2024,
+                1,
+                18,
+                17,
+                7,
+                23,
+                893000000
+            ],
+            "id": "65a95758b07e1b1fa0a583ea",
+            "comments": [],
+            "title": "Moderate Becoming Good Later",
+            "author": "Toby Carr and Katie Carr",
+            "genre": "Autobiography",
+            "summary": "A book about a kayaker who attempts to paddle in each of the 31 areas in the UK Shipping Forecast. In fact, Toby Carr didn't quite make it and died with 6 areas left to \"do\". The story is told from his notes, recordings and book outline by his sister Katie Carr. This is done very well - while I knew that the book had been finished by Katie Carr, I didn't realise until the end that she had actually written most of the chapters. The book is told in the first person and I hadn't quite grasped that it was Katie Carr writing as Toby Carr!\n\nIt's clear that Toby Carr was an experienced kayaker and, I think, quite a intrepid one.",
+            "rating": "GOOD",
+            "googleBookId": "6bq4EAAAQBAJ",
+            "googleBookDetails": {
+                "id": "6bq4EAAAQBAJ",
+                "selfLink": "https://www.googleapis.com/books/v1/volumes/6bq4EAAAQBAJ",
+                "volumeInfo": {
+                    "title": "Moderate Becoming Good Later",
+                    "subtitle": "Sea Kayaking the Shipping Forecast",
+                    "authors": [
+                        "Katie Carr",
+                        "Toby Carr"
+                    ],
+                    "description": "<p><b>An exhilarating and deeply moving story of one man's attempt to sea kayak the areas of the Shipping Forecast, perfect for fans of <i>The Salt Path</i> and <i>Attention All Shipping</i><br><br>Foreword by Charlie Connelly, author of </b><i><b>Attention All Shipping</b><br></i><br>The Shipping Forecast has been described as the UK's national lullaby: a source of dependability and calm in our often chaotic world, it has charmed millions of listeners and aided generations of seafarers across the decades. No stranger to weathering a storm after living with a rare life-limiting condition and facing the death of his brother, avid kayaker Toby Carr set out to explore the areas of the Forecast.<br><br>On a journey that took him to the harshest and most tranquil stretches of our sea, Toby found the real people, places and stories behind the familiar names and imagined environments of the well-loved BBC broadcast. From the wildness and peace of the sea, looking back at the land, Toby hoped to gain the strength and balance he knew nature could provide and to discover what anchors us to each other.<br><br>Written by Toby's sister Katie from his extensive notes and recordings after his untimely death, <i>Moderate Becoming Good Later</i> is both an epic adventure - sometimes choppy, constantly moving - and a personal voyage of discovery that includes old friends and new, plenty of wildlife, and the ever-present sea.</p>",
+                    "imageLinks": {
+                        "smallThumbnail": "http://books.google.com/books/publisher/content?id=6bq4EAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE71FV_UjUEJ3Skw0P6bOCmFJIGrUARS_6QMnGUQmg-U0yRgIIAaFor8gqPO5owPLEP3QnjIgNvM81T91TBUGMS_0Qp8N7fymwP1Q1yWzKd_Di0FPgHHVsGFGpaF1WU7eTztDuB1b&source=gbs_api",
+                        "thumbnail": "http://books.google.com/books/publisher/content?id=6bq4EAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE71W-fi-v7p8oncyT6bQFAc3Iu9z2E4OyFb3OuQqRcfzQVCdRe2Drth7zDZrfUMVlSBpX3HQfG-4jXIRNfM4gaDbj6CBQdlug1nrYSoNGqaeq-F3bTX07MA4GOabU4Xd2DNDcVtD&source=gbs_api",
+                        "small": "http://books.google.com/books/publisher/content?id=6bq4EAAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE72UcKwlMluOg8UmGi-eVqOrGnCJo7ID54SqspV8-Xt6pGeLk_zGJ5jO9urI1Qn5gBAwvt4EZwx_sqenH2WdT0QsbY4tjRJp9qIlPx0eP2-8xuAB2kRWSFNd2y9FsVZ52tebcRk-&source=gbs_api",
+                        "medium": "http://books.google.com/books/publisher/content?id=6bq4EAAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE73Pencjp2pHDyXkMk4tJm7u3447RYE3z0siX1Uw55nJFA5YjVcgdonSqFsWHsEAtQXwSUSnJrJm8nKn2C8Gd1sjWkJaiLnOWIBXu6koeKbw9jjhWNjqXZcABoKP-vfckfSBZdkh&source=gbs_api",
+                        "large": "http://books.google.com/books/publisher/content?id=6bq4EAAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE704qeQtNNZYLQRg_-FTX2JB2npOJXb5cvFKGLKyxtxl-5qQJrh5XURoJgLw8mPFGznsjvDCSydRaTGqTAg6s1VrgT14a2c9y_87sXATo7ejzog9_wuxh3H5fNJEeoFhpDXlYFCz&source=gbs_api",
+                        "extraLarge": "http://books.google.com/books/publisher/content?id=6bq4EAAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE714TPtIrS_gNJ3S6jimqqhVQQJWbNWgGJZzRZM-FKK8uv8aGkrvIoU8cl7hjWtgRMFJbicCW4Q7Fnkdx-T54HgcKX2GUCvu9NUJ1WmpwUeB6Kv7OvNPOU1jDVMyF2z_F3U2Ih8n&source=gbs_api"
+                    },
+                    "previewLink": "http://books.google.de/books?id=6bq4EAAAQBAJ&hl=&source=gbs_api"
+                },
+                "accessInfo": {
+                    "viewability": "PARTIAL",
+                    "embeddable": true,
+                    "publicDomain": false
+                }
+            },
+            "allowUpdate": false,
+            "allowDelete": false,
+            "allowComment": false
+        }
+    ],
+    "page": {
+        "size": 15,
+        "number": 0,
+        "totalElements": 198,
+        "totalPages": 14
+    }
+}
