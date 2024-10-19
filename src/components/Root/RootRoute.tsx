@@ -27,12 +27,10 @@ export default function Root() {
 
     let message = '';
     const loggedOnMessage = userProfile ? 'Hi ' + userProfile.firstName + ', thanks for logging on to the ' + import.meta.env.VITE_APPLICATION_NAME +'    !' : '';
-    const lastLoggedOn = userProfile && userProfile.lastLogon ? ' Your last logon was on ' + userProfile.lastLogon[2] + '/' + userProfile.lastLogon[1] + 
-        '/' + userProfile.lastLogon[0] + '.' : '';
     const loggedOffMessage = 'You have now logged out of ' + import.meta.env.VITE_APPLICATION_NAME; 
 
     if (searchParams.has('logged-on')) {
-        message = loggedOnMessage + lastLoggedOn;
+        message = loggedOnMessage;
     } else if (searchParams.has('logged-out')) {
         message = loggedOffMessage;
     }
