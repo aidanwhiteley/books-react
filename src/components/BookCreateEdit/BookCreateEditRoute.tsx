@@ -1,24 +1,32 @@
 import BookCreateEdit from './BookCreateEdit';
-import { getGenres, Genre, Book, createBookReview, stringAsRating } from "../../apis/HttpDataApis";
+import { getGenres, Book, createBookReview, stringAsRating, getBookById, Genre } from "../../apis/HttpDataApis";
 import { useLoaderData, LoaderFunction, useActionData, ActionFunction, redirect} from "react-router-typesafe";
 
 export interface BookCreateProps {
   genres: Genre[];
   ratings: string[];
   errorMessages: string[];
+  bookId: string;
   book: Book | null;
 }
 
-export const loader = (async () => {
-  return await getGenres();
+export const loader = (async (request) => {
+  
+  let currentBook = {} as Book;
+  if (request.params.id) {
+    currentBook = await getBookById(request.params.id!);
+  }
+
+  const genres = await getGenres()
+  
+  return {'currentBook': currentBook, 'genres': genres};
+
 }) satisfies LoaderFunction;
 
 export const action = (async ({request}) => {
 
   const formData = await request.formData();
   const bookFormData = Object.fromEntries(formData);
-
-  console.log('Saw bookFormData as: ' + JSON.stringify(bookFormData));
 
   const errorMessages = validateBookData(bookFormData);
   if (errorMessages.length === 0) {
@@ -44,6 +52,7 @@ export const action = (async ({request}) => {
     genres: [],
     ratings: [],
     errorMessages: errorMessages,
+    bookId: '',
     book: null
   }
 
@@ -73,7 +82,9 @@ function validateBookData(bookFormData): string[] {
 
 export default function BookCreateEditRoute() {
 
-  const genres = useLoaderData<typeof loader>();
+  const genres = useLoaderData<typeof loader>().genres;
+  const currentBook = useLoaderData<typeof loader>().currentBook;
+
   const ratings = ['Great', 'Good', 'OK', 'Poor', 'Terrible'];
 
   const props = useActionData<typeof action>();
@@ -87,7 +98,8 @@ export default function BookCreateEditRoute() {
     genres: genres,
     ratings: ratings,
     errorMessages: errorMessages,
-    book: null
+    bookId: currentBook?.id,
+    book: currentBook
   }
   
   return (

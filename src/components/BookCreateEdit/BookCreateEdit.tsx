@@ -14,8 +14,6 @@ export default function BookCreateEdit(props: BookCreateProps) {
     const [isGoogleSearched, setGoogleSearched] = useState(false);
     const [googleBookMatch, setGoogleBookmatched] = useState(false);
 
-    console.log('create props: ' + JSON.stringify(props));
-
     let errorDisplay = <span></span>;
     if (props.errorMessages.length === 1) {
         errorDisplay = <div className="alert alert-warning" role="alert"> {props.errorMessages[0]} </div>
@@ -88,7 +86,7 @@ export default function BookCreateEdit(props: BookCreateProps) {
                             <div className="col-md-6">
                                 <label htmlFor="title">Book Title</label>
                                 <input type="text" id="title" name="title" className="form-control" placeholder="Enter the book title" 
-                                    min="1" max="100" required />
+                                    min="1" max="100" required defaultValue={props.book?.title} key={props.book?.title}/>
                             </div>
                             <div className="col-md-6">
                                 <label htmlFor="author">Author</label>

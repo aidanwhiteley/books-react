@@ -66,7 +66,7 @@ export default function BooksFind(props: BooksFindProps) {
                                             setGenre(new Array<Option>());
                                             setAuthor(new Array<Option>());
                                             setReader(new Array<Option>());
-                                            navigate('rating/' + selected[0]);  
+                                            navigate('rating/' + encodeURIComponent(selected[0]));  
                                         }
                                     }
                                 }
@@ -89,7 +89,7 @@ export default function BooksFind(props: BooksFindProps) {
                                             setGenre(new Array<Option>());
                                             setRating(new Array<Option>());
                                             setReader(new Array<Option>());
-                                            navigate('author/' + selected[0].author);
+                                            navigate('author/' + encodeURIComponent(selected[0].author));
                                         }
                                     }
                                 }
@@ -112,7 +112,7 @@ export default function BooksFind(props: BooksFindProps) {
                                             setAuthor(new Array<Option>());
                                             setRating(new Array<Option>());
                                             setReader(new Array<Option>());
-                                            navigate('genre/' + selected[0].genre);
+                                            navigate('genre/' + encodeURIComponent(selected[0].genre));
                                         }
                                     }
                                 }
@@ -136,7 +136,7 @@ export default function BooksFind(props: BooksFindProps) {
                                                 setAuthor(new Array<Option>());
                                                 setRating(new Array<Option>());
                                                 setGenre(new Array<Option>());
-                                                navigate('reader/' + selected[0].reader);
+                                                navigate('reader/' + encodeURIComponent(selected[0].reader));
                                             }
                                         }
                                     }

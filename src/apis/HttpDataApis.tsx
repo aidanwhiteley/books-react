@@ -123,10 +123,15 @@ export type Author = {
     countOfBooks: number
 }
 
+export type Genre = {
+    genre: string,
+    countOfBooks: number
+}
+
 export type SummaryStats = {
     count: number,
     booksByRating: RatingCount[],
-    bookByGenre: Genre[]
+    bookByGenre: string[]
 }
 
 export type Role = 'ROLE_USER' | 'ROLE_EDITOR' | 'ROLE_ADMIN';

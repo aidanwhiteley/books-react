@@ -67,6 +67,12 @@ const router = createBrowserRouter([
             action: bookCreateEditAction
           },
           {
+            path: "books/edit/:id",
+            element: <BookCreateEditRoute />,
+            loader: bookCreateEditLoader,
+            action: bookCreateEditAction
+          },
+          {
             path: "books/find",
             element: <BooksFindRoute />,
             loader: booksFindLoader,

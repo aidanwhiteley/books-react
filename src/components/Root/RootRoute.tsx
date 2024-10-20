@@ -6,9 +6,6 @@ import "./RootRoute.css";
 import { getuserProfile, UserProfile } from "../../apis/HttpDataApis";
 import { useLoaderData, LoaderFunction} from "react-router-typesafe";
 
-// For testing only
-// import data from "./testuser.json";
-
 type ContextType = { userProfile: UserProfile | null };
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -26,7 +23,7 @@ export default function Root() {
     const containerClass = homepage ? 'container-fluid' : 'container';
 
     let message = '';
-    const loggedOnMessage = userProfile ? 'Hi ' + userProfile.firstName + ', thanks for logging on to the ' + import.meta.env.VITE_APPLICATION_NAME +'    !' : '';
+    const loggedOnMessage = userProfile ? 'Hi ' + userProfile.firstName + ', thanks for logging on to the ' + import.meta.env.VITE_APPLICATION_NAME + '!' : '';
     const loggedOffMessage = 'You have now logged out of ' + import.meta.env.VITE_APPLICATION_NAME; 
 
     if (searchParams.has('logged-on')) {
