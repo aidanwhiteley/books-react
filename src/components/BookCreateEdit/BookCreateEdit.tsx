@@ -5,7 +5,7 @@ import { Typeahead } from 'react-bootstrap-typeahead';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import 'react-bootstrap-typeahead/css/Typeahead.bs5.css';
 import { getGoogleBooks, GoogleBookSearchResult } from "../../apis/HttpDataApis";
-import { useState, MouseEvent } from "react";
+import { useState, MouseEvent, useEffect } from "react";
 
 export default function BookCreateEdit(props: BookCreateProps) {
 
@@ -30,10 +30,30 @@ export default function BookCreateEdit(props: BookCreateProps) {
         }
     });
 
-    const onAuthorChange = async () => {
+    const defaultSelected = genreDisplay.filter(aGenre => {
+        return aGenre.genre === props.book?.genre;
+    })
+
+    useEffect(() => {
+        if (props.googleBooks && props.googleBooks.items) {
+            setGoogleBooksSearchResult(props.googleBooks);
+            setGoogleSearched(true);
+            if (props.book?.googleBookId) { 
+                for (let i = 0; i < props.googleBooks.items.length - 1; i++) {
+                    if (props.googleBooks.items[i].id === props.book.googleBookId) {
+                        setCurrentGoogleBook(i);
+                        setGoogleBookmatched(true);
+                        break;
+                    }
+                }
+            }
+        }
+    }, [props.book?.googleBookId, props.googleBooks]);
+
+    const onAuthorBlur = async () => {
         const title = (document.getElementById('title') as HTMLInputElement).value;
         const author = (document.getElementById('author') as HTMLInputElement).value;
-        console.log('title: ' + title + ' and author: ' + author);
+
         const googleBooks = await getGoogleBooks(title, author)
         setGoogleSearched(true);
         setCurrentGoogleBook(0);
@@ -68,6 +88,12 @@ export default function BookCreateEdit(props: BookCreateProps) {
         }
     }
 
+    const bookId = props.bookId ? props.bookId : '';
+
+    const isUpdate = props.book?.title;
+    const heading = isUpdate ? 'Update your book review' : 'Enter your review of a book you have read';
+    const submitText = isUpdate ? 'Update book review' : 'Save book review';
+
     return (
         <>
 
@@ -75,27 +101,35 @@ export default function BookCreateEdit(props: BookCreateProps) {
                 <div className="col-md-12">
 
                     <div className="header">
-                        <h4 className="title">Enter your review of a book you have read</h4>
+                        <h4 className="title">{heading}</h4>
                     </div>
 
                     <div className="content">
 
                         <div id="message">{errorDisplay}</div>
 
-                        <Form name="bookForm" method="post" className="row g-3">
+                        {/* The rather odd looking "key" field on the form is to ensure that the defaultValue field is not
+                            "remebered" from one use of the form to another. Otherwise going from (say) the "update review" use
+                            of this Form to the "create review" use of the Form would leave the value from the "update review" 
+                            use in place at the "create review" use.
+                            I am not sure why - I _think_ it might be due to the browser remember the implict form state but
+                            I'm guessing really. */}
+                        <Form name="bookForm" method="post" className="row g-3" key={JSON.stringify(props.book)}>
+                            <input id="bookId" name="bookId" type="hidden" value={bookId} />
+
                             <div className="col-md-6">
                                 <label htmlFor="title">Book Title</label>
                                 <input type="text" id="title" name="title" className="form-control" placeholder="Enter the book title" 
-                                    min="1" max="100" required defaultValue={props.book?.title} key={props.book?.title}/>
+                                    min="1" max="100" required defaultValue={props.book?.title} />
                             </div>
                             <div className="col-md-6">
                                 <label htmlFor="author">Author</label>
                                 <input type="text" id="author" name="author" className="form-control" placeholder="Enter the authors name" 
-                                    min="1" max="75" required onBlur={onAuthorChange} />
+                                    min="1" max="75" required onBlur={onAuthorBlur} defaultValue={props.book?.author} />
                             </div>
                             <div className="col-md-4">
                                 <label htmlFor="rating">Your Rating Of The Book</label>
-                                <select id="rating" name="rating" className="form-control">
+                                <select id="rating" name="rating" className="form-control" defaultValue={props.book?.rating}>
                                     {props.ratings.map((rating, index) => {
                                         return (
                                             <option key={index}>
@@ -112,6 +146,7 @@ export default function BookCreateEdit(props: BookCreateProps) {
                                     id="genre"
                                     clearButton
                                     allowNew
+                                    defaultSelected={defaultSelected}
                                     inputProps={{ name: 'genre' }}
                                     newSelectionPrefix="Add a new genre: "
                                     options={genreDisplay}
@@ -122,7 +157,7 @@ export default function BookCreateEdit(props: BookCreateProps) {
                             <div className="col-md-12">
                                 <label htmlFor="summary">Your review / summary</label>
                                 <textarea id="summary" name="summary" rows={8} className="form-control" placeholder="What did you think of the book?" 
-                                    aria-describedby="summaryHelpBlock" required></textarea>
+                                    aria-describedby="summaryHelpBlock" required defaultValue={props.book?.summary}></textarea>
                                 <small id="summaryHelpBlock" className="form-text">
                                     Enter anything you like that may help someone else to decide whether the book is worth reading or not. Probably best not to say what the ending is!<br/>
                                     Remember: all entries are publicly visible.
@@ -160,7 +195,7 @@ export default function BookCreateEdit(props: BookCreateProps) {
                                             <p>If none of the options look like a good match, please untick the check box.</p>
 
                                             <div className="bookMatchControl d-flex align-items-center justify-content-center">
-                                                <input className="form-check-input" type="checkbox" id="checkBoxBookMatch" value="" onClick={onClickBookMatch}
+                                                <input className="form-check-input" type="checkbox" defaultChecked={googleBookMatch} id="checkBoxBookMatch" onClick={onClickBookMatch}
                                                     aria-label="Click if book matches" />
                                             </div>
 
@@ -176,7 +211,7 @@ export default function BookCreateEdit(props: BookCreateProps) {
                             }
 
                             <div className="text-center">
-                                <button type="submit" className="btn btn-info btn-fill btn-wd">Save Book Details</button>
+                                <button type="submit" className="btn btn-info btn-fill btn-wd">{submitText}</button>
                             </div>
                         </Form>
                     </div>

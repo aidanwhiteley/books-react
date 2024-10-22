@@ -29,6 +29,9 @@ export default function BookSwiper(props: BooksProps) {
     };
   }).filter(s => (s.thumbnail !== ''));
 
+  // Need a certain amount of slides available before "loop" mode will work - 10 is just a guess.
+  const loopEnabled = (booksData.length >= 10);
+
   const swiperSlides = booksData.map((book, index: number) =>
     <SwiperSlide key={index} data-book-id={book.id}>
       <img src={book.thumbnail} />
@@ -54,7 +57,7 @@ export default function BookSwiper(props: BooksProps) {
         }}
         onClick={(swiper) =>  navigate('book/' + swiper.slides[swiper.clickedIndex].dataset.bookId!)}
         navigation
-        loop={true}
+        loop={loopEnabled}
         modules={[EffectCoverflow, Pagination, Navigation]}
         className="mySwiper"
       >

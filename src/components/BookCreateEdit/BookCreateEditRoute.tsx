@@ -1,5 +1,5 @@
 import BookCreateEdit from './BookCreateEdit';
-import { getGenres, Book, createBookReview, stringAsRating, getBookById, Genre } from "../../apis/HttpDataApis";
+import { getGenres, Book, createOrUpdateBookReview, stringAsRating, getBookById, Genre, getGoogleBooks, GoogleBookSearchResult } from "../../apis/HttpDataApis";
 import { useLoaderData, LoaderFunction, useActionData, ActionFunction, redirect} from "react-router-typesafe";
 
 export interface BookCreateProps {
@@ -8,18 +8,21 @@ export interface BookCreateProps {
   errorMessages: string[];
   bookId: string;
   book: Book | null;
+  googleBooks: GoogleBookSearchResult;
 }
 
 export const loader = (async (request) => {
   
   let currentBook = {} as Book;
+  let googleBooks = {} as GoogleBookSearchResult;
   if (request.params.id) {
     currentBook = await getBookById(request.params.id!);
+    googleBooks = await getGoogleBooks(currentBook.title, currentBook.author);
   }
 
   const genres = await getGenres()
   
-  return {'currentBook': currentBook, 'genres': genres};
+  return {'currentBook': currentBook, 'genres': genres, 'googleBooks': googleBooks};
 
 }) satisfies LoaderFunction;
 
@@ -35,7 +38,8 @@ export const action = (async ({request}) => {
     const lastIndex = genreWithoutCount.lastIndexOf('(');
     genreWithoutCount = genreWithoutCount.substring(0, lastIndex - 1).trim();
 
-    const newBookReview : Book = {
+    const bookReview : Book = {
+      id: bookFormData.bookId as string,
       title: bookFormData.title as string,
       author: bookFormData.author as string,
       rating: stringAsRating(bookFormData.rating as string),
@@ -44,7 +48,12 @@ export const action = (async ({request}) => {
       googleBookId: bookFormData.googleBookId as string
     }
 
-    await createBookReview(newBookReview);
+    if (!bookReview.id) {
+      delete bookReview.id;
+    }
+
+    await createOrUpdateBookReview(bookReview);
+
     return redirect("/books/recent")
   }
 
@@ -53,7 +62,8 @@ export const action = (async ({request}) => {
     ratings: [],
     errorMessages: errorMessages,
     bookId: '',
-    book: null
+    book: null,
+    googleBooks: {} as GoogleBookSearchResult
   }
 
   return booksCreateProps;
@@ -78,12 +88,11 @@ function validateBookData(bookFormData): string[] {
   return errorMessages;
 }
 
-
-
 export default function BookCreateEditRoute() {
 
   const genres = useLoaderData<typeof loader>().genres;
   const currentBook = useLoaderData<typeof loader>().currentBook;
+  const googleBooks = useLoaderData<typeof loader>().googleBooks;
 
   const ratings = ['Great', 'Good', 'OK', 'Poor', 'Terrible'];
 
@@ -99,7 +108,8 @@ export default function BookCreateEditRoute() {
     ratings: ratings,
     errorMessages: errorMessages,
     bookId: currentBook?.id,
-    book: currentBook
+    book: currentBook,
+    googleBooks: googleBooks
   }
   
   return (

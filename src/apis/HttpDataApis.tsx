@@ -2,7 +2,7 @@ export class NotLoggedOnError extends Error { }
 export class DataRetievalError extends Error { }
 
 export type Book = {
-    id: string,
+    id?: string,
     comments: Comment[],
     title: string,
     author: string,
@@ -303,7 +303,7 @@ export async function getuserProfile(): Promise<UserProfile | null> {
     return response.json()
 }
 
-export async function getGoogleBooks(title: string, author: string): Promise<GoogleBookSearchResult | null> {
+export async function getGoogleBooks(title: string, author: string): Promise<GoogleBookSearchResult> {
 
     const api = '/secure/api/googlebooks/?';
     const apiParams = 'title=' + title + '&author=' + author; 
@@ -311,7 +311,7 @@ export async function getGoogleBooks(title: string, author: string): Promise<Goo
     const response = await fetch(api + apiParams);
     if (response.status === 401) {
         console.debug('Not authorised to search for Google Books data. This is expected if the user is not logged on.');
-        return null;
+        throw new NotLoggedOnError('You must be logged on to search for bbosk on Google Books');
     } else if (!response.ok) {
         throw new DataRetievalError('Error searching Google Books data via the server. Status: ' + response.status + ' ' + response.statusText);
     }
@@ -329,24 +329,27 @@ export async function getSummaryStats(): Promise<SummaryStats> {
     return response.json()
 }
 
-export async function createBookReview(newBookReview: Book): Promise<null> {
+export async function createOrUpdateBookReview(bookReview: Book): Promise<null> {
 
     const api = '/secure/api/books';
 
+    let method = 'POST';
+    if (bookReview.id) {
+        method = 'PUT';
+    }
+
     const config = {
-        method: 'POST',
+        method: method,
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
           },
-        body: JSON.stringify(newBookReview)
+        body: JSON.stringify(bookReview)
     }
 
     const response = await fetch(api, config);
     if (response.status === 401) {
-        console.debug('Not authorised to create book reviews. This is expected if the user doesnt have the EDITOR or ADMIN role.');
-        return null;
-    // Note that the API actually returns a 201 (created) with a redirect location for the newly created book
+        throw new NotLoggedOnError('Not authorised to create or update book reviews. You are either not logged on or don\'t have the EDITOR or ADMIN role.');
     } else if (!response.ok) {
         throw new DataRetievalError('Error trying to store book review details on the server. Status: ' + response.status + ' ' + response.statusText);
     }
