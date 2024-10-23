@@ -40,3 +40,23 @@ https://www.googleapis.com/books/v1/volumes?q=+intitle:flowers%20for%20algernon+
   },
 
 Fix the use of "localhost:9000" in the live RSS feed
+
+
+                Book mergedBook = mergeUpdatesOntoExistingBook(currentBookState, book);
+                bookRepository.save(mergedBook);
+
+
+    private Book mergeUpdatesOntoExistingBook(Book currentBookState, Book book) {
+
+        // Set the fields the owner / admin is allowed to manually update
+        currentBookState.setSummary(book.getSummary());
+        currentBookState.setGenre(book.getGenre());
+        currentBookState.setTitle(book.getTitle());
+        currentBookState.setSummary(book.getSummary());
+        currentBookState.setGoogleBookId(book.getGoogleBookId());
+        currentBookState.setRating(book.getRating());
+        currentBookState.setAuthor(book.getAuthor());
+
+        return currentBookState;
+    }
+
