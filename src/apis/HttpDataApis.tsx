@@ -357,6 +357,28 @@ export async function createOrUpdateBookReview(bookReview: Book): Promise<null> 
     return null;
 }
 
+export async function deleteBookReview(id: string): Promise<null> {
+
+    const api = '/secure/api/books/';
+
+    const config = {
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          }
+    }
+
+    const response = await fetch(api + id, config);
+    if (response.status === 401) {
+        throw new NotLoggedOnError('Not authorised to delete this book review. You are either not logged on, don\'t own the book or don\'t have the ADMIN role.');
+    } else if (!response.ok) {
+        throw new DataRetievalError('Error trying to delete book review details from the server. Status: ' + response.status + ' ' + response.statusText);
+    }
+
+    return null;
+}
+
 export async function logoff(): Promise<void> {
 
     const api = '/secure/api/logout';

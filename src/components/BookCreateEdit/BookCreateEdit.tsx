@@ -1,5 +1,5 @@
 import './BookCreateEdit.css';
-import { Form } from "react-router-dom";
+import { Form, useNavigate } from "react-router-dom";
 import { BookCreateProps } from "./BookCreateEditRoute";
 import { Typeahead } from 'react-bootstrap-typeahead';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
@@ -13,6 +13,8 @@ export default function BookCreateEdit(props: BookCreateProps) {
     const [currentGoogleBook, setCurrentGoogleBook] = useState<number>(0);
     const [isGoogleSearched, setGoogleSearched] = useState(false);
     const [googleBookMatch, setGoogleBookmatched] = useState(false);
+
+    const navigate = useNavigate();
 
     let errorDisplay = <span></span>;
     if (props.errorMessages.length === 1) {
@@ -211,7 +213,8 @@ export default function BookCreateEdit(props: BookCreateProps) {
                             }
 
                             <div className="text-center">
-                                <button type="submit" className="btn btn-info btn-fill btn-wd">{submitText}</button>
+                                <button type="submit" className="btn btn btn-outline-primary btn-wd me-3">{submitText}</button>
+                                <button type="button" className="btn btn btn-outline-secondary btn-wd" onClick={() => {navigate(-1);}}>Cancel</button>
                             </div>
                         </Form>
                     </div>

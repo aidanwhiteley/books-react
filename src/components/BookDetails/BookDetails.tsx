@@ -4,7 +4,7 @@ import Tabs from "react-bootstrap/Tabs";
 import "./BossDetails.css";
 import { sanitizeHtml } from "../../utils/textutils";
 import Button from 'react-bootstrap/Button';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Form } from 'react-router-dom';
 
 export default function BookDetails(props: BookProps) {
 
@@ -26,6 +26,10 @@ export default function BookDetails(props: BookProps) {
 
     const handleBookUpdateClicked = () => {
         navigate('/books/edit/' + book.id);
+    }
+
+    const handleBookDeleteClicked = () => {
+        navigate('/books/delete/' + book.id);
     }
 
     return (
@@ -65,7 +69,21 @@ export default function BookDetails(props: BookProps) {
                                 <Button variant="outline-primary" className="me-4" onClick={handleBookUpdateClicked}>Update this book review</Button>
                             }
                             {book.allowDelete &&
-                                <Button variant="outline-danger">Delete this book review</Button>
+                                <Form
+                                    method="post"
+                                    action={'/books/delete/' + book.id}
+                                    onSubmit={(event) => {
+                                    if (
+                                        !confirm(
+                                            "Please confirm you want to delete this book review."
+                                        )
+                                    ) {
+                                        event.preventDefault();
+                                    }
+                                    }}
+                                >
+                                    <Button className="mt-4" type="submit" variant="outline-danger">Delete this book review</Button>
+                                </Form>
                             }
                             
                         </Tab>
