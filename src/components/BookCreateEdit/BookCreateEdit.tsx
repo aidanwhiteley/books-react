@@ -11,7 +11,6 @@ export default function BookCreateEdit(props: BookCreateProps) {
 
     const [googleBookSearchResult, setGoogleBooksSearchResult] = useState<GoogleBookSearchResult>();
     const [currentGoogleBook, setCurrentGoogleBook] = useState<number>(0);
-    const [isGoogleSearched, setGoogleSearched] = useState(false);
     const [googleBookMatch, setGoogleBookmatched] = useState(false);
 
     const navigate = useNavigate();
@@ -39,7 +38,6 @@ export default function BookCreateEdit(props: BookCreateProps) {
     useEffect(() => {
         if (props.googleBooks && props.googleBooks.items) {
             setGoogleBooksSearchResult(props.googleBooks);
-            setGoogleSearched(true);
             if (props.book?.googleBookId) { 
                 for (let i = 0; i < props.googleBooks.items.length - 1; i++) {
                     if (props.googleBooks.items[i].id === props.book.googleBookId) {
@@ -57,7 +55,6 @@ export default function BookCreateEdit(props: BookCreateProps) {
         const author = (document.getElementById('author') as HTMLInputElement).value;
 
         const googleBooks = await getGoogleBooks(title, author)
-        setGoogleSearched(true);
         setCurrentGoogleBook(0);
         if (googleBooks) {
             setGoogleBooksSearchResult(googleBooks);
@@ -115,7 +112,7 @@ export default function BookCreateEdit(props: BookCreateProps) {
                             of this Form to the "create review" use of the Form would leave the value from the "update review" 
                             use in place at the "create review" use.
                             I am not sure why - I _think_ it might be due to the browser remember the implict form state but
-                            I'm guessing really. */}
+                            I'm guessing really. The use of the "key" field makes the problem go away! */}
                         <Form name="bookForm" method="post" className="row g-3" key={JSON.stringify(props.book)}>
                             <input id="bookId" name="bookId" type="hidden" value={bookId} />
 
@@ -152,7 +149,6 @@ export default function BookCreateEdit(props: BookCreateProps) {
                                     inputProps={{ name: 'genre' }}
                                     newSelectionPrefix="Add a new genre: "
                                     options={genreDisplay}
-                                    //selected={genre}
                                 />
                             </div>
 
@@ -166,14 +162,14 @@ export default function BookCreateEdit(props: BookCreateProps) {
                                 </small>
                             </div>
 
-                            {(isGoogleSearched && googleBookSearchResult && (googleBookSearchResult.totalItems === 0)) && 
+                            {(googleBookSearchResult && (googleBookSearchResult.totalItems === 0)) && 
                                 <div className="alert alert-warning" role="alert">
                                     We didn't find any matching books on Google Books. This may be correct but please do check what is entered 
                                     in the <b>Book Title</b> and <b>Author</b> fields above.
                                 </div>
                             }
                         
-                            {(isGoogleSearched && googleBookSearchResult && googleBookSearchResult.totalItems > 0) &&
+                            {(googleBookSearchResult && googleBookSearchResult.totalItems > 0) &&
                                 <>
                                     <div className="col-md-8">
                                         <h5>{googleBookSearchResult.items[currentGoogleBook].volumeInfo && googleBookSearchResult.items[currentGoogleBook].volumeInfo.title}</h5>

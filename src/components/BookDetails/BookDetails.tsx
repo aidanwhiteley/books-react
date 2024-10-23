@@ -5,6 +5,7 @@ import "./BossDetails.css";
 import { sanitizeHtml } from "../../utils/textutils";
 import Button from 'react-bootstrap/Button';
 import { useNavigate, Form } from 'react-router-dom';
+import Comments from '../Comments/Comments';
 
 export default function BookDetails(props: BookProps) {
 
@@ -20,16 +21,8 @@ export default function BookDetails(props: BookProps) {
     const displayGooglePreview = book.googleBookDetails && book.googleBookDetails.accessInfo.embeddable &&
         book.googleBookDetails.accessInfo.viewability !== 'NO_PAGES';
 
-    const comments = book.comments.map((aComment, index) => 
-         <li key={index} className="comment-entry">On {aComment.entered[2]}/{aComment.entered[1]}/{aComment.entered[0]}  {aComment.owner.fullName} commented - {aComment.commentText}</li>
-    );
-
     const handleBookUpdateClicked = () => {
         navigate('/books/edit/' + book.id);
-    }
-
-    const handleBookDeleteClicked = () => {
-        navigate('/books/delete/' + book.id);
     }
 
     return (
@@ -71,18 +64,14 @@ export default function BookDetails(props: BookProps) {
                             {book.allowDelete &&
                                 <Form
                                     method="post"
+                                    id="delete-form"
                                     action={'/books/delete/' + book.id}
                                     onSubmit={(event) => {
-                                    if (
-                                        !confirm(
-                                            "Please confirm you want to delete this book review."
-                                        )
-                                    ) {
-                                        event.preventDefault();
-                                    }
-                                    }}
-                                >
-                                    <Button className="mt-4" type="submit" variant="outline-danger">Delete this book review</Button>
+                                        if (!confirm('Please confirm you want to delete this book review.')) {
+                                            event.preventDefault();
+                                        }
+                                    }}>
+                                    <Button type="submit" variant="outline-danger">Delete this book review</Button>
                                 </Form>
                             }
                             
@@ -101,18 +90,7 @@ export default function BookDetails(props: BookProps) {
                         }
 
                         <Tab eventKey="reviewComments" title="Review Comments">
-
-                            {(comments.length === 0) && 
-                                <p className="mt-4">No comments have been left on this book review yet</p>
-                            }
-
-                            {(comments.length > 0) && 
-                                <ul>{comments}</ul>
-                            }
-
-                            {book.allowComment &&
-                                <Button variant="outline-primary" className="me-4">Comment on this book review</Button>
-                            }
+                            <Comments aBook={book} />
                         </Tab>
                     </Tabs>
                 </div>
