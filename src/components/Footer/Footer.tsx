@@ -13,7 +13,9 @@ export default function Footer() {
                             <div className="row d-flex flex-wrap justify-content-between">
                                 <div className="col-lg-5 col-sm-6 pb-3">
                                     <div className="footer-menu">
-                                        <img src="/images/book-club-logo.jpeg" alt="logo" />
+                                        <a href="/">
+                                            <img src="/images/book-club-logo.jpeg" alt="logo" />
+                                        </a>
                                         <p><b>{import.meta.env.VITE_APPLICATION_NAME}</b> - reminding me of what books I have read recently so I don't buy them again!</p>
                                     </div>
                                 </div>
