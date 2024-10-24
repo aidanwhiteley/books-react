@@ -81,7 +81,7 @@ const router = createBrowserRouter([
             path: "books/find",
             element: <BooksFindRoute />,
             loader: booksFindLoader,
-            shouldRevalidate: ({ currentUrl, nextUrl}) => {
+            shouldRevalidate: ({ nextUrl}) => {
               return !(nextUrl.pathname.includes('author') || nextUrl.pathname.includes('genre') || nextUrl.pathname.includes('reader'))
             },
             children: [

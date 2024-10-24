@@ -9,20 +9,27 @@ export type Book = {
     genre: string,
     summary: string,
     rating: Rating,
-    googleBookId: string,
-    googleBookDetails: GoogleBookDetails,
+    googleBookId?: string,
+    googleBookDetails?: GoogleBookDetails,
     // Next three fields are just _hints_ to the client side - they are enforced on the server
-    allowUpdate: boolean,
-    allowDelete: boolean,
-    allowComment: boolean,
-    // We dont use the next field
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    createdBy: any,
-    createdDateTime: number[],
-    // We dont use the next field
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    lastModifiedBy: any,
-    lastModifiedDateTime: number[]
+    allowUpdate?: boolean,
+    allowDelete?: boolean,
+    allowComment?: boolean,
+    createdBy?: UserBy,
+    createdDateTime?: number[],
+    lastModifiedBy?: UserBy,
+    lastModifiedDateTime?: number[]
+}
+
+export type UserBy = {
+    authProvider: string,
+    authenticationServiceId: string,
+    email?: string,
+    firstName: string,
+    fullName: string,
+    lastName?: string,
+    link?: string,
+    picture?: string
 }
 
 export type Comment = {
@@ -131,7 +138,7 @@ export type Genre = {
 export type SummaryStats = {
     count: number,
     booksByRating: RatingCount[],
-    bookByGenre: string[]
+    bookByGenre: Genre[]
 }
 
 export type Role = 'ROLE_USER' | 'ROLE_EDITOR' | 'ROLE_ADMIN';

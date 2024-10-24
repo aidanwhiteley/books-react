@@ -66,7 +66,7 @@ export default function BooksFind(props: BooksFindProps) {
                                             setGenre(new Array<Option>());
                                             setAuthor(new Array<Option>());
                                             setReader(new Array<Option>());
-                                            navigate('rating/' + encodeURIComponent(selected[0]));  
+                                            navigate('rating/' + encodeURIComponent(selected[0] as string));  
                                         }
                                     }
                                 }
@@ -89,7 +89,9 @@ export default function BooksFind(props: BooksFindProps) {
                                             setGenre(new Array<Option>());
                                             setRating(new Array<Option>());
                                             setReader(new Array<Option>());
-                                            navigate('author/' + encodeURIComponent(selected[0].author));
+                                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                            const selectedOption =  selected[0] as any;
+                                            navigate('author/' + encodeURIComponent( selectedOption['author']) );
                                         }
                                     }
                                 }
@@ -112,7 +114,9 @@ export default function BooksFind(props: BooksFindProps) {
                                             setAuthor(new Array<Option>());
                                             setRating(new Array<Option>());
                                             setReader(new Array<Option>());
-                                            navigate('genre/' + encodeURIComponent(selected[0].genre));
+                                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                            const selectedOption =  selected[0] as any;
+                                            navigate('genre/' + encodeURIComponent(selectedOption['genre']));
                                         }
                                     }
                                 }
@@ -136,7 +140,9 @@ export default function BooksFind(props: BooksFindProps) {
                                                 setAuthor(new Array<Option>());
                                                 setRating(new Array<Option>());
                                                 setGenre(new Array<Option>());
-                                                navigate('reader/' + encodeURIComponent(selected[0].reader));
+                                                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                                const selectedOption =  selected[0] as any;
+                                                navigate('reader/' + encodeURIComponent(selectedOption['reader']));
                                             }
                                         }
                                     }

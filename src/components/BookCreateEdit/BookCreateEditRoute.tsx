@@ -6,7 +6,7 @@ export interface BookCreateProps {
   genres: Genre[];
   ratings: string[];
   errorMessages: string[];
-  bookId: string;
+  bookId?: string;
   book: Book | null;
   googleBooks: GoogleBookSearchResult;
 }
@@ -40,6 +40,7 @@ export const action = (async ({request}) => {
 
     const bookReview : Book = {
       id: bookFormData.bookId as string,
+      comments: [],
       title: bookFormData.title as string,
       author: bookFormData.author as string,
       rating: stringAsRating(bookFormData.rating as string),
@@ -70,7 +71,11 @@ export const action = (async ({request}) => {
 
 }) satisfies ActionFunction
 
-function validateBookData(bookFormData): string[] {
+// See https://dev.to/svehla/typescript-object-fromentries-389c or 
+// https://stackoverflow.com/questions/69019873/how-can-i-get-typed-object-entries-and-object-fromentries-in-typescript
+// which are all too advanced for my beginner's Typescript!
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function validateBookData(bookFormData: any): string[] {
 
   const errorMessages: string[] =[];
   if (bookFormData.title.length < 1 || bookFormData.title.length > 100) {

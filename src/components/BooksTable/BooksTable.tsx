@@ -62,11 +62,11 @@ export default function BooksTable(props: BooksProps) {
             title: aBook.title,
             author: aBook.author,
             rating: aBook.rating,
-            reviewDate: aBook.createdDateTime[2] + '-' + aBook.createdDateTime[1] + '-' + aBook.createdDateTime[0],
+            reviewDate: aBook.createdDateTime![2] + '-' + aBook.createdDateTime![1] + '-' + aBook.createdDateTime![0],
             genre: aBook.genre,
             bookAppUrl: '/book/' + aBook.id,
         }
-    });
+    }) as DataRow[];
 
     type CurrentPage = {selected: number};
 

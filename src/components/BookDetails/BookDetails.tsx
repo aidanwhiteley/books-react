@@ -41,7 +41,9 @@ export default function BookDetails(props: BookProps) {
                                 <p><b>Title: </b>{book.title}</p>
                                 <p><b>Author: </b>{book.author}</p>
                                 <p className="rating"><b>Rating: </b>{book.rating.toLocaleLowerCase()}</p>
-                                <p><b>Review Date: </b>{book.createdDateTime[2] + '-' + book.createdDateTime[1] + '-' + book.createdDateTime[0]}</p>
+                                {book.createdDateTime &&
+                                    <p><b>Review Date: </b>{book.createdDateTime[2] + '-' + book.createdDateTime[1] + '-' + book.createdDateTime[0]}</p>
+                                }
                                 <p><b>Genre: </b>{book.genre}</p>
                                 {displayGooglePreview &&
                                     <p>
