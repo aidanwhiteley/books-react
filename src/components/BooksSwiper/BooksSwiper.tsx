@@ -63,7 +63,7 @@ export default function BookSwiper(props: BooksProps) {
       >
         {swiperSlides}
       </Swiper>
-      <p className="text-center lead">Books recently reviewed on {import.meta.env.VITE_APPLICATION_NAME} with a 'great' rating</p>
+      <p className="text-center">Books recently reviewed on {import.meta.env.VITE_APPLICATION_NAME} with a 'great' rating</p>
     </>
   );
 }

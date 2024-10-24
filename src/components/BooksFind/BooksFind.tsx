@@ -53,7 +53,7 @@ export default function BooksFind(props: BooksFindProps) {
 
             <div className="container">
                 <div className="row">
-                    <div className="col-sm">
+                    <div className="col-sm mb-4">
                         <Form.Group>
                             <Form.Label>Find Reviews By Rating</Form.Label>
                             <Typeahead
@@ -76,7 +76,7 @@ export default function BooksFind(props: BooksFindProps) {
                                 />
                         </Form.Group>
                     </div>
-                    <div className="col-sm">
+                    <div className="col-sm mb-4">
                         <Form.Group>
                             <Form.Label>Find Reviews By Author</Form.Label>
                             <Typeahead
@@ -101,7 +101,7 @@ export default function BooksFind(props: BooksFindProps) {
                                 />
                         </Form.Group>
                     </div>
-                    <div className="col-sm">           
+                    <div className="col-sm mb-4">           
                         <Form.Group>
                             <Form.Label>Find Reviews By Genre</Form.Label>
                             <Typeahead
@@ -127,7 +127,7 @@ export default function BooksFind(props: BooksFindProps) {
                         </Form.Group>
                     </div>
                     {userProfile && (userProfile.highestRole === 'ROLE_EDITOR' || userProfile.highestRole === 'ROLE_ADMIN') &&
-                        <div className="col-sm">           
+                        <div className="col-sm mb-4">           
                             <Form.Group>
                                 <Form.Label>Find Reviews By Reviewer</Form.Label>
                                 <Typeahead
