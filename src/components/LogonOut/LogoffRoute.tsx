@@ -14,6 +14,6 @@ export default function LogoffRoute() {
   window.location.href = "/?logged-out=y";
 
   return (
-      <p>This should not be seen!</p>
+      <p>We are currently logging you out of {import.meta.env.VITE_APPLICATION_NAME}</p>
     )
 }

@@ -61,7 +61,7 @@ export default function BookDetails(props: BookProps) {
                             </div>
 
                             {book.allowUpdate &&
-                                <Button variant="outline-primary" className="me-4 mb-4" onClick={handleBookUpdateClicked}>Update this book review</Button>
+                                <Button variant="outline-primary" className="me-4 mt-4" onClick={handleBookUpdateClicked}>Update this book review</Button>
                             }
                             {book.allowDelete &&
                                 <Form
@@ -73,7 +73,7 @@ export default function BookDetails(props: BookProps) {
                                             event.preventDefault();
                                         }
                                     }}>
-                                    <Button type="submit" variant="outline-danger">Delete this book review</Button>
+                                    <Button type="submit" className="mt-4" variant="outline-danger">Delete this book review</Button>
                                 </Form>
                             }
                             

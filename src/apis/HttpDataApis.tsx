@@ -349,7 +349,8 @@ export async function createOrUpdateBookReview(bookReview: Book): Promise<null> 
         method: method,
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'X-XSRF-TOKEN': getCookie('XSRF-TOKEN') 
           },
         body: JSON.stringify(bookReview)
     }
@@ -372,7 +373,8 @@ export async function deleteBookReview(id: string): Promise<null> {
         method: 'DELETE',
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'X-XSRF-TOKEN': getCookie('XSRF-TOKEN') 
           }
     }
 
@@ -392,6 +394,9 @@ export async function logoff(): Promise<void> {
 
     const config = {
         method: 'POST',
+        headers: {
+            'X-XSRF-TOKEN': getCookie('XSRF-TOKEN') 
+        }
     }
 
     const response = await fetch(api, config);
@@ -403,4 +408,17 @@ export async function logoff(): Promise<void> {
     }
     return;
 }
+
+function getCookie(name: string): string {
+	const nameLenPlus = (name.length + 1);
+	return document.cookie
+		.split(';')
+		.map(c => c.trim())
+		.filter(cookie => {
+			return cookie.substring(0, nameLenPlus) === `${name}=`;
+		})
+		.map(cookie => {
+			return decodeURIComponent(cookie.substring(nameLenPlus));
+		})[0] || '';
+    }
 
