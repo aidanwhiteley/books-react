@@ -34,7 +34,7 @@ export default function BookSwiper(props: BooksProps) {
 
   const swiperSlides = booksData.map((book, index: number) =>
     <SwiperSlide key={index} data-book-id={book.id}>
-      <img src={book.thumbnail} />
+      <img src={book.thumbnail} loading="lazy" />
     </SwiperSlide>
   );
 

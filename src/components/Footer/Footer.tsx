@@ -1,5 +1,6 @@
 import './Footer.css';
-import GitHubButton from 'react-github-btn'
+import GitHubButton from 'react-github-btn';
+import { Link } from "react-router-dom";
 
 export default function Footer() {
 
@@ -25,13 +26,13 @@ export default function Footer() {
                                         <h5 className="widget-title pb-2">Usual stuff</h5>
                                         <ul className="menu-list list-unstyled">
                                             <li className="menu-item pb-2">
-                                                <a href="/books/stats">Book review stats</a>
+                                                <Link to="/books/stats">Book review stats</Link>
                                             </li>
                                             <li className="menu-item pb-2">
-                                                <a href="/tandcs">Help and T&Cs</a>
+                                                <Link to="/tandcs">Help and T&Cs</Link>
                                             </li>
                                             <li className="menu-item pb-2">
-                                                <a href="/privacy">Privacy</a>
+                                            <Link to="/privacy">Privacy</Link>
                                             </li>
                                             <li className="menu-item pb-2">
                                                 <a href="/feeds/rss">RSS feed</a>
