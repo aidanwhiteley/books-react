@@ -1,62 +1,133 @@
-# Notes #
+<a id="readme-top"></a>
 
-1. in server side app, set 
-   `postLogonUrl: http://localhost:5173/?logged-on=y`
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://cloudybookclub.com">
+    <img src="public/images/book-club-logo.jpeg" alt="Logo">
+  </a>
 
+  <h3 align="center">Books React</h3>
 
+  <p align="center">
+    A simple React / Typescript front end for the <a href="https://github.com/aidanwhiteley/books">Books microservice</a>.
 
-2. Better error message for 500 (when server is down)
-
-3. Change serverside book search to be
-https://www.googleapis.com/books/v1/volumes?q=+intitle:flowers%20for%20algernon+inauthor:daniel%20keyes
-
-
-    @GetMapping(value = {"/googlebooks", "googlebooks/"}, params = {"title", "author"})
-    public BookSearchResult findGoogleBooksByTitleAndAuthor(@RequestParam String title, @RequestParam String author) {
-        return googleBooksDaoSync.searchGoogBooksByTitleAndAuthor(title, author);
-    }
+</div>
 
 
-    public BookSearchResult searchGoogBooksByTitleAndAuthor(String title, String author) {
 
-        String encodedTitle = URLEncoder.encode(title, StandardCharsets.UTF_8);
-        String encodedAuthor = URLEncoder.encode(author, StandardCharsets.UTF_8);
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-        googleBooksRestTemplate.getMessageConverters().add(0,
-                new StringHttpMessageConverter(StandardCharsets.UTF_8));
-
-        final String searchString = googleBooksApiConfig.getSearchUrl() + "+intitle: " + encodedTitle +
-                "+inauthor:" + author + "&" + googleBooksApiConfig.getCountryCode() +
-                "&" + googleBooksApiConfig.getMaxResults();
-
-   @Test
-   void findByTitleAndAuthor() {
-
-   Wire mock file
-   {
-  "request" : {
-    "url" : "/books/v1/volumes?q=+intitle:Design+Patterns+inauthor:Gamma&country=GB&maxResults=30",
-    "method" : "GET"
-  },
-
-Fix the use of "localhost:9000" in the live RSS feed
 
 
-                Book mergedBook = mergeUpdatesOntoExistingBook(currentBookState, book);
-                bookRepository.save(mergedBook);
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+[![Live app screen grab](public/images/screengrab.jpg)](https://cloudybookclub.com)
+
+A while back, I wanted a simple "microservice" to use while playing with technologies like Docker, Docker Compose and Kubernetes. As I have a bad habit of wandering into book shops and buying books I've already read, my wife suggested writing something to record what I've read recently. Hence, the <a href="https://github.com/aidanwhiteley/books">Books microservice</a> and the <a href="https://cloudybookclub.com">The Cloudy Book Club</a> were born.
+
+This project provides a simple React / Typescript front end for the book microservice.
+
+This project replaces a previous <a href="https://github.com/aidanwhiteley/books-web">front end</a> project taht used <a href="https://angularjs.org/">AngularJS</a>. Aside from AngularJS being long dead, that implementation was very poor on mobile devices (which is when I most need to use the project when in book shops).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-    private Book mergeUpdatesOntoExistingBook(Book currentBookState, Book book) {
+<!-- GETTING STARTED -->
+## Getting Started
 
-        // Set the fields the owner / admin is allowed to manually update
-        currentBookState.setSummary(book.getSummary());
-        currentBookState.setGenre(book.getGenre());
-        currentBookState.setTitle(book.getTitle());
-        currentBookState.setSummary(book.getSummary());
-        currentBookState.setGoogleBookId(book.getGoogleBookId());
-        currentBookState.setRating(book.getRating());
-        currentBookState.setAuthor(book.getAuthor());
+Here's how to get up and running with this project.
 
-        return currentBookState;
-    }
+### Prerequisites
 
+1. You should have a recent version of <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">npm</a> installed.
+2. Ideally, you should have an instance of the <a href="https://github.com/aidanwhiteley/books">Books microservice</a> running locally on your computer on port 8080. However, if Java isn't your thing, an alternative that allows access to all the read-only functionality of the this front end app is detailed further below. 
+
+### Installation
+
+1. Clone the repo
+   ```
+   git clone https://github.com/aidanwhiteley/books-react.git
+   ```
+2. Install NPM packages
+   ```
+   npm install
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+1. To run in development
+   ```
+   npm run dev
+   ```
+   and then enter "o" to open a browser
+2. To build for production
+   ```
+   npm run build
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the Apache 2.0 License. See <a href="LICENSE">LICENSE</a> for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Your Name - [Aidan Whiteley](https://aidanwhiteley.com/) - github@aidanwhiteley.com
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+Here are the main components used in this project
+
+* [React Router](https://reactrouter.com/en/main)
+* [Bootstrap 5](https://getbootstrap.com/)
+* [React Bootstrap](https://react-bootstrap.netlify.app/)
+* [React Bootstrap Typeahead](https://github.com/ericgio/react-bootstrap-typeahead)
+* [React Data Table Component](https://github.com/jbetancur/react-data-table-component)
+* [React Router Typesafe](react-router-typesafe)
+* [Swiper](xxx)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
