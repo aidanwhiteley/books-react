@@ -24,6 +24,7 @@ import { loader as bookCreateEditLoader } from './components/BookCreateEdit/Book
 import { action as bookCreateEditAction } from './components/BookCreateEdit/BookCreateEditRoute';
 import { loader as statsLoader } from './components/BookSummary/BooksSummaryRoute';
 import { action as bookDeleteAction } from './components/BookDelete/BookDeleteRoute';
+import { action as commentCreateAction } from './components/BookDetails/BookDetailsRoute';
 import BooksFindInfo from './components/BooksFind/BookFindInfo';
 import TandCs from './components/TandCsPrivacy/TandCs';
 import Privacy from './components/TandCsPrivacy/Privacy';
@@ -49,7 +50,8 @@ const router = createBrowserRouter([
           {
             path: "book/:id",
             element: <BookDetailsRoute />,
-            loader: bookByIdLoader
+            loader: bookByIdLoader,
+            action: commentCreateAction
           },
           {
             path: "books/recent",

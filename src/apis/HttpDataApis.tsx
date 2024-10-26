@@ -388,6 +388,53 @@ export async function deleteBookReview(id: string): Promise<null> {
     return null;
 }
 
+export async function createComment(bookId: string, comment: string): Promise<Book> {
+
+    const api = '/secure/api/books/' + bookId + '/comments';
+
+    const config = {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'X-XSRF-TOKEN': getCookie('XSRF-TOKEN') 
+          },
+        body: JSON.stringify({commentText: comment})
+    }
+
+    const response = await fetch(api, config);
+    if (response.status === 401) {
+        throw new NotLoggedOnError('Not authorised to comment on book reviews. You are either not logged on or don\'t have the EDITOR or ADMIN role.');
+    } else if (!response.ok) {
+        throw new DataRetievalError('Error trying to store book review comments on the server. Status: ' + response.status + ' ' + response.statusText);
+    }
+
+    return response.json();
+}
+
+export async function deleteComment(bookId: string, commentId: string): Promise<Book> {
+
+    const api = '/secure/api/books/' + bookId + '/comments/' + commentId;
+
+    const config = {
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'X-XSRF-TOKEN': getCookie('XSRF-TOKEN') 
+          }
+    }
+
+    const response = await fetch(api, config);
+    if (response.status === 401) {
+        throw new NotLoggedOnError('Not authorised to delete this book review comment. You are either not logged on, don\'t own the comment or don\'t have the ADMIN role.');
+    } else if (!response.ok) {
+        throw new DataRetievalError('Error trying to delete book review comment from the server. Status: ' + response.status + ' ' + response.statusText);
+    }
+
+    return response.json();
+}
+
 export async function logoff(): Promise<void> {
 
     const api = '/secure/api/logout';

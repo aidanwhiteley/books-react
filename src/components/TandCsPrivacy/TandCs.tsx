@@ -1,4 +1,5 @@
 import { useUserProfile } from '../../components/Root/RootRoute';
+import { Link } from "react-router-dom";
 
 export default function TandCs() {
     
@@ -173,7 +174,7 @@ export default function TandCs() {
                                 / Facebook.</p>
 
                             <h3>Privacy Policy</h3>
-                            <p>There's some stuff <a href="privacy">here</a>.</p>
+                            <p>There's some stuff <Link to="/privacy">here</Link>.</p>
 
                             <hr />
 

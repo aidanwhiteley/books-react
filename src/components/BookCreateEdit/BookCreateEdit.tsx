@@ -157,7 +157,9 @@ export default function BookCreateEdit(props: BookCreateProps) {
                                 <textarea id="summary" name="summary" rows={8} className="form-control" placeholder="What did you think of the book?" 
                                     aria-describedby="summaryHelpBlock" required defaultValue={props.book?.summary}></textarea>
                                 <small id="summaryHelpBlock" className="form-text">
-                                    Enter anything you like that may help someone else to decide whether the book is worth reading or not. Probably best not to say what the ending is!<br/>
+                                    Enter anything you like that may help someone else to decide whether the book is worth reading or not. 
+                                    Probably best not to say what the ending is!
+                                    HTML formatting is not supported.<br/>
                                     Remember: all entries are publicly visible.
                                 </small>
                             </div>
@@ -212,7 +214,9 @@ export default function BookCreateEdit(props: BookCreateProps) {
                                 <button type="submit" className="btn btn btn-outline-primary btn-wd me-3">{submitText}</button>
                                 <button type="button" className="btn btn btn-outline-secondary btn-wd" onClick={() => {navigate(-1);}}>Cancel</button>
                             </div>
+
                         </Form>
+
                     </div>
                 </div>
             </div>
