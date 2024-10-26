@@ -95,6 +95,9 @@ To try out the read-only parts of this front end application this can be tempora
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Tests
+Nah - there aren't any. The front end project is deliberately light in any "business logic". It is all just display related code. And I have rather strong feelings about the utility (and encumberances) of most client side "unit tests". Anyways, the server side where all the logic is has about about 100 automated tests and about <a href="https://sonarcloud.io/project/overview?id=com.aidanwhiteley%3Abooks">85% code coverage</a> split between unit tests and, the far more important in the long term, intergration tests.
+
 ## License
 
 Distributed under the Apache 2.0 License. See <a href="LICENSE">LICENSE</a> for more information.
