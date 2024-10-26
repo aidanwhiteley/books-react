@@ -22,9 +22,6 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -34,17 +31,12 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
-
-
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 
 [![Live app screen grab](public/images/screengrab.jpg)](https://cloudybookclub.com)
@@ -53,10 +45,9 @@ A while back, I wanted a simple "microservice" to use while playing with technol
 
 This project provides a simple React / Typescript front end for the book microservice.
 
-This project replaces a previous <a href="https://github.com/aidanwhiteley/books-web">front end</a> project taht used <a href="https://angularjs.org/">AngularJS</a>. Aside from AngularJS being long dead, that implementation was very poor on mobile devices (which is when I most need to use the project when in book shops).
+This project replaces a previous <a href="https://github.com/aidanwhiteley/books-web">front end</a> project that used <a href="https://angularjs.org/">AngularJS</a>. Aside from AngularJS being long dead, that implementation was very poor on mobile devices (which is when I most need to use the project when in book shops).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -81,8 +72,6 @@ Here's how to get up and running with this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- USAGE EXAMPLES -->
 ## Usage
 
@@ -96,17 +85,21 @@ Here's how to get up and running with this project.
    npm run build
    ```
 
+## Configuration
+
+There are a few "global variables" defined in the `.env` file in the root folder. These should be edited as required.
+
+In particular, the checked in .env file has `VITE_API_URL=localhost:8080` which assumes that you are running the books microservice locally (see earlier in this README).
+
+To try out the read-only parts of this front end application this can be temporarily changed to `VITE_API_URL=https://cloudybookclub.com`. This won't allow you to logon to access editor or admin functionality but does allow you to get started. Make sure that you don't add a trailing slash. The default value is `VITE_API_URL="http://localhost:8080"`
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-<!-- LICENSE -->
 ## License
 
 Distributed under the Apache 2.0 License. See <a href="LICENSE">LICENSE</a> for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- CONTACT -->
 ## Contact
@@ -114,8 +107,6 @@ Distributed under the Apache 2.0 License. See <a href="LICENSE">LICENSE</a> for 
 Your Name - [Aidan Whiteley](https://aidanwhiteley.com/) - github@aidanwhiteley.com
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
@@ -128,6 +119,7 @@ Here are the main components used in this project
 * [React Bootstrap Typeahead](https://github.com/ericgio/react-bootstrap-typeahead)
 * [React Data Table Component](https://github.com/jbetancur/react-data-table-component)
 * [React Router Typesafe](react-router-typesafe)
-* [Swiper](xxx)
+* [Swiper](https://swiperjs.com/react)
+* [DOM Purify](https://github.com/cure53/DOMPurify)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
