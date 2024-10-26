@@ -1,24 +1,35 @@
 import BookCreateEdit from './BookCreateEdit';
-import { getGenres, Genre, Book, createBookReview, stringAsRating } from "../../apis/HttpDataApis";
+import { getGenres, Book, createOrUpdateBookReview, stringAsRating, getBookById, Genre, getGoogleBooks, GoogleBookSearchResult } from "../../apis/HttpDataApis";
 import { useLoaderData, LoaderFunction, useActionData, ActionFunction, redirect} from "react-router-typesafe";
 
 export interface BookCreateProps {
   genres: Genre[];
   ratings: string[];
   errorMessages: string[];
+  bookId?: string;
   book: Book | null;
+  googleBooks: GoogleBookSearchResult;
 }
 
-export const loader = (async () => {
-  return await getGenres();
+export const loader = (async (request) => {
+  
+  let currentBook = {} as Book;
+  let googleBooks = {} as GoogleBookSearchResult;
+  if (request.params.id) {
+    currentBook = await getBookById(request.params.id!);
+    googleBooks = await getGoogleBooks(currentBook.title, currentBook.author);
+  }
+
+  const genres = await getGenres()
+  
+  return {'currentBook': currentBook, 'genres': genres, 'googleBooks': googleBooks};
+
 }) satisfies LoaderFunction;
 
 export const action = (async ({request}) => {
 
   const formData = await request.formData();
   const bookFormData = Object.fromEntries(formData);
-
-  console.log('Saw bookFormData as: ' + JSON.stringify(bookFormData));
 
   const errorMessages = validateBookData(bookFormData);
   if (errorMessages.length === 0) {
@@ -27,7 +38,9 @@ export const action = (async ({request}) => {
     const lastIndex = genreWithoutCount.lastIndexOf('(');
     genreWithoutCount = genreWithoutCount.substring(0, lastIndex - 1).trim();
 
-    const newBookReview : Book = {
+    const bookReview : Book = {
+      id: bookFormData.bookId as string,
+      comments: [],
       title: bookFormData.title as string,
       author: bookFormData.author as string,
       rating: stringAsRating(bookFormData.rating as string),
@@ -36,7 +49,12 @@ export const action = (async ({request}) => {
       googleBookId: bookFormData.googleBookId as string
     }
 
-    await createBookReview(newBookReview);
+    if (!bookReview.id) {
+      delete bookReview.id;
+    }
+
+    await createOrUpdateBookReview(bookReview);
+
     return redirect("/books/recent")
   }
 
@@ -44,14 +62,20 @@ export const action = (async ({request}) => {
     genres: [],
     ratings: [],
     errorMessages: errorMessages,
-    book: null
+    bookId: '',
+    book: null,
+    googleBooks: {} as GoogleBookSearchResult
   }
 
   return booksCreateProps;
 
 }) satisfies ActionFunction
 
-function validateBookData(bookFormData): string[] {
+// See https://dev.to/svehla/typescript-object-fromentries-389c or 
+// https://stackoverflow.com/questions/69019873/how-can-i-get-typed-object-entries-and-object-fromentries-in-typescript
+// which are all too advanced for my beginner's Typescript!
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function validateBookData(bookFormData: any): string[] {
 
   const errorMessages: string[] =[];
   if (bookFormData.title.length < 1 || bookFormData.title.length > 100) {
@@ -69,11 +93,12 @@ function validateBookData(bookFormData): string[] {
   return errorMessages;
 }
 
-
-
 export default function BookCreateEditRoute() {
 
-  const genres = useLoaderData<typeof loader>();
+  const genres = useLoaderData<typeof loader>().genres;
+  const currentBook = useLoaderData<typeof loader>().currentBook;
+  const googleBooks = useLoaderData<typeof loader>().googleBooks;
+
   const ratings = ['Great', 'Good', 'OK', 'Poor', 'Terrible'];
 
   const props = useActionData<typeof action>();
@@ -87,7 +112,9 @@ export default function BookCreateEditRoute() {
     genres: genres,
     ratings: ratings,
     errorMessages: errorMessages,
-    book: null
+    bookId: currentBook?.id,
+    book: currentBook,
+    googleBooks: googleBooks
   }
   
   return (

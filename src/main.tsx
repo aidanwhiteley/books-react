@@ -23,6 +23,8 @@ import { loader as logoffLoader } from './components/LogonOut/LogoffRoute';
 import { loader as bookCreateEditLoader } from './components/BookCreateEdit/BookCreateEditRoute';
 import { action as bookCreateEditAction } from './components/BookCreateEdit/BookCreateEditRoute';
 import { loader as statsLoader } from './components/BookSummary/BooksSummaryRoute';
+import { action as bookDeleteAction } from './components/BookDelete/BookDeleteRoute';
+import { action as commentCreateAction } from './components/BookDetails/BookDetailsRoute';
 import BooksFindInfo from './components/BooksFind/BookFindInfo';
 import TandCs from './components/TandCsPrivacy/TandCs';
 import Privacy from './components/TandCsPrivacy/Privacy';
@@ -48,7 +50,8 @@ const router = createBrowserRouter([
           {
             path: "book/:id",
             element: <BookDetailsRoute />,
-            loader: bookByIdLoader
+            loader: bookByIdLoader,
+            action: commentCreateAction
           },
           {
             path: "books/recent",
@@ -67,10 +70,20 @@ const router = createBrowserRouter([
             action: bookCreateEditAction
           },
           {
+            path: "books/edit/:id",
+            element: <BookCreateEditRoute />,
+            loader: bookCreateEditLoader,
+            action: bookCreateEditAction
+          },
+          {
+            path: "books/delete/:id",
+            action: bookDeleteAction
+          },
+          {
             path: "books/find",
             element: <BooksFindRoute />,
             loader: booksFindLoader,
-            shouldRevalidate: ({ currentUrl, nextUrl}) => {
+            shouldRevalidate: ({ nextUrl}) => {
               return !(nextUrl.pathname.includes('author') || nextUrl.pathname.includes('genre') || nextUrl.pathname.includes('reader'))
             },
             children: [

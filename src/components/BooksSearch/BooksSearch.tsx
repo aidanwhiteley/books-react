@@ -1,4 +1,4 @@
-import { BooksProps } from "../../routes/BooksRecentRoute";
+import { BooksProps } from "./BooksSearchRoute";
 import BooksTable from "../BooksTable/BooksTable";
 
 export default function BooksSearch(props: BooksProps) {

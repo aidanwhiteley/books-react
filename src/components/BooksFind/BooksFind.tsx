@@ -53,7 +53,7 @@ export default function BooksFind(props: BooksFindProps) {
 
             <div className="container">
                 <div className="row">
-                    <div className="col-sm">
+                    <div className="col-sm mb-4">
                         <Form.Group>
                             <Form.Label>Find Reviews By Rating</Form.Label>
                             <Typeahead
@@ -66,7 +66,7 @@ export default function BooksFind(props: BooksFindProps) {
                                             setGenre(new Array<Option>());
                                             setAuthor(new Array<Option>());
                                             setReader(new Array<Option>());
-                                            navigate('rating/' + selected[0]);  
+                                            navigate('rating/' + encodeURIComponent(selected[0] as string));  
                                         }
                                     }
                                 }
@@ -76,7 +76,7 @@ export default function BooksFind(props: BooksFindProps) {
                                 />
                         </Form.Group>
                     </div>
-                    <div className="col-sm">
+                    <div className="col-sm mb-4">
                         <Form.Group>
                             <Form.Label>Find Reviews By Author</Form.Label>
                             <Typeahead
@@ -89,7 +89,9 @@ export default function BooksFind(props: BooksFindProps) {
                                             setGenre(new Array<Option>());
                                             setRating(new Array<Option>());
                                             setReader(new Array<Option>());
-                                            navigate('author/' + selected[0].author);
+                                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                            const selectedOption =  selected[0] as any;
+                                            navigate('author/' + encodeURIComponent( selectedOption['author']) );
                                         }
                                     }
                                 }
@@ -99,7 +101,7 @@ export default function BooksFind(props: BooksFindProps) {
                                 />
                         </Form.Group>
                     </div>
-                    <div className="col-sm">           
+                    <div className="col-sm mb-4">           
                         <Form.Group>
                             <Form.Label>Find Reviews By Genre</Form.Label>
                             <Typeahead
@@ -112,7 +114,9 @@ export default function BooksFind(props: BooksFindProps) {
                                             setAuthor(new Array<Option>());
                                             setRating(new Array<Option>());
                                             setReader(new Array<Option>());
-                                            navigate('genre/' + selected[0].genre);
+                                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                            const selectedOption =  selected[0] as any;
+                                            navigate('genre/' + encodeURIComponent(selectedOption['genre']));
                                         }
                                     }
                                 }
@@ -123,7 +127,7 @@ export default function BooksFind(props: BooksFindProps) {
                         </Form.Group>
                     </div>
                     {userProfile && (userProfile.highestRole === 'ROLE_EDITOR' || userProfile.highestRole === 'ROLE_ADMIN') &&
-                        <div className="col-sm">           
+                        <div className="col-sm mb-4">           
                             <Form.Group>
                                 <Form.Label>Find Reviews By Reviewer</Form.Label>
                                 <Typeahead
@@ -136,7 +140,9 @@ export default function BooksFind(props: BooksFindProps) {
                                                 setAuthor(new Array<Option>());
                                                 setRating(new Array<Option>());
                                                 setGenre(new Array<Option>());
-                                                navigate('reader/' + selected[0].reader);
+                                                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                                const selectedOption =  selected[0] as any;
+                                                navigate('reader/' + encodeURIComponent(selectedOption['reader']));
                                             }
                                         }
                                     }

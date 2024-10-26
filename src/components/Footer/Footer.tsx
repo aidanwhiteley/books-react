@@ -1,5 +1,6 @@
 import './Footer.css';
-import GitHubButton from 'react-github-btn'
+import GitHubButton from 'react-github-btn';
+import { Link } from "react-router-dom";
 
 export default function Footer() {
 
@@ -13,7 +14,9 @@ export default function Footer() {
                             <div className="row d-flex flex-wrap justify-content-between">
                                 <div className="col-lg-5 col-sm-6 pb-3">
                                     <div className="footer-menu">
-                                        <img src="/images/book-club-logo.jpeg" alt="logo" />
+                                        <Link to="/">
+                                            <img src="/images/book-club-logo.jpeg" alt="logo" />
+                                        </Link>
                                         <p><b>{import.meta.env.VITE_APPLICATION_NAME}</b> - reminding me of what books I have read recently so I don't buy them again!</p>
                                     </div>
                                 </div>
@@ -23,13 +26,13 @@ export default function Footer() {
                                         <h5 className="widget-title pb-2">Usual stuff</h5>
                                         <ul className="menu-list list-unstyled">
                                             <li className="menu-item pb-2">
-                                                <a href="/books/stats">Book review stats</a>
+                                                <Link to="/books/stats">Book review stats</Link>
                                             </li>
                                             <li className="menu-item pb-2">
-                                                <a href="/tandcs">Help and T&Cs</a>
+                                                <Link to="/tandcs">Help and T&Cs</Link>
                                             </li>
                                             <li className="menu-item pb-2">
-                                                <a href="/privacy">Privacy</a>
+                                                <Link to="/privacy">Privacy</Link>
                                             </li>
                                             <li className="menu-item pb-2">
                                                 <a href="/feeds/rss">RSS feed</a>

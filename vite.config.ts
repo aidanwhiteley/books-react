@@ -1,84 +1,40 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  server: {
-    proxy: {
-      '/api/books/': {
-        //target: 'https://cloudybookclub.com',
-        target: 'http://localhost:8080',
-        changeOrigin: true,
-        secure: false,      
-        ws: true,
-        configure: (proxy) => {
-          proxy.on('error', (err) => {
-            //console.error('proxy error', err);
-          });
-          proxy.on('proxyReq', (proxyReq, req) => {
-            //console.debug('Sending Request to the Target:', req.method, req.url);
-          });
-          proxy.on('proxyRes', (proxyRes, req) => {
-            //console.debug('Received Response from the Target:', proxyRes.statusCode, req.url);
-          });
+export default ( mode: string ) => {
+
+  const env = loadEnv(mode, process.cwd());
+  const API_URL = `${env.VITE_API_URL ?? 'http://localhost:8080'}`;
+
+  return defineConfig({
+    plugins: [react()],
+    server: {
+      proxy: {
+        '/api/books/': {
+          target: API_URL,
+          changeOrigin: true,
+          secure: false,      
+          ws: true,
         },
-      },
-      '/secure/api/': {
-        //target: 'https://cloudybookclub.com',
-        target: 'http://localhost:8080',
-        changeOrigin: true,
-        secure: false,      
-        ws: true,
-        configure: (proxy) => {
-          proxy.on('error', (err) => {
-            //console.error('proxy error', err);
-          });
-          proxy.on('proxyReq', (proxyReq, req) => {
-            //console.debug('Sending Request to the Target:', req.method, req.url);
-          });
-          proxy.on('proxyRes', (proxyRes, req) => {
-            //console.debug('Received Response from the Target:', proxyRes.statusCode, req.url);
-          });
+        '/secure/api/': {
+          target: API_URL,
+          changeOrigin: true,
+          secure: false,      
+          ws: true,
         },
-      },
-      '/login/': {
-        //target: 'https://cloudybookclub.com',
-        target: 'http://localhost:8080',
-        changeOrigin: true,
-        secure: false,      
-        ws: true,
-        configure: (proxy) => {
-          proxy.on('error', (err) => {
-            //console.error('proxy error', err);
-          });
-          proxy.on('proxyReq', (proxyReq, req) => {
-            //console.debug('Sending Request to the Target:', req.method, req.url);
-          });
-          proxy.on('proxyRes', (proxyRes, req) => {
-            //console.debug('Received Response from the Target:', proxyRes.statusCode, req.url);
-          });
+        '/login/': {
+          target: API_URL,
+          changeOrigin: true,
+          secure: false,      
+          ws: true,
         },
-      },
-      '/feeds/': {
-        //target: 'https://cloudybookclub.com',
-        target: 'http://localhost:8080',
-        changeOrigin: true,
-        secure: false,      
-        ws: true,
-        configure: (proxy) => {
-          proxy.on('error', (err) => {
-            //console.error('proxy error', err);
-          });
-          proxy.on('proxyReq', (proxyReq, req) => {
-            //console.debug('Sending Request to the Target:', req.method, req.url);
-          });
-          proxy.on('proxyRes', (proxyRes, req) => {
-            //console.debug('Received Response from the Target:', proxyRes.statusCode, req.url);
-          });
+        '/feeds/': {
+          target: API_URL,
+          changeOrigin: true,
+          secure: false,      
+          ws: true,
         },
-      },
-      
+      }
     }
-  }
-})
+  });
+}

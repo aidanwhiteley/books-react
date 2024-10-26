@@ -2,27 +2,34 @@ export class NotLoggedOnError extends Error { }
 export class DataRetievalError extends Error { }
 
 export type Book = {
-    id: string,
+    id?: string,
     comments: Comment[],
     title: string,
     author: string,
     genre: string,
     summary: string,
     rating: Rating,
-    googleBookId: string,
-    googleBookDetails: GoogleBookDetails,
+    googleBookId?: string,
+    googleBookDetails?: GoogleBookDetails,
     // Next three fields are just _hints_ to the client side - they are enforced on the server
-    allowUpdate: boolean,
-    allowDelete: boolean,
-    allowComment: boolean,
-    // We dont use the next field
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    createdBy: any,
-    createdDateTime: number[],
-    // We dont use the next field
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    lastModifiedBy: any,
-    lastModifiedDateTime: number[]
+    allowUpdate?: boolean,
+    allowDelete?: boolean,
+    allowComment?: boolean,
+    createdBy?: UserBy,
+    createdDateTime?: number[],
+    lastModifiedBy?: UserBy,
+    lastModifiedDateTime?: number[]
+}
+
+export type UserBy = {
+    authProvider: string,
+    authenticationServiceId: string,
+    email?: string,
+    firstName: string,
+    fullName: string,
+    lastName?: string,
+    link?: string,
+    picture?: string
 }
 
 export type Comment = {
@@ -120,6 +127,11 @@ export type Reader = {
 
 export type Author = {
     author: string,
+    countOfBooks: number
+}
+
+export type Genre = {
+    genre: string,
     countOfBooks: number
 }
 
@@ -298,7 +310,7 @@ export async function getuserProfile(): Promise<UserProfile | null> {
     return response.json()
 }
 
-export async function getGoogleBooks(title: string, author: string): Promise<GoogleBookSearchResult | null> {
+export async function getGoogleBooks(title: string, author: string): Promise<GoogleBookSearchResult> {
 
     const api = '/secure/api/googlebooks/?';
     const apiParams = 'title=' + title + '&author=' + author; 
@@ -306,7 +318,7 @@ export async function getGoogleBooks(title: string, author: string): Promise<Goo
     const response = await fetch(api + apiParams);
     if (response.status === 401) {
         console.debug('Not authorised to search for Google Books data. This is expected if the user is not logged on.');
-        return null;
+        throw new NotLoggedOnError('You must be logged on to search for bbosk on Google Books');
     } else if (!response.ok) {
         throw new DataRetievalError('Error searching Google Books data via the server. Status: ' + response.status + ' ' + response.statusText);
     }
@@ -324,29 +336,103 @@ export async function getSummaryStats(): Promise<SummaryStats> {
     return response.json()
 }
 
-export async function createBookReview(newBookReview: Book): Promise<null> {
+export async function createOrUpdateBookReview(bookReview: Book): Promise<null> {
 
     const api = '/secure/api/books';
 
+    let method = 'POST';
+    if (bookReview.id) {
+        method = 'PUT';
+    }
+
     const config = {
-        method: 'POST',
+        method: method,
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'X-XSRF-TOKEN': getCookie('XSRF-TOKEN') 
           },
-        body: JSON.stringify(newBookReview)
+        body: JSON.stringify(bookReview)
     }
 
     const response = await fetch(api, config);
     if (response.status === 401) {
-        console.debug('Not authorised to create book reviews. This is expected if the user doesnt have the EDITOR or ADMIN role.');
-        return null;
-    // Note that the API actually returns a 201 (created) with a redirect location for the newly created book
+        throw new NotLoggedOnError('Not authorised to create or update book reviews. You are either not logged on or don\'t have the EDITOR or ADMIN role.');
     } else if (!response.ok) {
         throw new DataRetievalError('Error trying to store book review details on the server. Status: ' + response.status + ' ' + response.statusText);
     }
 
     return null;
+}
+
+export async function deleteBookReview(id: string): Promise<null> {
+
+    const api = '/secure/api/books/';
+
+    const config = {
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'X-XSRF-TOKEN': getCookie('XSRF-TOKEN') 
+          }
+    }
+
+    const response = await fetch(api + id, config);
+    if (response.status === 401) {
+        throw new NotLoggedOnError('Not authorised to delete this book review. You are either not logged on, don\'t own the book or don\'t have the ADMIN role.');
+    } else if (!response.ok) {
+        throw new DataRetievalError('Error trying to delete book review details from the server. Status: ' + response.status + ' ' + response.statusText);
+    }
+
+    return null;
+}
+
+export async function createComment(bookId: string, comment: string): Promise<Book> {
+
+    const api = '/secure/api/books/' + bookId + '/comments';
+
+    const config = {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'X-XSRF-TOKEN': getCookie('XSRF-TOKEN') 
+          },
+        body: JSON.stringify({commentText: comment})
+    }
+
+    const response = await fetch(api, config);
+    if (response.status === 401) {
+        throw new NotLoggedOnError('Not authorised to comment on book reviews. You are either not logged on or don\'t have the EDITOR or ADMIN role.');
+    } else if (!response.ok) {
+        throw new DataRetievalError('Error trying to store book review comments on the server. Status: ' + response.status + ' ' + response.statusText);
+    }
+
+    return response.json();
+}
+
+export async function deleteComment(bookId: string, commentId: string): Promise<Book> {
+
+    const api = '/secure/api/books/' + bookId + '/comments/' + commentId;
+
+    const config = {
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'X-XSRF-TOKEN': getCookie('XSRF-TOKEN') 
+          }
+    }
+
+    const response = await fetch(api, config);
+    if (response.status === 401) {
+        throw new NotLoggedOnError('Not authorised to delete this book review comment. You are either not logged on, don\'t own the comment or don\'t have the ADMIN role.');
+    } else if (!response.ok) {
+        throw new DataRetievalError('Error trying to delete book review comment from the server. Status: ' + response.status + ' ' + response.statusText);
+    }
+
+    return response.json();
 }
 
 export async function logoff(): Promise<void> {
@@ -355,6 +441,9 @@ export async function logoff(): Promise<void> {
 
     const config = {
         method: 'POST',
+        headers: {
+            'X-XSRF-TOKEN': getCookie('XSRF-TOKEN') 
+        }
     }
 
     const response = await fetch(api, config);
@@ -366,4 +455,17 @@ export async function logoff(): Promise<void> {
     }
     return;
 }
+
+function getCookie(name: string): string {
+	const nameLenPlus = (name.length + 1);
+	return document.cookie
+		.split(';')
+		.map(c => c.trim())
+		.filter(cookie => {
+			return cookie.substring(0, nameLenPlus) === `${name}=`;
+		})
+		.map(cookie => {
+			return decodeURIComponent(cookie.substring(nameLenPlus));
+		})[0] || '';
+    }
 

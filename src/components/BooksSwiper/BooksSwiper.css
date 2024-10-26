@@ -7,11 +7,39 @@
   padding-bottom: 200px;
 }
 
+@media (max-width: 600px) {
+  .swiper {
+    padding-top: 30px;
+    padding-bottom: 100px;
+  }
+}
+
+@media (max-width: 300px) {
+  .swiper {
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+}
+
 .swiper-slide {
   background-position: center;
   background-size: cover;
   width: 250px;
   height: 250px;
+}
+
+@media (max-width: 600px) {
+  .swiper-slide {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 300px) {
+  .swiper-slide {
+    width: 75px;
+    height: 75px;
+  }
 }
 
 .swiper-slide img {
