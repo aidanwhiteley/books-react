@@ -31,6 +31,8 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#configuration">Configuration</a></li>
+    <li><a href="#tests">Tests</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -57,7 +59,7 @@ Here's how to get up and running with this project.
 ### Prerequisites
 
 1. You should have a recent version of <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">npm</a> installed.
-2. Ideally, you should have an instance of the <a href="https://github.com/aidanwhiteley/books">Books microservice</a> running locally on your computer on port 8080. However, if Java isn't your thing, an alternative that allows access to all the read-only functionality of the this front end app is detailed further below. 
+2. Ideally, you should have an instance of the <a href="https://github.com/aidanwhiteley/books">Books microservice</a> running locally on your computer on port 8080. However, if Java isn't your thing, an alternative that allows access to all the read-only functionality of this front end app is detailed further below. 
 
 ### Installation
 
@@ -89,14 +91,14 @@ Here's how to get up and running with this project.
 
 There are a few "global variables" defined in the `.env` file in the root folder. These should be edited as required.
 
-In particular, the checked in .env file has `VITE_API_URL=localhost:8080` which assumes that you are running the books microservice locally (see earlier in this README).
+In particular, the checked in .env file has `VITE_API_URL=http://localhost:8080` which assumes that you are running the books microservice locally (see earlier in this README).
 
-To try out the read-only parts of this front end application this can be temporarily changed to `VITE_API_URL=https://cloudybookclub.com`. This won't allow you to logon to access editor or admin functionality but does allow you to get started. Make sure that you don't add a trailing slash. The default value is `VITE_API_URL="http://localhost:8080"`
+To try out the read-only parts of this front end application this can be temporarily changed to `VITE_API_URL=https://cloudybookclub.com`. This won't allow you to logon to access editor or admin functionality but does allow you to get started. Make sure that you don't add a trailing slash. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Tests
-Nah - there aren't any. The front end project is deliberately light in any "business logic". It is all just display related code. And I have rather strong feelings about the utility (and encumberances) of most client side "unit tests". Anyways, the server side where all the logic is has about about 100 automated tests and about <a href="https://sonarcloud.io/project/overview?id=com.aidanwhiteley%3Abooks">85% code coverage</a> split between unit tests and, the far more important in the long term, intergration tests.
+Nah - there aren't any. This front end project is deliberately light in any "business logic". It is all just display related code. And I have rather strong feelings about the utility (and encumberances) of most client side "unit tests". Anyways, the server side, where all the logic is, has about about 100 automated tests and about <a href="https://sonarcloud.io/project/overview?id=com.aidanwhiteley%3Abooks">85% code coverage</a> split between unit tests and, the far more important in the long term, integration tests.
 
 ## License
 
