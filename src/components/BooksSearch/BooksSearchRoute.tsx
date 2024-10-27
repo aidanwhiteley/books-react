@@ -18,7 +18,7 @@ export const loader = (async ({request}) => {
     }
   } 
   
-  return await getBooksBySearch(search!, parseInt(pageNumber), 5);
+  return await getBooksBySearch(search!, parseInt(pageNumber), 7);
 }) satisfies LoaderFunction;
 
 export interface BooksProps {

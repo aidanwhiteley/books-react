@@ -5,6 +5,7 @@ import { Outlet, useNavigation, useOutletContext } from "react-router-dom";
 import "./RootRoute.css";
 import { getuserProfile, UserProfile } from "../../apis/HttpDataApis";
 import { useLoaderData, LoaderFunction} from "react-router-typesafe";
+import ScrollToTop from "../../utils/ScrollToTop";
 
 type ContextType = { userProfile: UserProfile | null };
 
@@ -35,6 +36,7 @@ export default function Root() {
     return (
 
         <>
+            <ScrollToTop />
             <Header userprofile={userProfile} />
 
             {message && 

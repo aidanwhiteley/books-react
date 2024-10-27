@@ -14,10 +14,10 @@ export default function Footer() {
                             <div className="row d-flex flex-wrap justify-content-between">
                                 <div className="col-lg-5 col-sm-6 pb-3">
                                     <div className="footer-menu">
-                                        <Link to="/">
+                                        <Link className="d-none d-md-block" to="/">
                                             <img src="/images/book-club-logo.jpeg" alt="logo" />
                                         </Link>
-                                        <p><b>{import.meta.env.VITE_APPLICATION_NAME}</b> - reminding me of what books I have read recently so I don't buy them again!</p>
+                                        <p><b>{import.meta.env.VITE_APPLICATION_NAME}</b> - <span className="fst-italic">reminding me of what books I have read recently so I don't buy them again!</span></p>
                                     </div>
                                 </div>
                                 

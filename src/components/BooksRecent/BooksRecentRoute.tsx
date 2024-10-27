@@ -16,7 +16,7 @@ export const loader = (async ({request}) => {
     page = page - 1;
   }
 
-  return await getBooksByReviewDate(page, 5);
+  return await getBooksByReviewDate(page, 7);
 }) satisfies LoaderFunction;
 
 export interface BooksProps {

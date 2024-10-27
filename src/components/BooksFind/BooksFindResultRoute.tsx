@@ -22,13 +22,13 @@ export const loader = (async (params) => {
   }
 
   if (criteria === 'author') {
-    return await getBooksByAuthor(value!, page, 5);
+    return await getBooksByAuthor(value!, page, 7);
   } else if (criteria === 'genre') {
-    return await getBooksByGenre(value!, page, 5);
+    return await getBooksByGenre(value!, page, 7);
   } else if (criteria === 'rating') {
-    return await getBooksByRating(stringAsRating(value!), page, 5);
+    return await getBooksByRating(stringAsRating(value!), page, 7);
   } else if (criteria === 'reader') {
-    return await getBooksByReader(value!, page, 5);
+    return await getBooksByReader(value!, page, 7);
   }
 }) satisfies LoaderFunction;
 

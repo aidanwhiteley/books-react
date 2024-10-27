@@ -40,6 +40,8 @@ export default function BookSwiper(props: BooksProps) {
 
   const navigate = useNavigate();
 
+  const showNaviagtion = window.innerWidth > 1023;
+
   return (
     <>
       
@@ -56,7 +58,7 @@ export default function BookSwiper(props: BooksProps) {
           slideShadows: false,
         }}
         onClick={(swiper) =>  navigate('book/' + swiper.slides[swiper.clickedIndex].dataset.bookId!)}
-        navigation
+        navigation={showNaviagtion}
         loop={loopEnabled}
         modules={[EffectCoverflow, Pagination, Navigation]}
         className="mySwiper"

@@ -1,4 +1,4 @@
-import { Link, useLocation, Form, useNavigation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, Form, useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -13,90 +13,73 @@ export interface Props {
 export default function Header(props:  PropsWithChildren<Props>) {
 
     const location = useLocation();
-    const navigation = useNavigation();
     const navigate = useNavigate();
 
     const userProfile = props.userprofile;
 
     const [term, setTerm] = useState('');
+    const [expanded, setExpanded] = useState(false);
 
     const activeKey = location.pathname === '/' ? '/home' : location.pathname;
-    const searching = navigation.location && new URLSearchParams(navigation.location.search).has("term");
 
     return (
-        <Navbar collapseOnSelect expand="lg" bg="light" data-bs-theme="light" sticky="top">
+      <Navbar collapseOnSelect expand="lg" bg="light" data-bs-theme="light" sticky="top" expanded={expanded}>
         <Container>
           <Navbar.Brand as={Link} to="/">
-          <img
-                alt=""
-                src="/images/book-club-logo.png"
-                height="30"
-                className="d-inline-block align-top"
-              />{' '}
+            <img alt="Site logo" src="/images/book-club-logo.png" height="30" className="d-inline-block align-top" />{' '}
             {import.meta.env.VITE_APPLICATION_NAME}
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+          <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(!expanded)} />
+
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav activeKey={activeKey} className="me-auto">
-              <Nav.Link as={Link} eventKey="/home" to="/">
+              <Nav.Link as={Link} eventKey="/home" to="/" onClick={() => setExpanded(false)}>
                 Home
               </Nav.Link>
-              <Nav.Link as={Link} eventKey="/books/recent" to="/books/recent">
+              <Nav.Link as={Link} eventKey="/books/recent" to="/books/recent" onClick={() => setExpanded(false)}>
                 Recently Reviewed
               </Nav.Link>
-              <Nav.Link as={Link} eventKey="/books/find" to="/books/find">
+              <Nav.Link as={Link} eventKey="/books/find" to="/books/find" onClick={() => setExpanded(false)}>
                 Find a review
               </Nav.Link>
 
               {(userProfile && (userProfile.highestRole === 'ROLE_EDITOR' || userProfile.highestRole === 'ROLE_ADMIN')) &&
-                <Nav.Link as={Link} eventKey="/create" to="/books/create">
+                <Nav.Link as={Link} eventKey="/create" to="/books/create" onClick={() => setExpanded(false)}>
                   Add a book review
                 </Nav.Link>
               }
 
               {!userProfile && 
-                <Nav.Link as={Link} eventKey="/logon" to="/logon">
+                <Nav.Link as={Link} eventKey="/logon" to="/logon" onClick={() => setExpanded(false)}>
                   Logon
                 </Nav.Link>
               }
               {userProfile && 
-                <Nav.Link as={Link} eventKey="/logoff" to="/logoff">
+                <Nav.Link as={Link} eventKey="/logoff" to="/logoff" onClick={() => setExpanded(false)}>
                   Logoff
                 </Nav.Link>
               }
             </Nav>
             <div id="book-search">
-                <Form id="search-form" role="search" navigate={false}>
-                <input
-                    id="term"
-                    className={searching ? "loading" : ""}
-                    aria-label="Search book reviews"
-                    placeholder="Search book reviews"
-                    type="search"
-                    name="term"
-                    value={term}
-                    onChange={(event) => {
-                        setTerm(event.target.value);
-                    }}
-                    onKeyDown={event => {
-                        
-                        if (event.key === 'Enter') {
-                            event.preventDefault();
-                            navigate('/books/search?term=' + term);
-                        }
+              <Form id="search-form" role="search" navigate={false}>
+                <input id="term" aria-label="Search book reviews"
+                  placeholder="Search book reviews" type="search" name="term" value={term}
+                  onChange={(event) => {
+                      setTerm(event.target.value);
+                  }}
+                  onKeyDown={event => {
+                      if (event.key === 'Enter') {
+                          event.preventDefault();
+                          setExpanded(false);
+                          const searchTerm = term;
+                          setTerm('');
+                          navigate('/books/search?term=' + searchTerm);  
                       }
                     }
+                  }
                 />
-                <div
-                    id="search-spinner"
-                    aria-hidden
-                    hidden={!searching}
-                />
-                <div
-                    className="sr-only"
-                    aria-live="polite"
-                ></div>
-                </Form>
+              </Form>
             </div>
           </Navbar.Collapse>
         </Container>

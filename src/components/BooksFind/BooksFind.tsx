@@ -47,9 +47,18 @@ export default function BooksFind(props: BooksFindProps) {
 
     const ratingDisplay = ['Great', 'Good', 'Ok', 'Poor', 'Terrible'];
 
+    const inputSelected = author.length > 0 || genre.length > 0|| rating.length > 0 || reader.length > 0;
+
     return (
         <>
             <h2>Find a book review</h2>
+
+            {inputSelected &&
+                <p className="searchResultsMsg d-md-none fst-italic">Scroll down to see search results</p>
+            }
+            {!inputSelected &&
+                <p className="searchResultsMsg d-md-none">&nbsp;</p>
+            }
 
             <div className="container">
                 <div className="row">
@@ -156,9 +165,9 @@ export default function BooksFind(props: BooksFindProps) {
                 </div>
             </div>
                               
-            <hr/>
+            <hr />
 
-            <Outlet />
+            <Outlet  />
         </>
     )
 }

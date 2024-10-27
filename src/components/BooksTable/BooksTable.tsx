@@ -32,7 +32,8 @@ export default function BooksTable(props: BooksProps) {
         {
             name: 'Title',
             selector: row => row.author,
-            format: row => formatTitle(row)
+            format: row => formatTitle(row),
+            minWidth: '250px'
         },
         {
             name: 'Author',
