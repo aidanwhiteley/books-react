@@ -100,6 +100,12 @@ To try out the read-only parts of this front end application this can be tempora
 ## Tests
 Nah - there aren't any. This front end project is deliberately light in any "business logic". It is all just display related code. And I have rather strong feelings about the utility (and encumberances) of most client side "unit tests". Anyways, the server side, where all the logic is, has about about 100 automated tests and about <a href="https://sonarcloud.io/project/overview?id=com.aidanwhiteley%3Abooks">85% code coverage</a> split between unit tests and, the far more important in the long term, integration tests.
 
+## Docker
+There is a Docker file in the root of the project that is intended to build a simple Docker image of the project that runs serves it using ngnix. The referenced nginx config file(s) 
+proxy API calls other Docker containers that are specified in the Docker Compose file in the <a href="https://github.com/aidanwhiteley/books">Books microservice</a> project.
+See the Docker file for the suggested syntax for build the Docker image.
+
+
 ## License
 
 Distributed under the Apache 2.0 License. See <a href="LICENSE">LICENSE</a> for more information.
