@@ -12,7 +12,7 @@ export default function BookDetails(props: BookProps) {
     const navigate = useNavigate();
 
     const book = props.book;
-    let bookCover : string | null = '';
+    let bookCover: string | null = '';
     if (book.googleBookDetails && book.googleBookDetails.volumeInfo && book.googleBookDetails.volumeInfo.imageLinks) {
         bookCover = book.googleBookDetails.volumeInfo.imageLinks.thumbnail ? book.googleBookDetails.volumeInfo.imageLinks.thumbnail
             : book.googleBookDetails.volumeInfo.imageLinks.smallThumbnail;
@@ -34,10 +34,10 @@ export default function BookDetails(props: BookProps) {
 
                         <Tab eventKey="bookDetails" title="Book Details">
                             <div className="bookInfo">
-                                {bookCover && 
+                                {bookCover &&
                                     <img src={bookCover.replace('http://', 'https://')} className="float-start rounded img-thumbnail me-3" alt={altText} />
                                 }
-                                
+
                                 <p><b>Title: </b>{book.title}</p>
                                 <p><b>Author: </b>{book.author}</p>
                                 <p className="rating"><b>Rating: </b>{book.rating.toLocaleLowerCase()}</p>
@@ -47,7 +47,7 @@ export default function BookDetails(props: BookProps) {
                                 <p><b>Genre: </b>{book.genre}</p>
                                 {displayGooglePreview &&
                                     <p>
-                                    <b className="me-3">Book Preview:</b>
+                                        <b className="me-3">Book Preview:</b>
                                         <a href={"https://books.google.co.uk/books?id=" + book.googleBookId + "&printsec=frontcover#v=onepage&q&f=true&gbpv=1"} target="_blank">
                                             <img className="" src="/images/gbs_preview_button1.gif" />
                                         </a>
@@ -57,7 +57,7 @@ export default function BookDetails(props: BookProps) {
 
                                 {(book.createdBy && book.createdBy.fullName) &&
                                     <p><b>Reviewer:</b> {book.createdBy.fullName}</p>
-                                }  
+                                }
                             </div>
 
                             {book.allowUpdate &&
@@ -76,17 +76,17 @@ export default function BookDetails(props: BookProps) {
                                     <Button type="submit" className="mt-4" variant="outline-danger">Delete this book review</Button>
                                 </Form>
                             }
-                            
+
                         </Tab>
 
                         {(book.googleBookDetails && book.googleBookDetails.volumeInfo) &&
                             <Tab eventKey="googleBookSummary" title="Google Book Summary">
                                 <div className="bookInfo">
-                                    {bookCover && 
+                                    {bookCover &&
                                         <img src={bookCover.replace('http://', 'https://')} className="float-start rounded img-thumbnail me-3" alt={altText} />
                                     }
                                     <p><b>Google Summary: </b></p>
-                                    <div id="googleSummaryDetail" dangerouslySetInnerHTML={{__html: sanitizeHtml(book.googleBookDetails.volumeInfo.description)}}></div>
+                                    <div id="googleSummaryDetail" dangerouslySetInnerHTML={{ __html: sanitizeHtml(book.googleBookDetails.volumeInfo.description) }}></div>
                                 </div>
                             </Tab>
                         }

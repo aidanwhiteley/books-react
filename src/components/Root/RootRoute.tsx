@@ -4,7 +4,7 @@ import Messaging from "../Messaging/Messaging";
 import { Outlet, useNavigation, useOutletContext } from "react-router-dom";
 import "./RootRoute.css";
 import { getuserProfile, UserProfile } from "../../apis/HttpDataApis";
-import { useLoaderData, LoaderFunction} from "react-router-typesafe";
+import { useLoaderData, LoaderFunction } from "react-router-typesafe";
 import ScrollToTop from "../../utils/ScrollToTop";
 
 type ContextType = { userProfile: UserProfile | null };
@@ -25,7 +25,7 @@ export default function Root() {
 
     let message = '';
     const loggedOnMessage = userProfile ? 'Hi ' + userProfile.firstName + ', thanks for logging on to the ' + import.meta.env.VITE_APPLICATION_NAME + '!' : '';
-    const loggedOffMessage = 'You have now logged out of ' + import.meta.env.VITE_APPLICATION_NAME; 
+    const loggedOffMessage = 'You have now logged out of ' + import.meta.env.VITE_APPLICATION_NAME;
 
     if (searchParams.has('logged-on')) {
         message = loggedOnMessage;
@@ -39,7 +39,7 @@ export default function Root() {
             <ScrollToTop />
             <Header userprofile={userProfile} />
 
-            {message && 
+            {message &&
                 <Messaging message={message} />
             }
 

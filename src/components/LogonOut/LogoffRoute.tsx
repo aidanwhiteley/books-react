@@ -6,14 +6,14 @@ export const loader = (async () => {
 
   await logoff();
   return null;
-  
+
 }) satisfies LoaderFunction;
-    
+
 export default function LogoffRoute() {
 
   window.location.href = "/?logged-out=y";
 
   return (
-      <p>We are currently logging you out of {import.meta.env.VITE_APPLICATION_NAME}</p>
-    )
+    <p>We are currently logging you out of {import.meta.env.VITE_APPLICATION_NAME}</p>
+  )
 }

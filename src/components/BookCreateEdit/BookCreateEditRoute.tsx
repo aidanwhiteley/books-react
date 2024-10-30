@@ -1,6 +1,6 @@
 import BookCreateEdit from './BookCreateEdit';
 import { getGenres, Book, createOrUpdateBookReview, stringAsRating, getBookById, Genre, getGoogleBooks, GoogleBookSearchResult } from "../../apis/HttpDataApis";
-import { useLoaderData, LoaderFunction, useActionData, ActionFunction, redirect} from "react-router-typesafe";
+import { useLoaderData, LoaderFunction, useActionData, ActionFunction, redirect } from "react-router-typesafe";
 
 export interface BookCreateProps {
   genres: Genre[];
@@ -12,7 +12,7 @@ export interface BookCreateProps {
 }
 
 export const loader = (async (request) => {
-  
+
   let currentBook = {} as Book;
   let googleBooks = {} as GoogleBookSearchResult;
   if (request.params.id) {
@@ -21,12 +21,12 @@ export const loader = (async (request) => {
   }
 
   const genres = await getGenres()
-  
-  return {'currentBook': currentBook, 'genres': genres, 'googleBooks': googleBooks};
+
+  return { 'currentBook': currentBook, 'genres': genres, 'googleBooks': googleBooks };
 
 }) satisfies LoaderFunction;
 
-export const action = (async ({request}) => {
+export const action = (async ({ request }) => {
 
   const formData = await request.formData();
   const bookFormData = Object.fromEntries(formData);
@@ -38,7 +38,7 @@ export const action = (async ({request}) => {
     const lastIndex = genreWithoutCount.lastIndexOf('(');
     genreWithoutCount = genreWithoutCount.substring(0, lastIndex - 1).trim();
 
-    const bookReview : Book = {
+    const bookReview: Book = {
       id: bookFormData.bookId as string,
       comments: [],
       title: bookFormData.title as string,
@@ -58,7 +58,7 @@ export const action = (async ({request}) => {
     return redirect("/books/recent")
   }
 
-  const booksCreateProps : BookCreateProps = {
+  const booksCreateProps: BookCreateProps = {
     genres: [],
     ratings: [],
     errorMessages: errorMessages,
@@ -77,7 +77,7 @@ export const action = (async ({request}) => {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function validateBookData(bookFormData: any): string[] {
 
-  const errorMessages: string[] =[];
+  const errorMessages: string[] = [];
   if (bookFormData.title.length < 1 || bookFormData.title.length > 100) {
     errorMessages.push('The title of your book must be between 1 and 100 characters long');
   }
@@ -108,7 +108,7 @@ export default function BookCreateEditRoute() {
     errorMessages = props.errorMessages;
   }
 
-  const booksCreateProps : BookCreateProps = {
+  const booksCreateProps: BookCreateProps = {
     genres: genres,
     ratings: ratings,
     errorMessages: errorMessages,
@@ -116,7 +116,7 @@ export default function BookCreateEditRoute() {
     book: currentBook,
     googleBooks: googleBooks
   }
-  
+
   return (
     <BookCreateEdit {...booksCreateProps} />
   )

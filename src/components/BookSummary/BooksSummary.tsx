@@ -2,11 +2,11 @@ import { SummaryStats } from "../../apis/HttpDataApis";
 
 export default function BooksSummary(props: SummaryStats) {
 
-  const bookByRating = props.booksByRating.map((aRating, index) =>  
-    <li key={index}><span className="text-capitalize">{aRating.rating.toLowerCase()}</span> - {aRating.countOfBooks} {aRating.countOfBooks === 1 ? 'book' : 'books'}</li> );
+  const bookByRating = props.booksByRating.map((aRating, index) =>
+    <li key={index}><span className="text-capitalize">{aRating.rating.toLowerCase()}</span> - {aRating.countOfBooks} {aRating.countOfBooks === 1 ? 'book' : 'books'}</li>);
   const booksByGenreLimited = props.bookByGenre.length > 0 ? props.bookByGenre.slice(0, 10) : props.bookByGenre;
-  const bookByGenre = booksByGenreLimited.map((aGenre, index) =>  <li key={index}>{aGenre.genre} - {aGenre.countOfBooks} {aGenre.countOfBooks === 1 ? 'book' : 'books'}</li> );
-  
+  const bookByGenre = booksByGenreLimited.map((aGenre, index) => <li key={index}>{aGenre.genre} - {aGenre.countOfBooks} {aGenre.countOfBooks === 1 ? 'book' : 'books'}</li>);
+
   return (
     <>
       <p className="lead mt-3 mb-4 ms-2">

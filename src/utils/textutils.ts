@@ -10,6 +10,6 @@ import purify from "dompurify";
  * isn't opening up XSS possibilities.
  */
 export function sanitizeHtml(text: string) {
-    
+
     return purify.sanitize(text, { USE_PROFILES: { html: true } });
 }

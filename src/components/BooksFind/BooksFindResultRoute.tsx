@@ -40,7 +40,7 @@ export default function BooksFindRoute() {
 
   const booksData = useLoaderData<typeof loader>();
 
-  const booksProps : BooksProps = {
+  const booksProps: BooksProps = {
     booksQueryResult: booksData!
   }
   return (

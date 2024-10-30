@@ -6,7 +6,7 @@ export const loader = (async () => {
 
   const [authors, genres, readers] = await Promise.all([getAuthors(), getGenres(), getReaders()]);
 
-  return {authors, genres, readers};
+  return { authors, genres, readers };
 
 }) satisfies LoaderFunction;
 
@@ -20,7 +20,7 @@ export default function BooksFindRoute() {
 
   const data = useLoaderData<typeof loader>();
 
-  const booksFindProps : BooksFindProps = {
+  const booksFindProps: BooksFindProps = {
     authors: data.authors,
     genres: data.genres,
     readers: data.readers

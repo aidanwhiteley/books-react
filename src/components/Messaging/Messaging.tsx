@@ -1,14 +1,14 @@
-import {PropsWithChildren} from 'react';
+import { PropsWithChildren } from 'react';
 
 export interface Props {
     message: string;
 }
 
-export default function Messaging(props:  PropsWithChildren<Props>) {
+export default function Messaging(props: PropsWithChildren<Props>) {
 
     return (
         <>
-            {props.message && 
+            {props.message &&
                 <div className="container mt-3">
                     <div className="alert alert-primary" role="alert">
                         {props.message}

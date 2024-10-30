@@ -1,4 +1,4 @@
-import { useLoaderData, LoaderFunction} from "react-router-typesafe";
+import { useLoaderData, LoaderFunction } from "react-router-typesafe";
 import BooksSummary from "./BooksSummary";
 import { getSummaryStats } from '../../apis/HttpDataApis';
 
