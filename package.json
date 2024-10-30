@@ -21,7 +21,7 @@
     "react-paginate": "^8.2.0",
     "react-router-dom": "^6.26.1",
     "react-router-typesafe": "^1.5.0",
-    "styled-components": "^6.1.13",
+    "styled-components": "^5.3.11",
     "swiper": "^11.1.14"
   },
   "devDependencies": {

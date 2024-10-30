@@ -1,9 +1,9 @@
 import { BooksFindProps } from "./BooksFindRoute";
-import { Typeahead } from 'react-bootstrap-typeahead';
+import { Typeahead, TypeaheadRef } from 'react-bootstrap-typeahead';
 import { Option } from 'react-bootstrap-typeahead/types/types';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import 'react-bootstrap-typeahead/css/Typeahead.bs5.css';
-import { useState } from "react";
+import { useState, createRef } from "react";
 import Form from 'react-bootstrap/Form';
 import './BooksFind.css';
 import { Outlet } from "react-router-dom";
@@ -20,6 +20,10 @@ export default function BooksFind(props: BooksFindProps) {
     const navigate = useNavigate();
 
     const { userProfile } = useUserProfile();
+    const refAuthor = createRef<TypeaheadRef>();
+    const refGenre = createRef<TypeaheadRef>();
+    const refRating = createRef<TypeaheadRef>();
+    const refReader = createRef<TypeaheadRef>();
 
     const authorsDisplay = props.authors.map(anAuthor => {
         const text = anAuthor.countOfBooks > 1 ? ' books' : ' book';
@@ -75,6 +79,8 @@ export default function BooksFind(props: BooksFindProps) {
                                             setGenre(new Array<Option>());
                                             setAuthor(new Array<Option>());
                                             setReader(new Array<Option>());
+                                            // This is to close virtual keyboard on phone/tablet after select choice
+                                            refRating.current!.blur();
                                             navigate('rating/' + encodeURIComponent(selected[0] as string));  
                                         }
                                     }
@@ -82,6 +88,7 @@ export default function BooksFind(props: BooksFindProps) {
                                 options={ratingDisplay}
                                 selected={rating}
                                 highlightOnlyResult
+                                ref={refRating}
                                 />
                         </Form.Group>
                     </div>
@@ -100,6 +107,7 @@ export default function BooksFind(props: BooksFindProps) {
                                             setReader(new Array<Option>());
                                             // eslint-disable-next-line @typescript-eslint/no-explicit-any
                                             const selectedOption =  selected[0] as any;
+                                            refAuthor.current!.blur();
                                             navigate('author/' + encodeURIComponent( selectedOption['author']) );
                                         }
                                     }
@@ -107,6 +115,7 @@ export default function BooksFind(props: BooksFindProps) {
                                 options={authorsDisplay}
                                 selected={author}
                                 highlightOnlyResult
+                                ref={refAuthor}
                                 />
                         </Form.Group>
                     </div>
@@ -125,6 +134,7 @@ export default function BooksFind(props: BooksFindProps) {
                                             setReader(new Array<Option>());
                                             // eslint-disable-next-line @typescript-eslint/no-explicit-any
                                             const selectedOption =  selected[0] as any;
+                                            refGenre.current!.blur();
                                             navigate('genre/' + encodeURIComponent(selectedOption['genre']));
                                         }
                                     }
@@ -132,6 +142,7 @@ export default function BooksFind(props: BooksFindProps) {
                                 options={genreDisplay}
                                 selected={genre}
                                 highlightOnlyResult
+                                ref={refGenre}
                                 />
                         </Form.Group>
                     </div>
@@ -151,6 +162,7 @@ export default function BooksFind(props: BooksFindProps) {
                                                 setGenre(new Array<Option>());
                                                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                                                 const selectedOption =  selected[0] as any;
+                                                refReader.current!.blur();
                                                 navigate('reader/' + encodeURIComponent(selectedOption['reader']));
                                             }
                                         }
@@ -158,6 +170,7 @@ export default function BooksFind(props: BooksFindProps) {
                                     options={readerDisplay}
                                     selected={reader}
                                     highlightOnlyResult
+                                    ref={refReader}
                                 />
                             </Form.Group>
                         </div>
