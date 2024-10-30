@@ -17,15 +17,15 @@ export default function BookSwiper(props: BooksProps) {
 
   const booksData = props.booksQueryResult.content.map(aBook => {
     return {
-        id: aBook.id,
-        title: aBook.title,
-        author: aBook.author,
-        rating: aBook.rating,
-        bookAppUrl: '/book/' + aBook.id,
-        thumbnail: ((aBook.googleBookId && aBook.googleBookDetails) ? 
-          aBook.googleBookDetails.volumeInfo.imageLinks.thumbnail ? aBook.googleBookDetails.volumeInfo.imageLinks.thumbnail.replace('http:', 'https:') : '' : ''),
-        smallThumbnail: ((aBook.googleBookId && aBook.googleBookDetails) ? 
-          aBook.googleBookDetails.volumeInfo.imageLinks.smallThumbnail ? aBook.googleBookDetails.volumeInfo.imageLinks.smallThumbnail.replace('http:', 'https:') : '' : '')
+      id: aBook.id,
+      title: aBook.title,
+      author: aBook.author,
+      rating: aBook.rating,
+      bookAppUrl: '/book/' + aBook.id,
+      thumbnail: ((aBook.googleBookId && aBook.googleBookDetails) ?
+        aBook.googleBookDetails.volumeInfo.imageLinks.thumbnail ? aBook.googleBookDetails.volumeInfo.imageLinks.thumbnail.replace('http:', 'https:') : '' : ''),
+      smallThumbnail: ((aBook.googleBookId && aBook.googleBookDetails) ?
+        aBook.googleBookDetails.volumeInfo.imageLinks.smallThumbnail ? aBook.googleBookDetails.volumeInfo.imageLinks.smallThumbnail.replace('http:', 'https:') : '' : '')
     };
   }).filter(s => (s.thumbnail !== ''));
 
@@ -44,7 +44,7 @@ export default function BookSwiper(props: BooksProps) {
 
   return (
     <>
-      
+
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
@@ -57,7 +57,7 @@ export default function BookSwiper(props: BooksProps) {
           modifier: 1,
           slideShadows: false,
         }}
-        onClick={(swiper) =>  navigate('book/' + swiper.slides[swiper.clickedIndex].dataset.bookId!)}
+        onClick={(swiper) => navigate('book/' + swiper.slides[swiper.clickedIndex].dataset.bookId!)}
         navigation={showNaviagtion}
         loop={loopEnabled}
         modules={[EffectCoverflow, Pagination, Navigation]}

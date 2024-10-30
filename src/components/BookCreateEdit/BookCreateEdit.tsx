@@ -19,7 +19,7 @@ export default function BookCreateEdit(props: BookCreateProps) {
     if (props.errorMessages.length === 1) {
         errorDisplay = <div className="alert alert-warning" role="alert"> {props.errorMessages[0]} </div>
     } else if (props.errorMessages.length > 1) {
-        const messages = props.errorMessages.map((message) =>  <li>{message}</li> );
+        const messages = props.errorMessages.map((message) => <li>{message}</li>);
         errorDisplay = <div className="alert alert-warning" role="alert"><ul> {messages} </ul></div>
     }
 
@@ -38,7 +38,7 @@ export default function BookCreateEdit(props: BookCreateProps) {
     useEffect(() => {
         if (props.googleBooks && props.googleBooks.items) {
             setGoogleBooksSearchResult(props.googleBooks);
-            if (props.book?.googleBookId) { 
+            if (props.book?.googleBookId) {
                 for (let i = 0; i < props.googleBooks.items.length - 1; i++) {
                     if (props.googleBooks.items[i].id === props.book.googleBookId) {
                         setCurrentGoogleBook(i);
@@ -118,12 +118,12 @@ export default function BookCreateEdit(props: BookCreateProps) {
 
                             <div className="col-md-6">
                                 <label htmlFor="title">Book Title</label>
-                                <input type="text" id="title" name="title" className="form-control" placeholder="Enter the book title" 
+                                <input type="text" id="title" name="title" className="form-control" placeholder="Enter the book title"
                                     min="1" max="100" required defaultValue={props.book?.title} />
                             </div>
                             <div className="col-md-6">
                                 <label htmlFor="author">Author</label>
-                                <input type="text" id="author" name="author" className="form-control" placeholder="Enter the authors name" 
+                                <input type="text" id="author" name="author" className="form-control" placeholder="Enter the authors name"
                                     min="1" max="75" required onBlur={onAuthorBlur} defaultValue={props.book?.author} />
                             </div>
                             <div className="col-md-4">
@@ -154,23 +154,23 @@ export default function BookCreateEdit(props: BookCreateProps) {
 
                             <div className="col-md-12">
                                 <label htmlFor="summary">Your review / summary</label>
-                                <textarea id="summary" name="summary" rows={8} className="form-control" placeholder="What did you think of the book?" 
+                                <textarea id="summary" name="summary" rows={8} className="form-control" placeholder="What did you think of the book?"
                                     aria-describedby="summaryHelpBlock" required defaultValue={props.book?.summary}></textarea>
                                 <small id="summaryHelpBlock" className="form-text">
-                                    Enter anything you like that may help someone else to decide whether the book is worth reading or not. 
+                                    Enter anything you like that may help someone else to decide whether the book is worth reading or not.
                                     Probably best not to say what the ending is!
-                                    HTML formatting is not supported.<br/>
+                                    HTML formatting is not supported.<br />
                                     Remember: all entries are publicly visible.
                                 </small>
                             </div>
 
-                            {(googleBookSearchResult && (googleBookSearchResult.totalItems === 0)) && 
+                            {(googleBookSearchResult && (googleBookSearchResult.totalItems === 0)) &&
                                 <div className="alert alert-warning" role="alert">
-                                    We didn't find any matching books on Google Books. This may be correct but please do check what is entered 
+                                    We didn't find any matching books on Google Books. This may be correct but please do check what is entered
                                     in the <b>Book Title</b> and <b>Author</b> fields above.
                                 </div>
                             }
-                        
+
                             {(googleBookSearchResult && googleBookSearchResult.totalItems > 0) &&
                                 <>
                                     <div className="col-md-8">
@@ -201,9 +201,9 @@ export default function BookCreateEdit(props: BookCreateProps) {
 
                                             <div className="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
                                                 <button type="button" disabled={currentGoogleBook === 0} onClick={onClickPrevious} className="btn btn-outline-primary previous-button" >&laquo; Previous</button>
-                                                <button type="button" disabled={currentGoogleBook === (googleBookSearchResult.totalItems -1)} onClick={onClickNext} className="btn btn-outline-primary next-button">Next &raquo;</button>
+                                                <button type="button" disabled={currentGoogleBook === (googleBookSearchResult.totalItems - 1)} onClick={onClickNext} className="btn btn-outline-primary next-button">Next &raquo;</button>
                                             </div>
-                                            
+
                                             <input id="googleBookId" name="googleBookId" type="hidden" value={getGoogleBookId()} />
                                         </div>
                                     </div>
@@ -212,7 +212,7 @@ export default function BookCreateEdit(props: BookCreateProps) {
 
                             <div className="text-center">
                                 <button type="submit" className="btn btn btn-outline-primary btn-wd me-3">{submitText}</button>
-                                <button type="button" className="btn btn btn-outline-secondary btn-wd" onClick={() => {navigate(-1);}}>Cancel</button>
+                                <button type="button" className="btn btn btn-outline-secondary btn-wd" onClick={() => { navigate(-1); }}>Cancel</button>
                             </div>
 
                         </Form>

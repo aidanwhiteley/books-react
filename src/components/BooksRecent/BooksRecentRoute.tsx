@@ -1,9 +1,9 @@
 import BooksRecent from "../BooksRecent/BooksRecent";
 import { BooksQueryResult, getBooksByReviewDate } from "../../apis/HttpDataApis";
-import { useLoaderData, LoaderFunction, redirect} from "react-router-typesafe";
+import { useLoaderData, LoaderFunction, redirect } from "react-router-typesafe";
 
 // eslint-disable-next-line react-refresh/only-export-components
-export const loader = (async ({request}) => {
+export const loader = (async ({ request }) => {
 
   let page = 0;
   const searchParams = new URL(request.url).searchParams.get("page");
@@ -27,7 +27,7 @@ export default function BooksRecentRoute() {
 
   const booksData = useLoaderData<typeof loader>();
 
-  const booksProps : BooksProps = {
+  const booksProps: BooksProps = {
     booksQueryResult: booksData
   }
 

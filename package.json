@@ -12,6 +12,7 @@
   "dependencies": {
     "books-react": "file:",
     "dompurify": "^3.1.7",
+    "eslint-plugin-react": "^7.37.2",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
     "react-bootstrap-typeahead": "^6.3.2",

@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./components/Root/RootRoute";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import SwiperRoute from "./components/BooksSwiper/BooksSwiperRoute";
@@ -42,9 +42,9 @@ const router = createBrowserRouter([
       {
         errorElement: <ErrorPage />,
         children: [
-          { 
-            index: true, 
-            element: <SwiperRoute />, 
+          {
+            index: true,
+            element: <SwiperRoute />,
             loader: bookByRatingLoader,
           },
           {
@@ -83,13 +83,13 @@ const router = createBrowserRouter([
             path: "books/find",
             element: <BooksFindRoute />,
             loader: booksFindLoader,
-            shouldRevalidate: ({ nextUrl}) => {
+            shouldRevalidate: ({ nextUrl }) => {
               return !(nextUrl.pathname.includes('author') || nextUrl.pathname.includes('genre') || nextUrl.pathname.includes('reader'))
             },
             children: [
-              { 
-                index: true, 
-                element: <BooksFindInfo /> 
+              {
+                index: true,
+                element: <BooksFindInfo />
               },
               {
                 path: ":criteria/:value",
@@ -108,7 +108,7 @@ const router = createBrowserRouter([
             loader: logoffLoader
           },
           {
-            path: "books/stats", 
+            path: "books/stats",
             element: <BooksSummaryRoute />,
             loader: statsLoader
           },

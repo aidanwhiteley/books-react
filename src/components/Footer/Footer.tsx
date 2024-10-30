@@ -20,7 +20,7 @@ export default function Footer() {
                                         <p><b>{import.meta.env.VITE_APPLICATION_NAME}</b> - <span className="fst-italic">reminding me of what books I have read recently so I don't buy them again!</span></p>
                                     </div>
                                 </div>
-                                
+
                                 <div className="col-lg-2 col-sm-6 pb-3">
                                     <div className="footer-menu">
                                         <h5 className="widget-title pb-2">Usual stuff</h5>
@@ -36,7 +36,7 @@ export default function Footer() {
                                             </li>
                                             <li className="menu-item pb-2">
                                                 <a href="/feeds/rss">RSS feed</a>
-                                            </li>   
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -52,7 +52,7 @@ export default function Footer() {
                                                 <a href="https://github.com/aidanwhiteley/books-react">Code - front end</a>
                                             </li>
                                             <li className="github-stars">
-                                                <GitHubButton href="https://github.com/aidanwhiteley/books" data-color-scheme="no-preference: light; light: light; dark: light;" 
+                                                <GitHubButton href="https://github.com/aidanwhiteley/books" data-color-scheme="no-preference: light; light: light; dark: light;"
                                                     data-size="large" data-show-count="true" aria-label="Stars on GitHub">Stars</GitHubButton>
                                             </li>
                                         </ul>
@@ -62,8 +62,8 @@ export default function Footer() {
                                 <div className="col-lg-3 col-sm-6 pb-3">
                                     <div className="footer-menu contact-item">
                                         <h5 className="widget-title pb-2">Contact Us</h5>
-                                        <p>Do you have any queries or suggestions? 
-                                            <a href={'mailto:' + import.meta.env.VITE_BOOK_CLUB_ADMIN_EMAIL + ' ' + '?subject=' + import.meta.env.VITE_APPLICATION_NAME + 
+                                        <p>Do you have any queries or suggestions?
+                                            <a href={'mailto:' + import.meta.env.VITE_BOOK_CLUB_ADMIN_EMAIL + ' ' + '?subject=' + import.meta.env.VITE_APPLICATION_NAME +
                                                 ' - contact from website'}>{import.meta.env.VITE_BOOK_CLUB_ADMIN_EMAIL}</a>
                                         </p>
                                     </div>
@@ -72,7 +72,7 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                
+
             </footer>
 
             <div id="footer-bottom">
@@ -80,7 +80,7 @@ export default function Footer() {
                     <div className="row d-flex flex-wrap justify-content-between">
                         <div className="col-md-4 col-sm-6">
                         </div>
-                        
+
                         <div className="col-md-4 col-sm-6">
                             <div className="copyright">
                                 <p className="text-center">© Copyright 2024 <a href="https://aidanwhiteley.com/">Aidan Whiteley</a>.

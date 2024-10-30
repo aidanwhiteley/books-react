@@ -1,13 +1,13 @@
 
 import { Book, getBookById, createComment, deleteComment } from "../../apis/HttpDataApis";
-import { useLoaderData, LoaderFunction, ActionFunction} from "react-router-typesafe";
+import { useLoaderData, LoaderFunction, ActionFunction } from "react-router-typesafe";
 import BookDetails from "../BookDetails/BookDetails";
 
 export const loader = (async (request) => {
   return await getBookById(request.params.id!);
 }) satisfies LoaderFunction;
 
-export const action = (async ({request}) => {
+export const action = (async ({ request }) => {
 
   const formData = await request.formData();
   const bookFormData = Object.fromEntries(formData);
@@ -33,12 +33,12 @@ export default function BookDetailsRoute() {
 
   const book = useLoaderData<typeof loader>();
 
-  const bookProps : BookProps = {
+  const bookProps: BookProps = {
     book: book
   }
 
   return (
-    <BookDetails {...bookProps}/>
+    <BookDetails {...bookProps} />
   )
 
 }

@@ -2,12 +2,12 @@ import { useUserProfile } from '../../components/Root/RootRoute';
 import { Link } from "react-router-dom";
 
 export default function TandCs() {
-    
+
     const { userProfile } = useUserProfile();
     const isAnonymous = !userProfile;
     const isUser = userProfile && (userProfile.highestRole === 'ROLE_USER');
-    const isEditor =  userProfile && (userProfile.highestRole === 'ROLE_EDITOR');
-    const isAdmin =  userProfile && (userProfile.highestRole === 'ROLE_ADMIN');
+    const isEditor = userProfile && (userProfile.highestRole === 'ROLE_EDITOR');
+    const isAdmin = userProfile && (userProfile.highestRole === 'ROLE_ADMIN');
 
     return (
         <>
@@ -47,7 +47,7 @@ export default function TandCs() {
                                     }
                                     <p>You can currently read book reviews and comments entered by our members. However, you
                                         cannot post your own reviews or comment on the reviews of others. Additionally, you can't see details of who
-                                        has posted a review or comment. 
+                                        has posted a review or comment.
                                         {isAnonymous &&
                                             <span> Logging on via Google or Facebook is the first
                                                 step in getting more access to the application and its content.
@@ -57,16 +57,16 @@ export default function TandCs() {
 
                                     {(isUser && !userProfile.email) &&
                                         <p>If {import.meta.env.VITE_BOOK_CLUB_MEMBERS_SCOPE} and want to get full access to existing
-                                            reviews and comments and maybe write your own reviews or comments, please drop an email 
+                                            reviews and comments and maybe write your own reviews or comments, please drop an email
                                             to <a href={'mailto:' + import.meta.env.VITE_BOOK_CLUB_ADMIN_EMAIL + ' ' + '?subject=' + import.meta.env.VITE_APPLICATION_NAME +
                                                 ' - access request'}>{import.meta.env.VITE_BOOK_CLUB_ADMIN_EMAIL}</a> and we'll get you added to the list of registered editors asap.
                                         </p>
                                     }
                                     {(isUser && userProfile.email) &&
-                                        <p>If {import.meta.env.VITE_BOOK_CLUB_MEMBERS_SCOPE}, please check your { userProfile.email } email
+                                        <p>If {import.meta.env.VITE_BOOK_CLUB_MEMBERS_SCOPE}, please check your {userProfile.email} email
                                             account (including the spam folder) for an email confirming
                                             that access has been provided to {import.meta.env.VITE_APPLICATION_NAME}. If you no longer use that email address (which was
-                                            looked up from your {userProfile.authProvider.toLowerCase()} account), please drop an email 
+                                            looked up from your {userProfile.authProvider.toLowerCase()} account), please drop an email
                                             to <a href={'mailto:' + import.meta.env.VITE_BOOK_CLUB_ADMIN_EMAIL + ' ' + '?subject=' + import.meta.env.VITE_APPLICATION_NAME +
                                                 ' - access request'}>{import.meta.env.VITE_BOOK_CLUB_ADMIN_EMAIL}</a> and we'll get you added to the list of registered editors asap.
                                         </p>
@@ -164,7 +164,7 @@ export default function TandCs() {
                                 doesn't on your device.</p>
 
                             <h3>Logons</h3>
-                            <p>Logons to {import.meta.env.VITE_APPLICATION_NAME} currently last a day. If you don't click the logout button, 
+                            <p>Logons to {import.meta.env.VITE_APPLICATION_NAME} currently last a day. If you don't click the logout button,
                                 your kids will be logged on as you if they can also use the
                                 device you log on with!</p>
                             <p>If you usually stay logged on to Google or Facebook on the device you are accessing {import.meta.env.VITE_APPLICATION_NAME} with,
@@ -178,9 +178,9 @@ export default function TandCs() {
 
                             <hr />
 
-                            <p>Finally, 
+                            <p>Finally,
                                 {(isAnonymous || isUser) && <span>if you do register for the site,</span>} please remember - the
-                                first rule of <del><i>Fight Club</i></del> {import.meta.env.VITE_APPLICATION_NAME}<br/>&quot;<i>You do not give any Jeffery
+                                first rule of <del><i>Fight Club</i></del> {import.meta.env.VITE_APPLICATION_NAME}<br />&quot;<i>You do not give any Jeffery
                                     Archer book more than than one star in a review!</i>&quot;
                             </p>
 

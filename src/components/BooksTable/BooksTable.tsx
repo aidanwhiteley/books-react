@@ -69,7 +69,7 @@ export default function BooksTable(props: BooksProps) {
         }
     }) as DataRow[];
 
-    type CurrentPage = {selected: number};
+    type CurrentPage = { selected: number };
 
     const handlePageClick = (event: CurrentPage) => {
 
@@ -89,10 +89,10 @@ export default function BooksTable(props: BooksProps) {
                 } else {
                     queryString = queryString + '&' + key + '=' + value;
                 }
-            } 
+            }
             count++;
         }
-        if (! searchParams.has("page")) {
+        if (!searchParams.has("page")) {
             if (count === 0) {
                 queryString = '?page=' + (event.selected + 1);
             } else {
