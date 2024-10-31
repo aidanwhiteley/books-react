@@ -141,8 +141,8 @@ export type SummaryStats = {
     bookByGenre: Genre[]
 }
 
-export type Role = 'ROLE_USER' | 'ROLE_EDITOR' | 'ROLE_ADMIN';
-export type AuthenticationProvider = 'GOOGLE' | 'FACEBOOK';
+export type Role = 'ROLE_USER' | 'ROLE_EDITOR' | 'ROLE_ACTUATOR' | 'ROLE_ADMIN';
+export type AuthenticationProvider = 'GOOGLE' | 'FACEBOOK' | 'LOCAL';
 
 export type UserProfile = {
     "roles": Role[],
@@ -296,7 +296,7 @@ export async function getBookById(bookId: string): Promise<Book> {
     return response.json()
 }
 
-export async function getuserProfile(): Promise<UserProfile | null> {
+export async function getUserProfile(): Promise<UserProfile | null> {
 
     const api = '/secure/api/user';
 
@@ -310,6 +310,20 @@ export async function getuserProfile(): Promise<UserProfile | null> {
     return response.json()
 }
 
+export async function getUserProfiles(): Promise<UserProfile[]> {
+
+    const api = '/secure/api/users';
+
+    const response = await fetch(api);
+    if (response.status === 401) {
+        console.debug('Not authorised to get list of users profile data. This is expected if the user is not logged on.');
+        throw new NotLoggedOnError('You must be logged on with the admin role to view the list of users of the application');
+    } else if (!response.ok) {
+        throw new DataRetievalError('Error retrieiving list of user profile data from the server. Status: ' + response.status + ' ' + response.statusText);
+    }
+    return response.json()
+}
+
 export async function getGoogleBooks(title: string, author: string): Promise<GoogleBookSearchResult> {
 
     const api = '/secure/api/googlebooks/?';
@@ -318,7 +332,7 @@ export async function getGoogleBooks(title: string, author: string): Promise<Goo
     const response = await fetch(api + apiParams);
     if (response.status === 401) {
         console.debug('Not authorised to search for Google Books data. This is expected if the user is not logged on.');
-        throw new NotLoggedOnError('You must be logged on to search for bbosk on Google Books');
+        throw new NotLoggedOnError('You must be logged on to search for books on Google Books');
     } else if (!response.ok) {
         throw new DataRetievalError('Error searching Google Books data via the server. Status: ' + response.status + ' ' + response.statusText);
     }

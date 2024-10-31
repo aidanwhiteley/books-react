@@ -23,7 +23,7 @@ export default function Header(props: PropsWithChildren<Props>) {
   const activeKey = location.pathname === '/' ? '/home' : location.pathname;
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="light" data-bs-theme="light" sticky="top" expanded={expanded}>
+    <Navbar collapseOnSelect expand="xl" bg="light" data-bs-theme="light" sticky="top" expanded={expanded}>
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img alt="Site logo" src="/images/book-club-logo.png" height="30" className="d-inline-block align-top" />{' '}
@@ -47,6 +47,12 @@ export default function Header(props: PropsWithChildren<Props>) {
             {(userProfile && (userProfile.highestRole === 'ROLE_EDITOR' || userProfile.highestRole === 'ROLE_ADMIN')) &&
               <Nav.Link as={Link} eventKey="/create" to="/books/create" onClick={() => setExpanded(false)}>
                 Add a book review
+              </Nav.Link>
+            }
+
+            {(userProfile && (userProfile.highestRole === 'ROLE_ADMIN')) &&
+              <Nav.Link as={Link} eventKey="/useradmin" to="/useradmin" onClick={() => setExpanded(false)}>
+                User admin
               </Nav.Link>
             }
 
