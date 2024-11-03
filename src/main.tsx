@@ -26,6 +26,7 @@ import { loader as statsLoader } from './components/BookSummary/BooksSummaryRout
 import { action as bookDeleteAction } from './components/BookDelete/BookDeleteRoute';
 import { action as commentCreateAction } from './components/BookDetails/BookDetailsRoute';
 import { loader as userProfileLoader } from './components/UserAdmin/UserAdminRoute';
+import { action as userProfileAction } from './components/UserAdmin/UserAdminRoute';
 import BooksFindInfo from './components/BooksFind/BookFindInfo';
 import TandCs from './components/TandCsPrivacy/TandCs';
 import Privacy from './components/TandCsPrivacy/Privacy';
@@ -117,7 +118,8 @@ const router = createBrowserRouter([
           {
             path: "useradmin",
             element: <UserAdminRoute />,
-            loader: userProfileLoader
+            loader: userProfileLoader,
+            action: userProfileAction
           },
           {
             path: "tandcs",

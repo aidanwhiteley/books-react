@@ -1,0 +1,9 @@
+#users-table .rdt_TableCol {
+    color: black;
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+#users-table .rdt_TableCell {
+    font-size: 13px;
+}

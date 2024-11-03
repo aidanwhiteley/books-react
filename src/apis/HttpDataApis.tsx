@@ -1,5 +1,5 @@
 export class NotLoggedOnError extends Error { }
-export class DataRetievalError extends Error { }
+export class DataRetrievalError extends Error { }
 
 export type Book = {
     id?: string,
@@ -178,7 +178,7 @@ export async function getBooksByRating(requestedRating: RequestedRating = "ALL",
 
     const response = await fetch(apiPrefix + apiParams);
     if (!response.ok) {
-        throw new DataRetievalError('Error retrieiving books by review rating data from the server. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetrievalError('Error retrieiving books by review rating data from the server. Status: ' + response.status + ' ' + response.statusText);
     }
     return response.json()
 }
@@ -191,7 +191,7 @@ export async function getBooksByReviewDate(page: number = 0, pageSize: number = 
 
     const response = await fetch(apiPrefix + apiParams);
     if (!response.ok) {
-        throw new DataRetievalError('Error retrieving books by review date from the server. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetrievalError('Error retrieving books by review date from the server. Status: ' + response.status + ' ' + response.statusText);
     }
     return response.json()
 }
@@ -204,7 +204,7 @@ export async function getBooksBySearch(searchTerm: string, page: number = 0, pag
 
     const response = await fetch(apiPrefix + apiParams);
     if (!response.ok) {
-        throw new DataRetievalError('Error searching for books on the server. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetrievalError('Error searching for books on the server. Status: ' + response.status + ' ' + response.statusText);
     }
     return response.json()
 }
@@ -217,7 +217,7 @@ export async function getBooksByAuthor(author: string, page: number = 0, pageSiz
 
     const response = await fetch(apiPrefix + apiParams);
     if (!response.ok) {
-        throw new DataRetievalError('Error searching for books by author. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetrievalError('Error searching for books by author. Status: ' + response.status + ' ' + response.statusText);
     }
     return response.json()
 }
@@ -230,7 +230,7 @@ export async function getBooksByGenre(genre: string, page: number = 0, pageSize:
 
     const response = await fetch(apiPrefix + apiParams);
     if (!response.ok) {
-        throw new DataRetievalError('Error searching for books by genre. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetrievalError('Error searching for books by genre. Status: ' + response.status + ' ' + response.statusText);
     }
     return response.json()
 }
@@ -243,7 +243,7 @@ export async function getBooksByReader(reader: string, page: number = 0, pageSiz
 
     const response = await fetch(apiPrefix + apiParams);
     if (!response.ok) {
-        throw new DataRetievalError('Error searching for books by reader. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetrievalError('Error searching for books by reader. Status: ' + response.status + ' ' + response.statusText);
     }
     return response.json()
 }
@@ -254,7 +254,7 @@ export async function getGenres(): Promise<Genre[]> {
 
     const response = await fetch(apiPrefix);
     if (!response.ok) {
-        throw new DataRetievalError('Error retrieving list of book genres. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetrievalError('Error retrieving list of book genres. Status: ' + response.status + ' ' + response.statusText);
     }
     return response.json()
 }
@@ -265,7 +265,7 @@ export async function getAuthors(): Promise<Author[]> {
 
     const response = await fetch(apiPrefix);
     if (!response.ok) {
-        throw new DataRetievalError('Error retrieving list of book authors. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetrievalError('Error retrieving list of book authors. Status: ' + response.status + ' ' + response.statusText);
     }
     return response.json()
 }
@@ -280,7 +280,7 @@ export async function getReaders(): Promise<Reader[]> {
         const arr: Reader[] = []
         return arr;
     } else if (!response.ok) {
-        throw new DataRetievalError('Error retrieving list of book readers (i.e. reviewers). Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetrievalError('Error retrieving list of book readers (i.e. reviewers). Status: ' + response.status + ' ' + response.statusText);
     }
     return response.json()
 }
@@ -291,7 +291,7 @@ export async function getBookById(bookId: string): Promise<Book> {
 
     const response = await fetch(api);
     if (!response.ok) {
-        throw new DataRetievalError('Error retrieiving data for a book from the server. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetrievalError('Error retrieiving data for a book from the server. Status: ' + response.status + ' ' + response.statusText);
     }
     return response.json()
 }
@@ -305,7 +305,7 @@ export async function getUserProfile(): Promise<UserProfile | null> {
         console.debug('Not authorised to get users profile data. This is expected if the user is not logged on.');
         return null;
     } else if (!response.ok) {
-        throw new DataRetievalError('Error retrieiving users profile data from the server. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetrievalError('Error retrieiving users profile data from the server. Status: ' + response.status + ' ' + response.statusText);
     }
     return response.json()
 }
@@ -319,7 +319,7 @@ export async function getUserProfiles(): Promise<UserProfile[]> {
         console.debug('Not authorised to get list of users profile data. This is expected if the user is not logged on.');
         throw new NotLoggedOnError('You must be logged on with the admin role to view the list of users of the application');
     } else if (!response.ok) {
-        throw new DataRetievalError('Error retrieiving list of user profile data from the server. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetrievalError('Error retrieiving list of user profile data from the server. Status: ' + response.status + ' ' + response.statusText);
     }
     return response.json()
 }
@@ -334,7 +334,7 @@ export async function getGoogleBooks(title: string, author: string): Promise<Goo
         console.debug('Not authorised to search for Google Books data. This is expected if the user is not logged on.');
         throw new NotLoggedOnError('You must be logged on to search for books on Google Books');
     } else if (!response.ok) {
-        throw new DataRetievalError('Error searching Google Books data via the server. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetrievalError('Error searching Google Books data via the server. Status: ' + response.status + ' ' + response.statusText);
     }
     return response.json()
 }
@@ -345,7 +345,7 @@ export async function getSummaryStats(): Promise<SummaryStats> {
 
     const response = await fetch(api);
     if (!response.ok) {
-        throw new DataRetievalError('Error retrieiving Books application summary stats. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetrievalError('Error retrieiving Books application summary stats. Status: ' + response.status + ' ' + response.statusText);
     }
     return response.json()
 }
@@ -373,7 +373,63 @@ export async function createOrUpdateBookReview(bookReview: Book): Promise<null> 
     if (response.status === 401) {
         throw new NotLoggedOnError('Not authorised to create or update book reviews. You are either not logged on or don\'t have the EDITOR or ADMIN role.');
     } else if (!response.ok) {
-        throw new DataRetievalError('Error trying to store book review details on the server. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetrievalError('Error trying to store book review details on the server. Status: ' + response.status + ' ' + response.statusText);
+    }
+
+    return null;
+}
+
+
+export async function deleteUser(id: string): Promise<null> {
+
+    const api = '/secure/api/users/' + id;
+    const config = {
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'X-XSRF-TOKEN': getCookie('XSRF-TOKEN') 
+          },
+    }
+
+    const response = await fetch(api, config);
+    if (response.status === 401) {
+        throw new NotLoggedOnError('Not authorised to delete users. You are either not logged on or don\'t have the ADMIN role.');
+    } else if (response.status === 409) {
+        throw new Error('Oh dear - you can\'t delete your own userid!!!!');
+    } else if (!response.ok) {
+        throw new DataRetrievalError('Error trying to delete a user from the server. Status: ' + response.status + ' ' + response.statusText);
+    }
+
+    return null;
+}
+
+export async function updateUserAccess(id: string, isAdmin: boolean, isEditor: boolean): Promise<null> {
+
+    const clientRoles = {
+        id: id,
+        admin: isAdmin,
+        editor: isEditor
+    }
+
+    const api = '/secure/api/users/' + id;
+    const config = {
+        method: 'PATCH',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'X-XSRF-TOKEN': getCookie('XSRF-TOKEN') 
+          },
+          body: JSON.stringify(clientRoles)
+    }
+
+    const response = await fetch(api, config);
+    if (response.status === 401) {
+        throw new NotLoggedOnError('Not authorised to update user access roles. You are either not logged on or don\'t have the ADMIN role.');
+    } else if (response.status === 409) {
+        throw new Error('Oh dear - you can\'t change the access levels for your own userid!!!!');
+    } else if (!response.ok) {
+        throw new DataRetrievalError('Error trying to change the access levels for a user. Status: ' + response.status + ' ' + response.statusText);
     }
 
     return null;
@@ -396,7 +452,7 @@ export async function deleteBookReview(id: string): Promise<null> {
     if (response.status === 401) {
         throw new NotLoggedOnError('Not authorised to delete this book review. You are either not logged on, don\'t own the book or don\'t have the ADMIN role.');
     } else if (!response.ok) {
-        throw new DataRetievalError('Error trying to delete book review details from the server. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetrievalError('Error trying to delete book review details from the server. Status: ' + response.status + ' ' + response.statusText);
     }
 
     return null;
@@ -420,7 +476,7 @@ export async function createComment(bookId: string, comment: string): Promise<Bo
     if (response.status === 401) {
         throw new NotLoggedOnError('Not authorised to comment on book reviews. You are either not logged on or don\'t have the EDITOR or ADMIN role.');
     } else if (!response.ok) {
-        throw new DataRetievalError('Error trying to store book review comments on the server. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetrievalError('Error trying to store book review comments on the server. Status: ' + response.status + ' ' + response.statusText);
     }
 
     return response.json();
@@ -443,7 +499,7 @@ export async function deleteComment(bookId: string, commentId: string): Promise<
     if (response.status === 401) {
         throw new NotLoggedOnError('Not authorised to delete this book review comment. You are either not logged on, don\'t own the comment or don\'t have the ADMIN role.');
     } else if (!response.ok) {
-        throw new DataRetievalError('Error trying to delete book review comment from the server. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetrievalError('Error trying to delete book review comment from the server. Status: ' + response.status + ' ' + response.statusText);
     }
 
     return response.json();
@@ -465,7 +521,7 @@ export async function logoff(): Promise<void> {
         console.debug('Not authorised to acess the logout endpoint. This is expected if the user is not logged in.');
         return;
     } else if (!response.ok) {
-        throw new DataRetievalError('Error calling the logout API on the server. Status: ' + response.status + ' ' + response.statusText);
+        throw new DataRetrievalError('Error calling the logout API on the server. Status: ' + response.status + ' ' + response.statusText);
     }
     return;
 }

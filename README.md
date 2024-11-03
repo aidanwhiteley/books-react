@@ -1,6 +1,5 @@
 <a id="readme-top"></a>
 
-<!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://cloudybookclub.com">
@@ -33,6 +32,7 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#configuration">Configuration</a></li>
     <li><a href="#tests">Tests</a></li>
+    <li><a href="#docker">Docker</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -47,7 +47,7 @@ A while back, I wanted a simple "microservice" to use while playing with technol
 
 This project provides a simple React / Typescript front end for the book microservice.
 
-This project replaces a previous <a href="https://github.com/aidanwhiteley/books-web">front end</a> project that used <a href="https://angularjs.org/">AngularJS</a>. Aside from AngularJS being long dead, that implementation was very poor on mobile devices (which is when I most need to use the project when in book shops).
+This project replaces a previous <a href="https://github.com/aidanwhiteley/books-web">project</a> that used <a href="https://angularjs.org/">AngularJS</a>. Aside from AngularJS being long dead, that implementation was very poor on mobile devices (which is when I most need to use the project when in book shops).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -87,6 +87,8 @@ Here's how to get up and running with this project.
    npm run build
    ```
 
+   <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Configuration
 
 There are a few "global variables" defined in the `.env` file in the root folder. These should be edited as required.
@@ -98,13 +100,16 @@ To try out the read-only parts of this front end application this can be tempora
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Tests
-Nah - there aren't any. This front end project is deliberately light in any "business logic". It is all just display related code. And I have rather strong feelings about the utility (and encumberances) of most client side "unit tests". Anyways, the server side, where all the logic is, has about about 100 automated tests and about <a href="https://sonarcloud.io/project/overview?id=com.aidanwhiteley%3Abooks">85% code coverage</a> split between unit tests and, the far more important in the long term, integration tests.
+Nah - there aren't any. This front end project is deliberately light in any "business logic". It is all just display related code. And I have rather strong feelings about the utility (and encumberances) of much of the client side "unit tests" I've seen in the past. Anyways, the server side, where all the logic is, has about about 100 automated tests and about <a href="https://sonarcloud.io/project/overview?id=com.aidanwhiteley%3Abooks">85% code coverage</a> split between unit tests and, the far more important in the long term, integration tests.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Docker
 There is a Docker file in the root of the project that is intended to build a simple Docker image of the project that runs serves it using ngnix. The referenced nginx config file(s) 
 proxy API calls other Docker containers that are specified in the Docker Compose file in the <a href="https://github.com/aidanwhiteley/books">Books microservice</a> project.
-See the Docker file for the suggested syntax for build the Docker image.
+See the Docker file for the suggested syntax for building the Docker image.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## License
 
@@ -125,11 +130,11 @@ Your Name - [Aidan Whiteley](https://aidanwhiteley.com/) - github@aidanwhiteley.
 Here are the main components used in this project
 
 * [React Router](https://reactrouter.com/en/main)
+* [React Router Typesafe](react-router-typesafe)
 * [Bootstrap 5](https://getbootstrap.com/)
 * [React Bootstrap](https://react-bootstrap.netlify.app/)
 * [React Bootstrap Typeahead](https://github.com/ericgio/react-bootstrap-typeahead)
 * [React Data Table Component](https://github.com/jbetancur/react-data-table-component)
-* [React Router Typesafe](react-router-typesafe)
 * [Swiper](https://swiperjs.com/react)
 * [DOM Purify](https://github.com/cure53/DOMPurify)
 
