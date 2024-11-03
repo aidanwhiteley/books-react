@@ -25,10 +25,13 @@ import { action as bookCreateEditAction } from './components/BookCreateEdit/Book
 import { loader as statsLoader } from './components/BookSummary/BooksSummaryRoute';
 import { action as bookDeleteAction } from './components/BookDelete/BookDeleteRoute';
 import { action as commentCreateAction } from './components/BookDetails/BookDetailsRoute';
+import { loader as userProfileLoader } from './components/UserAdmin/UserAdminRoute';
+import { action as userProfileAction } from './components/UserAdmin/UserAdminRoute';
 import BooksFindInfo from './components/BooksFind/BookFindInfo';
 import TandCs from './components/TandCsPrivacy/TandCs';
 import Privacy from './components/TandCsPrivacy/Privacy';
 import BooksSummaryRoute from './components/BookSummary/BooksSummaryRoute';
+import UserAdminRoute from './components/UserAdmin/UserAdminRoute';
 
 
 const router = createBrowserRouter([
@@ -111,6 +114,12 @@ const router = createBrowserRouter([
             path: "books/stats",
             element: <BooksSummaryRoute />,
             loader: statsLoader
+          },
+          {
+            path: "useradmin",
+            element: <UserAdminRoute />,
+            loader: userProfileLoader,
+            action: userProfileAction
           },
           {
             path: "tandcs",

@@ -31,7 +31,7 @@ export default function BooksTable(props: BooksProps) {
     const columns: TableColumn<DataRow>[] = [
         {
             name: 'Title',
-            selector: row => row.author,
+            selector: row => row.title,
             format: row => formatTitle(row),
             minWidth: '250px'
         },

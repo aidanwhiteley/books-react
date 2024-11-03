@@ -3,7 +3,7 @@ import Footer from "../Footer/Footer";
 import Messaging from "../Messaging/Messaging";
 import { Outlet, useNavigation, useOutletContext } from "react-router-dom";
 import "./RootRoute.css";
-import { getuserProfile, UserProfile } from "../../apis/HttpDataApis";
+import { getUserProfile, UserProfile } from "../../apis/HttpDataApis";
 import { useLoaderData, LoaderFunction } from "react-router-typesafe";
 import ScrollToTop from "../../utils/ScrollToTop";
 
@@ -11,7 +11,7 @@ type ContextType = { userProfile: UserProfile | null };
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const loader = (async () => {
-    return await getuserProfile();
+    return await getUserProfile();
 }) satisfies LoaderFunction;
 
 export default function Root() {
