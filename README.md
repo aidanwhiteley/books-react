@@ -130,7 +130,7 @@ Your Name - [Aidan Whiteley](https://aidanwhiteley.com/) - github@aidanwhiteley.
 Here are the main components used in this project
 
 * [React Router](https://reactrouter.com/en/main)
-* [React Router Typesafe](react-router-typesafe)
+* [React Router Typesafe](https://github.com/fredericoo/react-router-typesafe)
 * [Bootstrap 5](https://getbootstrap.com/)
 * [React Bootstrap](https://react-bootstrap.netlify.app/)
 * [React Bootstrap Typeahead](https://github.com/ericgio/react-bootstrap-typeahead)
