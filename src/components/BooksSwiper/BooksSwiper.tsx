@@ -54,7 +54,7 @@ export default function BookSwiper(props: BooksProps) {
     </SwiperSlide>
   );
 
-  
+
   const ratingText = (radioValue === 'ok') ? 'an OK' : 'a ' + radioValue;
   const showNaviagtion = window.innerWidth > 1023;
 
@@ -82,6 +82,7 @@ export default function BookSwiper(props: BooksProps) {
         {swiperSlides}
       </Swiper>
       <p className="text-center">Books recently reviewed on {import.meta.env.VITE_APPLICATION_NAME} with {ratingText} rating</p>
+      <p className="text-center d-lg-none">Swipe to see more books with {ratingText} rating.</p>
 
       <div id="rating-selection" className="text-center">
         <ButtonGroup>
