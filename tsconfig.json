@@ -10,5 +10,6 @@
       "esModuleInterop": true,
       "lib": ["ES2023", "DOM", "DOM.Iterable"],
       "jsx": "react-jsx",
+      "types": ["jest", "node"]
     }
 }

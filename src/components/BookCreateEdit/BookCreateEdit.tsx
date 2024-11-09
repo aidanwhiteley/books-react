@@ -110,9 +110,7 @@ export default function BookCreateEdit(props: BookCreateProps) {
                         {/* The rather odd looking "key" field on the form is to ensure that the defaultValue field is not
                             "remebered" from one use of the form to another. Otherwise going from (say) the "update review" use
                             of this Form to the "create review" use of the Form would leave the value from the "update review" 
-                            use in place at the "create review" use.
-                            I am not sure why - I _think_ it might be due to the browser remember the implict form state but
-                            I'm guessing really. The use of the "key" field makes the problem go away! */}
+                            use in place at the "create review" use. */}
                         <Form name="bookForm" method="post" className="row g-3" key={JSON.stringify(props.book)}>
                             <input id="bookId" name="bookId" type="hidden" value={bookId} />
 
