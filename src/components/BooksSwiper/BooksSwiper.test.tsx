@@ -1,12 +1,11 @@
 
-import { describe, test, expect } from 'vitest'
+import { expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import BookSwiper from './BooksSwiper'
 import { BrowserRouter } from 'react-router-dom'
-import { vi } from 'vitest'
 import userEvent from '@testing-library/user-event'
 
-it('Click the about router link', async () => {
+it('Click the Great Books link', async () => {
     render(<BookSwiper rating={''} booksQueryResult={{
         content: [],
         page: {
