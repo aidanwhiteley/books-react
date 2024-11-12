@@ -52,7 +52,7 @@ export default function Footer() {
                                                 <a href="https://github.com/aidanwhiteley/books-react">Code - front end</a>
                                             </li>
                                             <li className="menu-item pb-2">
-                                                <a href="https://cloudybookclub.com/swagger-ui/index.html">API - read only</a>
+                                                <a href={import.meta.env.VITE_API_URL + '/swagger-ui/index.html'}>API - read only</a>
                                             </li>
                                             <li className="github-stars">
                                                 <GitHubButton href="https://github.com/aidanwhiteley/books" data-color-scheme="no-preference: light; light: light; dark: light;"
