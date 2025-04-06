@@ -8,3 +8,13 @@
     padding-top: 30px;
     padding-bottom: 5px;
 }
+
+.deprecation {
+    background-color: #f60705;
+    margin-bottom: 20px;
+    ;
+}
+
+.deprecation p {
+    margin-bottom: 0rem
+}

@@ -12,7 +12,7 @@ export default function Footer() {
                     <div className="row">
                         <div className="footer-top-area">
                             <div className="row d-flex flex-wrap justify-content-between">
-                                <div className="col-lg-5 col-sm-6 pb-3">
+                                <div className="col-lg-3 col-sm-6 pb-3">
                                     <div className="footer-menu">
                                         <Link className="d-none d-md-block" to="/">
                                             <img src="/images/book-club-logo.jpeg" alt="logo" />
@@ -43,16 +43,36 @@ export default function Footer() {
 
                                 <div className="col-lg-2 col-sm-6 pb-3">
                                     <div className="footer-menu">
+                                        <h5 className="widget-title pb-2">Versions</h5>
+                                        <ul className="menu-list list-unstyled">
+                                            <li className="menu-item pb-2">
+                                                <a href="https://cloudybookclub.com/" target="_blank">Current (Htmx)</a>
+                                            </li>
+                                            <li className="menu-item pb-2">
+                                                <Link to="/">Previous (React)</Link>
+                                            </li>
+                                            <li className="menu-item pb-2">
+                                                Demo (TBC)
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div className="col-lg-2 col-sm-6 pb-3">
+                                    <div className="footer-menu">
                                         <h5 className="widget-title pb-2">Software</h5>
                                         <ul className="menu-list list-unstyled ">
                                             <li className="menu-item pb-2">
-                                                <a href="https://github.com/aidanwhiteley/books">Code - server side</a>
+                                                <a href="https://github.com/aidanwhiteley/books" target="_blank">Code - server side</a>
                                             </li>
                                             <li className="menu-item pb-2">
-                                                <a href="https://github.com/aidanwhiteley/books-react">Code - front end</a>
+                                                <a href="https://github.com/aidanwhiteley/books/tree/develop/src/main/resources/templates" target="_blank">Code - front end (Htmx)</a>
                                             </li>
                                             <li className="menu-item pb-2">
-                                                <a href={import.meta.env.VITE_API_URL + '/swagger-ui/index.html'}>API - read only</a>
+                                                <a href="https://github.com/aidanwhiteley/books-react" target="_blank">Code - front end (React)</a>
+                                            </li>
+                                            <li className="menu-item pb-2">
+                                                <a href={import.meta.env.VITE_API_URL + '/swagger-ui/index.html'} target="_blank">API - read only</a>
                                             </li>
                                             <li className="github-stars">
                                                 <GitHubButton href="https://github.com/aidanwhiteley/books" data-color-scheme="no-preference: light; light: light; dark: light;"
@@ -86,7 +106,7 @@ export default function Footer() {
 
                         <div className="col-md-4 col-sm-6">
                             <div className="copyright">
-                                <p className="text-center">© Copyright 2024 <a href="https://aidanwhiteley.com/">Aidan Whiteley</a>.
+                                <p className="text-center">© Copyright 2025 <a href="https://aidanwhiteley.com/">Aidan Whiteley</a>.
                                 </p>
                             </div>
                         </div>
