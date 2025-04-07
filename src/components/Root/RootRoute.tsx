@@ -47,7 +47,7 @@ export default function Root() {
                 <div className="row">
                     <div className="col-sm-12 text-center card card-body deprecation text-white">
                         <p><b>Deprecation: </b> This React / Typescript front end for The Cloudy Book Club is
-                            deprecated in favour of an HTMX implementation available  <a href="https://cloudybookclub.com" target="_blank">here</a>.</p>
+                            deprecated in favour of an HTMX implementation available  <a href="https://cloudybookclub.com">here</a>.</p>
                     </div>
                 </div>
 

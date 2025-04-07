@@ -46,10 +46,10 @@ export default function Footer() {
                                         <h5 className="widget-title pb-2">Versions</h5>
                                         <ul className="menu-list list-unstyled">
                                             <li className="menu-item pb-2">
-                                                <a href="https://cloudybookclub.com/" target="_blank">Current (Htmx)</a>
+                                                <a href="https://cloudybookclub.com/">Current (Htmx)</a>
                                             </li>
                                             <li className="menu-item pb-2">
-                                                <Link to="/">Previous (React)</Link>
+                                                <a href="https://spa.cloudybookclub.com/">Previous (React)</a>
                                             </li>
                                             <li className="menu-item pb-2">
                                                 Demo (TBC)
