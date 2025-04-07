@@ -10,6 +10,7 @@
 
   <p align="center">
     A simple React / Typescript front end for the <a href="https://github.com/aidanwhiteley/books">Books microservice</a>.
+  </p>
 
 </div>
 
