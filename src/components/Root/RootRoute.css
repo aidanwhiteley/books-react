@@ -18,3 +18,7 @@
 .deprecation p {
     margin-bottom: 0rem
 }
+
+.deprecation-link {
+    color: white;
+}
