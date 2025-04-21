@@ -43,11 +43,11 @@ export default function Root() {
                 <Messaging message={message} />
             }
 
-            <section id="main-content" className="container">
+            <section id="main-content" className={containerClass}>
                 <div className="row">
                     <div className="col-sm-12 text-center card card-body deprecation text-white">
                         <p><b>Deprecation: </b> This React / Typescript front end for The Cloudy Book Club is
-                            deprecated in favour of an HTMX implementation available  <a href="https://cloudybookclub.com">here</a>.</p>
+                            deprecated in favour of a Thymeleaf / Htmx implementation available  <a className="deprecation-link" href="https://cloudybookclub.com">here</a>.</p>
                     </div>
                 </div>
 
