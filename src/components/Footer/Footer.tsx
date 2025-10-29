@@ -51,8 +51,11 @@ export default function Footer() {
                                             <li className="menu-item pb-2">
                                                 <a href="https://spa.cloudybookclub.com/">Previous (React)</a>
                                             </li>
+                                        </ul>
+                                        <h5 className="widget-title pb-2">Writing</h5>
+                                        <ul className="menu-list list-unstyled">
                                             <li className="menu-item pb-2">
-                                                Demo (TBC)
+                                                <a href="https://blather.aidanwhiteley.com/htmx-with-java-spring-boot-and-thymeleaf/">Blog post</a>
                                             </li>
                                         </ul>
                                     </div>
